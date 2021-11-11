@@ -8,5 +8,6 @@ namespace CafeAndRestaurantLib.Concrete
 {
    public  class Masa
     {
+        public int MasaId { get; set; }
     }
 }
