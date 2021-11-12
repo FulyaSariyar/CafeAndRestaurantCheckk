@@ -80,6 +80,7 @@
             this.btnYönetici.TabIndex = 0;
             this.btnYönetici.Text = "Yönetici";
             this.btnYönetici.UseVisualStyleBackColor = false;
+            this.btnYönetici.Click += new System.EventHandler(this.btnYönetici_Click);
             // 
             // btnBack1
             // 

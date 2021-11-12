@@ -44,5 +44,23 @@ namespace CafeAndRestaurant
             frmGiris.Show();
             this.Hide();
         }
+
+        private void cb1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb1.Checked)
+            {
+                cb1.Text = "Checked";
+
+            }
+            else
+            {
+                cb1.Text = "Unchecked";
+            }
+        }
+
+        private void cbBahce_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

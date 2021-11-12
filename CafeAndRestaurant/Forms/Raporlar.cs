@@ -17,6 +17,11 @@ namespace CafeAndRestaurant.Forms
             InitializeComponent();
         }
 
-       
+        private void btnBack2_Click(object sender, EventArgs e)
+        {
+            FrmGiris frmGiris = new FrmGiris();
+            frmGiris.Show();
+            this.Hide();
+        }
     }
 }

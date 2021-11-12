@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIlk));
             this.gbBinaBilgileri = new System.Windows.Forms.GroupBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbKat4 = new System.Windows.Forms.ComboBox();
+            this.cbKat3 = new System.Windows.Forms.ComboBox();
+            this.cbKat2 = new System.Windows.Forms.ComboBox();
+            this.cbKat1 = new System.Windows.Forms.ComboBox();
+            this.cbZemin = new System.Windows.Forms.ComboBox();
+            this.cbBahce = new System.Windows.Forms.ComboBox();
             this.cb6 = new System.Windows.Forms.CheckBox();
             this.cb5 = new System.Windows.Forms.CheckBox();
             this.cb4 = new System.Windows.Forms.CheckBox();
@@ -49,12 +49,12 @@
             // gbBinaBilgileri
             // 
             this.gbBinaBilgileri.BackColor = System.Drawing.Color.Transparent;
-            this.gbBinaBilgileri.Controls.Add(this.comboBox6);
-            this.gbBinaBilgileri.Controls.Add(this.comboBox5);
-            this.gbBinaBilgileri.Controls.Add(this.comboBox4);
-            this.gbBinaBilgileri.Controls.Add(this.comboBox3);
-            this.gbBinaBilgileri.Controls.Add(this.comboBox2);
-            this.gbBinaBilgileri.Controls.Add(this.comboBox1);
+            this.gbBinaBilgileri.Controls.Add(this.cbKat4);
+            this.gbBinaBilgileri.Controls.Add(this.cbKat3);
+            this.gbBinaBilgileri.Controls.Add(this.cbKat2);
+            this.gbBinaBilgileri.Controls.Add(this.cbKat1);
+            this.gbBinaBilgileri.Controls.Add(this.cbZemin);
+            this.gbBinaBilgileri.Controls.Add(this.cbBahce);
             this.gbBinaBilgileri.Controls.Add(this.cb6);
             this.gbBinaBilgileri.Controls.Add(this.cb5);
             this.gbBinaBilgileri.Controls.Add(this.cb4);
@@ -73,59 +73,60 @@
             this.gbBinaBilgileri.Tag = "";
             this.gbBinaBilgileri.Text = "Bina Kat Bilgilerini ve Katlara Ait Masa Adetlerini Giriniz:";
             // 
-            // comboBox6
+            // cbKat4
             // 
-            this.comboBox6.ForeColor = System.Drawing.Color.Silver;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(147, 252);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 30);
-            this.comboBox6.TabIndex = 11;
+            this.cbKat4.ForeColor = System.Drawing.Color.Silver;
+            this.cbKat4.FormattingEnabled = true;
+            this.cbKat4.Location = new System.Drawing.Point(147, 252);
+            this.cbKat4.Name = "cbKat4";
+            this.cbKat4.Size = new System.Drawing.Size(121, 30);
+            this.cbKat4.TabIndex = 11;
             // 
-            // comboBox5
+            // cbKat3
             // 
-            this.comboBox5.ForeColor = System.Drawing.Color.Silver;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(147, 212);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 30);
-            this.comboBox5.TabIndex = 10;
+            this.cbKat3.ForeColor = System.Drawing.Color.Silver;
+            this.cbKat3.FormattingEnabled = true;
+            this.cbKat3.Location = new System.Drawing.Point(147, 212);
+            this.cbKat3.Name = "cbKat3";
+            this.cbKat3.Size = new System.Drawing.Size(121, 30);
+            this.cbKat3.TabIndex = 10;
             // 
-            // comboBox4
+            // cbKat2
             // 
-            this.comboBox4.ForeColor = System.Drawing.Color.Silver;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(147, 176);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 30);
-            this.comboBox4.TabIndex = 9;
+            this.cbKat2.ForeColor = System.Drawing.Color.Silver;
+            this.cbKat2.FormattingEnabled = true;
+            this.cbKat2.Location = new System.Drawing.Point(147, 176);
+            this.cbKat2.Name = "cbKat2";
+            this.cbKat2.Size = new System.Drawing.Size(121, 30);
+            this.cbKat2.TabIndex = 9;
             // 
-            // comboBox3
+            // cbKat1
             // 
-            this.comboBox3.ForeColor = System.Drawing.Color.Silver;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(147, 140);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 30);
-            this.comboBox3.TabIndex = 8;
+            this.cbKat1.ForeColor = System.Drawing.Color.Silver;
+            this.cbKat1.FormattingEnabled = true;
+            this.cbKat1.Location = new System.Drawing.Point(147, 140);
+            this.cbKat1.Name = "cbKat1";
+            this.cbKat1.Size = new System.Drawing.Size(121, 30);
+            this.cbKat1.TabIndex = 8;
             // 
-            // comboBox2
+            // cbZemin
             // 
-            this.comboBox2.ForeColor = System.Drawing.Color.Silver;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(147, 101);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 30);
-            this.comboBox2.TabIndex = 7;
+            this.cbZemin.ForeColor = System.Drawing.Color.Silver;
+            this.cbZemin.FormattingEnabled = true;
+            this.cbZemin.Location = new System.Drawing.Point(147, 101);
+            this.cbZemin.Name = "cbZemin";
+            this.cbZemin.Size = new System.Drawing.Size(121, 30);
+            this.cbZemin.TabIndex = 7;
             // 
-            // comboBox1
+            // cbBahce
             // 
-            this.comboBox1.ForeColor = System.Drawing.Color.Silver;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(147, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 30);
-            this.comboBox1.TabIndex = 6;
+            this.cbBahce.ForeColor = System.Drawing.Color.Silver;
+            this.cbBahce.FormattingEnabled = true;
+            this.cbBahce.Location = new System.Drawing.Point(147, 62);
+            this.cbBahce.Name = "cbBahce";
+            this.cbBahce.Size = new System.Drawing.Size(121, 30);
+            this.cbBahce.TabIndex = 6;
+            this.cbBahce.SelectedIndexChanged += new System.EventHandler(this.cbBahce_SelectedIndexChanged);
             // 
             // cb6
             // 
@@ -200,6 +201,7 @@
             this.cb1.TabIndex = 0;
             this.cb1.Text = "Bahçe Bölümü";
             this.cb1.UseVisualStyleBackColor = true;
+            this.cb1.CheckedChanged += new System.EventHandler(this.cb1_CheckedChanged);
             // 
             // btnNext1
             // 
@@ -246,12 +248,12 @@
         private CheckBox cb3;
         private CheckBox cb2;
         private CheckBox cb1;
-        private ComboBox comboBox5;
-        private ComboBox comboBox4;
-        private ComboBox comboBox3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
-        private ComboBox comboBox6;
+        private ComboBox cbKat3;
+        private ComboBox cbKat2;
+        private ComboBox cbKat1;
+        private ComboBox cbZemin;
+        private ComboBox cbBahce;
+        private ComboBox cbKat4;
         private Button btnNext1;
     }
 }

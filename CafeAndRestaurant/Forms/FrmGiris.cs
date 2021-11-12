@@ -37,5 +37,12 @@ namespace CafeAndRestaurant.Forms
             frmIlk.Show();
             this.Hide();
         }
+
+        private void btnYönetici_Click(object sender, EventArgs e)
+        {
+             Raporlar frmRaporlar = new Raporlar();
+            frmRaporlar.Show();
+            this.Hide();
+        }
     }
 }
