@@ -1,4 +1,5 @@
 using CafeAndRestaurant.Forms;
+using System.Collections;
 
 namespace CafeAndRestaurant
 {
@@ -43,6 +44,11 @@ namespace CafeAndRestaurant
 
         private void FrmIlk_Load(object sender, EventArgs e)
         {
+           
+           string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
+           MemoryStream mS = new MemoryStream();
+            ArrayList resim = new ArrayList();
+
 
 
 
@@ -52,14 +58,22 @@ namespace CafeAndRestaurant
             MemoryStream mS = new MemoryStream();
 
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i <2 ; i++)
             {
                 PictureBox pbmenuler = new PictureBox();
+
+                //string yol = @"\CafeAndRestaurantCheck\CafeAndRestaurant.Lib\ImageResources\Balýklar.png";
+                //pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
+                //pbmenuler.Dock = DockStyle.Fill;
+                new MemoryStream(Properties.Resources.Balýklar.png);
+                pbmenuler.BackColor = Color.Black;
+               // pbmenuler.ImageLocation = $"@\\ImageResources{menuResim[i]}.png";
                 // pbmenuler.Image = Image.FromStream(Menu);
                 pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
                 pbmenuler.Dock = DockStyle.Fill;
                 // pbmenuler.BackColor = Color.Black;
                 flwpMenu.Controls.Add(pbmenuler);
+                pbmenuler.ImageLocation = (string)resim[0];
 
 
 
@@ -102,138 +116,6 @@ namespace CafeAndRestaurant
             FrmGiris frmGiris = new FrmGiris();
             frmGiris.Show();
             this.Hide();
-        }
-
-        private void cb1_CheckedChanged(object sender, EventArgs e)
-        {
-            {
-                if (cb1.Checked == true)
-                {
-                    cbBahce.Show();
-                    cbZemin.Visible = false;
-                    cbKat1.Visible = false;
-                    cbKat2.Visible = false;
-                    cbKat3.Visible = false;
-                    cbKat4.Visible = false;
-                }
-                else
-                {
-                    cbZemin.Visible = true;
-                    cbKat1.Visible = true;
-                    cbKat2.Visible = true;
-                    cbKat3.Visible = true;
-                    cbKat4.Visible = true;
-                }
-            }
-
-           
-
-
-        }
-
-        private void cbBahce_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flwpMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void cb2_CheckedChanged(object sender, EventArgs e)
-        {
-            {
-                if (cb2.Checked == true)
-                {
-                    cbZemin.Show();
-                    cbBahce.Visible = false;
-                    cbKat1.Visible = false;
-                    cbKat2.Visible = false;
-                    cbKat3.Visible = false;
-                    cbKat4.Visible = false;
-                }
-                else
-                {
-                    cbBahce.Visible = true;
-                    cbKat1.Visible = true;
-                    cbKat2.Visible = true;
-                    cbKat3.Visible = true;
-                    cbKat4.Visible = true;
-                }
-            }
-        }
-
-        private void cb3_CheckedChanged(object sender, EventArgs e)
-        {
-            {
-                
-                    if (cb3.Checked == true)
-                    {
-                        cbKat1.Show();
-                        cbBahce.Visible = false;
-                        cbZemin.Visible = false;
-                        cbKat2.Visible = false;
-                        cbKat3.Visible = false;
-                        cbKat4.Visible = false;
-                    }
-                    else
-                    {
-                        cbBahce.Visible = true;
-                        cbZemin.Visible = true;
-                        cbKat2.Visible = true;
-                        cbKat3.Visible = true;
-                        cbKat4.Visible = true;
-                    }
-                }
-            }
-
-        private void cb4_CheckedChanged(object sender, EventArgs e)
-        {
-            {
-
-                if (cb4.Checked == true)
-                {
-                    cbKat2.Show();
-                    cbBahce.Visible = false;
-                    cbZemin.Visible = false;
-                    cbKat1.Visible = false;
-                    cbKat3.Visible = false;
-                    cbKat4.Visible = false;
-                }
-                else
-                {
-                    cbBahce.Visible = true;
-                    cbZemin.Visible = true;
-                    cbKat1.Visible = true;
-                    cbKat3.Visible = true;
-                    cbKat4.Visible = true;
-                }
-            }
-        }
-
-        private void cb5_CheckedChanged(object sender, EventArgs e)
-        {
-            {
-
-                if (cb5.Checked == true)
-                {
-                    cbKat3.Show();
-                    cbBahce.Visible = false;
-                    cbZemin.Visible = false;
-                    cbKat1.Visible = false;
-                    cbKat2.Visible = false;
-                    cbKat4.Visible = false;
-                }
-                else
-                {
-                    cbBahce.Visible = true;
-                    cbZemin.Visible = true;
-                    cbKat1.Visible = true;
-                    cbKat2.Visible = true;
-                    cbKat4.Visible = true;
-                }
-            }
         }
     }
 }

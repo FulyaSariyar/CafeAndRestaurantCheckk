@@ -248,6 +248,7 @@
             this.flwpMenu.Size = new System.Drawing.Size(153, 468);
             this.flwpMenu.TabIndex = 0;
             this.flwpMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.flwpMenu_Paint);
+            
             // 
             // FrmIlk
             // 
