@@ -135,7 +135,7 @@
             this.cbBahce.Name = "cbBahce";
             this.cbBahce.Size = new System.Drawing.Size(121, 30);
             this.cbBahce.TabIndex = 6;
-            this.cbBahce.SelectedIndexChanged += new System.EventHandler(this.cbBahce_SelectedIndexChanged);
+            
             // 
             // cb6
             // 
@@ -161,7 +161,7 @@
             this.cb5.TabIndex = 4;
             this.cb5.Text = "Kat3";
             this.cb5.UseVisualStyleBackColor = true;
-            this.cb5.CheckedChanged += new System.EventHandler(this.cb5_CheckedChanged);
+           
             // 
             // cb4
             // 
@@ -174,7 +174,7 @@
             this.cb4.TabIndex = 3;
             this.cb4.Text = "Kat2";
             this.cb4.UseVisualStyleBackColor = true;
-            this.cb4.CheckedChanged += new System.EventHandler(this.cb4_CheckedChanged);
+            
             // 
             // cb3
             // 
@@ -187,7 +187,7 @@
             this.cb3.TabIndex = 2;
             this.cb3.Text = "Kat 1";
             this.cb3.UseVisualStyleBackColor = true;
-            this.cb3.CheckedChanged += new System.EventHandler(this.cb3_CheckedChanged);
+            
             // 
             // cb2
             // 
@@ -201,7 +201,7 @@
             this.cb2.TabIndex = 1;
             this.cb2.Text = "Zemin Kat";
             this.cb2.UseVisualStyleBackColor = true;
-            this.cb2.CheckedChanged += new System.EventHandler(this.cb2_CheckedChanged);
+            
             // 
             // cb1
             // 
@@ -214,7 +214,7 @@
             this.cb1.TabIndex = 0;
             this.cb1.Text = "Bahçe Bölümü";
             this.cb1.UseVisualStyleBackColor = true;
-            this.cb1.CheckedChanged += new System.EventHandler(this.cb1_CheckedChanged);
+           
             // 
             // btnNext1
             // 
@@ -247,7 +247,7 @@
             this.flwpMenu.Name = "flwpMenu";
             this.flwpMenu.Size = new System.Drawing.Size(153, 468);
             this.flwpMenu.TabIndex = 0;
-            this.flwpMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.flwpMenu_Paint);
+            
             
             // 
             // FrmIlk

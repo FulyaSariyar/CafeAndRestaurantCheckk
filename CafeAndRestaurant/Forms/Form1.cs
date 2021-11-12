@@ -45,38 +45,53 @@ namespace CafeAndRestaurant
         private void FrmIlk_Load(object sender, EventArgs e)
         {
            
-           string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
-           MemoryStream mS = new MemoryStream();
-            ArrayList resim = new ArrayList();
+           //string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
+           //MemoryStream mS = new MemoryStream();
+           // ArrayList resim = new ArrayList();
 
 
 
 
 
 
-            string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
-            MemoryStream mS = new MemoryStream();
+            //string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
+            //MemoryStream mS = new MemoryStream();
 
 
-            for (int i = 0; i <2 ; i++)
+            //for (int i = 0; i <2 ; i++)
+            //{
+            //    PictureBox pbmenuler = new PictureBox();
+
+            // //string yol = @"\CafeAndRestaurantCheck\CafeAndRestaurant.Lib\ImageResources\Balýklar.png";
+            // //pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
+            // //pbmenuler.Dock = DockStyle.Fill;
+            // new MemoryStream(Properties.Resources.Balýklar.png);
+            // pbmenuler.BackColor = Color.Black;
+            //// pbmenuler.ImageLocation = $"@\\ImageResources{menuResim[i]}.png";
+            // // pbmenuler.Image = Image.FromStream(Menu);
+            // pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
+            // pbmenuler.Dock = DockStyle.Fill;
+            // // pbmenuler.BackColor = Color.Black;
+            // flwpMenu.Controls.Add(pbmenuler);
+            // pbmenuler.ImageLocation = (string)resim[0];
+
+            //}
+            var path = @"C:\Users\HP\Desktop\MenuAD";
+            var resim = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
+                                .Where(x => new string[] { ".bmp", ".jpg", ".png" }
+                                .Contains(new FileInfo(x).Extension.ToLower()))
+                                .Take(20)
+                                .ToList();
+
+            for (int i = 0; i < resim.Count(); i++)
             {
-                PictureBox pbmenuler = new PictureBox();
-
-                //string yol = @"\CafeAndRestaurantCheck\CafeAndRestaurant.Lib\ImageResources\Balýklar.png";
-                //pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
-                //pbmenuler.Dock = DockStyle.Fill;
-                new MemoryStream(Properties.Resources.Balýklar.png);
-                pbmenuler.BackColor = Color.Black;
-               // pbmenuler.ImageLocation = $"@\\ImageResources{menuResim[i]}.png";
-                // pbmenuler.Image = Image.FromStream(Menu);
-                pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
-                pbmenuler.Dock = DockStyle.Fill;
-                // pbmenuler.BackColor = Color.Black;
-                flwpMenu.Controls.Add(pbmenuler);
-                pbmenuler.ImageLocation = (string)resim[0];
-
-
-
+                var pbox = new PictureBox
+                {
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    //ClientSize = new Size(200, 180),
+                    ImageLocation = resim[i]
+                };
+                flwpMenu.Controls.Add(pbox);
             }
         }
 

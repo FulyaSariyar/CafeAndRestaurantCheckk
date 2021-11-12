@@ -40,7 +40,7 @@ namespace CafeAndRestaurant.Forms
 
         private void btnYönetici_Click(object sender, EventArgs e)
         {
-             Raporlar frmRaporlar = new Raporlar();
+             FrmRapor frmRaporlar = new FrmRapor();
             frmRaporlar.Show();
             this.Hide();
         }
