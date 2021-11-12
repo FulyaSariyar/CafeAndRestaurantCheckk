@@ -234,6 +234,7 @@
             this.flwpMenu.Name = "flwpMenu";
             this.flwpMenu.Size = new System.Drawing.Size(153, 468);
             this.flwpMenu.TabIndex = 0;
+            
             // 
             // FrmIlk
             // 

@@ -1,4 +1,5 @@
 using CafeAndRestaurant.Forms;
+using System.Collections;
 
 namespace CafeAndRestaurant
 {
@@ -20,16 +21,18 @@ namespace CafeAndRestaurant
         {
            
            string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
-            MemoryStream mS = new MemoryStream();
-            
+           // MemoryStream mS = new MemoryStream();
+            //ArrayList resim = new ArrayList();
 
-            for (int i = 0; i <2 ; i++)
+            for (int i = 0; i <9 ; i++)
             {
                 PictureBox pbmenuler = new PictureBox();
-                pbmenuler.Image = Image.FromStream(Menu);
-                pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
-                pbmenuler.Dock = DockStyle.Fill;
-               // pbmenuler.BackColor = Color.Black;
+
+            
+                //pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
+                //pbmenuler.Dock = DockStyle.Fill;
+                pbmenuler.BackColor = Color.Black;
+                pbmenuler.ImageLocation = $"\\ImageResources{menuResim[i]}.png";
                 flwpMenu.Controls.Add(pbmenuler);
 
                 
@@ -55,5 +58,7 @@ namespace CafeAndRestaurant
             frmGiris.Show();
             this.Hide();
         }
+
+       
     }
 }

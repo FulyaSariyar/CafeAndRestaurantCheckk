@@ -1,7 +1,7 @@
 ﻿
 namespace CafeAndRestaurant.Forms
 {
-    partial class Raporlar
+    partial class FrmRapor
     {
         /// <summary>
         /// Required designer variable.
