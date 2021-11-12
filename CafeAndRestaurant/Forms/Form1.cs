@@ -15,5 +15,15 @@ namespace CafeAndRestaurant
             frmGiris.Show();  
             this.Hide();
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbBahçe_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
