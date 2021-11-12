@@ -42,7 +42,10 @@
             this.cb3 = new System.Windows.Forms.CheckBox();
             this.cb2 = new System.Windows.Forms.CheckBox();
             this.cb1 = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flwpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.gbBinaBilgileri.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbBinaBilgileri
@@ -199,6 +202,23 @@
             this.cb1.Text = "Bahçe Bölümü";
             this.cb1.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.flwpMenu);
+            this.groupBox1.Location = new System.Drawing.Point(330, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(633, 496);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // flwpMenu
+            // 
+            this.flwpMenu.Location = new System.Drawing.Point(6, 22);
+            this.flwpMenu.Name = "flwpMenu";
+            this.flwpMenu.Size = new System.Drawing.Size(153, 468);
+            this.flwpMenu.TabIndex = 0;
+            // 
             // FrmIlk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -207,14 +227,17 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1249, 496);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbBinaBilgileri);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmIlk";
             this.Text = "Hoşgeldiniz";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmIlk_Load);
             this.gbBinaBilgileri.ResumeLayout(false);
             this.gbBinaBilgileri.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -234,5 +257,7 @@
         private ComboBox comboBox3;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
+        private GroupBox groupBox1;
+        private FlowLayoutPanel flwpMenu;
     }
 }
