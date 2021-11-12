@@ -21,22 +21,26 @@ namespace CafeAndRestaurant
         {
            
            string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
-           // MemoryStream mS = new MemoryStream();
-            //ArrayList resim = new ArrayList();
+           MemoryStream mS = new MemoryStream();
+            ArrayList resim = new ArrayList();
+
+
 
             for (int i = 0; i <9 ; i++)
             {
                 PictureBox pbmenuler = new PictureBox();
 
-            
+                //string yol = @"\CafeAndRestaurantCheck\CafeAndRestaurant.Lib\ImageResources\Balýklar.png";
                 //pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
                 //pbmenuler.Dock = DockStyle.Fill;
+                new MemoryStream(Properties.Resources.Balýklar.png);
                 pbmenuler.BackColor = Color.Black;
-                pbmenuler.ImageLocation = $"\\ImageResources{menuResim[i]}.png";
+               // pbmenuler.ImageLocation = $"@\\ImageResources{menuResim[i]}.png";
                 flwpMenu.Controls.Add(pbmenuler);
+                pbmenuler.ImageLocation = (string)resim[0];
 
-                
-                
+
+
             }
         }
 
