@@ -16,14 +16,25 @@ namespace CafeAndRestaurant
             this.Hide();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void FrmIlk_Load(object sender, EventArgs e)
         {
+           
+           string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
+            MemoryStream mS = new MemoryStream();
+            
 
-        }
+            for (int i = 0; i <2 ; i++)
+            {
+                PictureBox pbmenuler = new PictureBox();
+                pbmenuler.Image = Image.FromStream(Menu);
+                pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
+                pbmenuler.Dock = DockStyle.Fill;
+               // pbmenuler.BackColor = Color.Black;
+                flwpMenu.Controls.Add(pbmenuler);
 
-        private void tbBahçe_TextChanged(object sender, EventArgs e)
-        {
-
+                
+                
+            }
         }
 
         private void btnNext1_Click(object sender, EventArgs e)
