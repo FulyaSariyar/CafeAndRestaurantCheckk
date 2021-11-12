@@ -44,15 +44,10 @@ namespace CafeAndRestaurant
 
         private void FrmIlk_Load(object sender, EventArgs e)
         {
-           
-           //string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
-           //MemoryStream mS = new MemoryStream();
-           // ArrayList resim = new ArrayList();
 
-
-
-
-
+            //string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
+            //MemoryStream mS = new MemoryStream();
+            // ArrayList resim = new ArrayList();
 
             //string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
             //MemoryStream mS = new MemoryStream();
@@ -91,9 +86,18 @@ namespace CafeAndRestaurant
                     //ClientSize = new Size(200, 180),
                     ImageLocation = resim[i]
                 };
+                pbox.Name= $"pbox{i}";
+                pbox.Click += new EventHandler(pbox_Click);
                 flwpMenu.Controls.Add(pbox);
             }
         }
+
+        private void pbox_Click(object sender, EventArgs e)
+        {
+            PictureBox oPictureBox = (PictureBox)sender;
+            MessageBox.Show(oPictureBox.Name);
+        }
+       
 
         private void btnNext1_Click(object sender, EventArgs e)
         {
