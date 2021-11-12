@@ -1,10 +1,19 @@
+using CafeAndRestaurant.Forms;
+
 namespace CafeAndRestaurant
 {
-    public partial class Frm1 : Form
+    public partial class FrmIlk : Form
     {
-        public Frm1()
+        public FrmIlk()
         {
             InitializeComponent();
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            FrmGiris frmGiris = new FrmGiris();
+            frmGiris.Show();  
+            this.Hide();
         }
     }
 }

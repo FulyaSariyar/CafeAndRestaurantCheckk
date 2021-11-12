@@ -1,6 +1,6 @@
 ﻿namespace CafeAndRestaurant
 {
-    partial class Frm1
+    partial class FrmIlk
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIlk));
             this.gbBinaBilgileri = new System.Windows.Forms.GroupBox();
             this.cb6 = new System.Windows.Forms.CheckBox();
             this.cb5 = new System.Windows.Forms.CheckBox();
@@ -36,6 +36,7 @@
             this.cb3 = new System.Windows.Forms.CheckBox();
             this.cb2 = new System.Windows.Forms.CheckBox();
             this.cb1 = new System.Windows.Forms.CheckBox();
+            this.Btn1 = new System.Windows.Forms.Button();
             this.gbBinaBilgileri.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,15 +117,28 @@
             this.cb1.Text = "Bahçe Bölümü";
             this.cb1.UseVisualStyleBackColor = true;
             // 
-            // Frm1
+            // Btn1
+            // 
+            this.Btn1.BackColor = System.Drawing.Color.Transparent;
+            this.Btn1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Btn1.Location = new System.Drawing.Point(694, 430);
+            this.Btn1.Name = "Btn1";
+            this.Btn1.Size = new System.Drawing.Size(75, 23);
+            this.Btn1.TabIndex = 1;
+            this.Btn1.Text = "NEXT";
+            this.Btn1.UseVisualStyleBackColor = false;
+            this.Btn1.Click += new System.EventHandler(this.btn1_Click);
+            // 
+            // FrmIlk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(781, 465);
+            this.Controls.Add(this.Btn1);
             this.Controls.Add(this.gbBinaBilgileri);
-            this.Name = "Frm1";
+            this.Name = "FrmIlk";
             this.Text = "Hoşgeldiniz";
             this.gbBinaBilgileri.ResumeLayout(false);
             this.gbBinaBilgileri.PerformLayout();
@@ -141,5 +155,6 @@
         private CheckBox cb3;
         private CheckBox cb2;
         private CheckBox cb1;
+        private Button Btn1;
     }
 }

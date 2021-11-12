@@ -9,7 +9,7 @@ namespace CafeAndRestaurant
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new Frm1());
+            Application.Run(new FrmIlk());
         }
     }
 }
