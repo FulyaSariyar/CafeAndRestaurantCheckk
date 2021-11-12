@@ -7,45 +7,93 @@ namespace CafeAndRestaurant
         public FrmIlk()
         {
             InitializeComponent();
+            for (int i = 1; i <= 20; i++)
+            {
+                cbBahce.Items.Add(i);
+            }
+            for (int i = 1; i <= 20; i++)
+            {
+                cbZemin.Items.Add(i);
+            }
+            for (int i = 1; i <= 20; i++)
+            {
+                cbKat1.Items.Add(i);
+            }
+            for (int i = 1; i <= 20; i++)
+            {
+                cbKat2.Items.Add(i);
+            }
+            for (int i = 1; i <= 20; i++)
+            {
+                cbKat3.Items.Add(i);
+            }
+            for (int i = 1; i <= 20; i++)
+            {
+                cbKat4.Items.Add(i);
+            }
+
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
             FrmGiris frmGiris = new FrmGiris();
-            frmGiris.Show();  
+            frmGiris.Show();
             this.Hide();
         }
 
         private void FrmIlk_Load(object sender, EventArgs e)
         {
-           
-           string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
-            MemoryStream mS = new MemoryStream();
-            
 
-            for (int i = 0; i <2 ; i++)
+
+
+
+
+            string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
+            MemoryStream mS = new MemoryStream();
+
+
+            for (int i = 0; i < 2; i++)
             {
                 PictureBox pbmenuler = new PictureBox();
-                pbmenuler.Image = Image.FromStream(Menu);
+                // pbmenuler.Image = Image.FromStream(Menu);
                 pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
                 pbmenuler.Dock = DockStyle.Fill;
-               // pbmenuler.BackColor = Color.Black;
+                // pbmenuler.BackColor = Color.Black;
                 flwpMenu.Controls.Add(pbmenuler);
 
-                
-                
+
+
             }
         }
 
         private void btnNext1_Click(object sender, EventArgs e)
         {
             FrmGiris frmGiris = new FrmGiris();
-            frmGiris.Show();  
+            frmGiris.Show();
             this.Hide();
         }
 
         private void cb6_CheckedChanged(object sender, EventArgs e)
         {
+            {
+                if (cb6.Checked == true)
+                {
+                    cbKat4.Show();
+                    cbZemin.Visible = false;
+                    cbKat1.Visible = false;
+                    cbKat2.Visible = false;
+                    cbKat3.Visible = false;
+                    cbBahce.Visible = false;
+                }
+                else
+                {
+                    cbZemin.Visible = true;
+                    cbKat1.Visible = true;
+                    cbKat2.Visible = true;
+                    cbKat3.Visible = true;
+                    cbBahce.Visible = true;
+                }
+            }
 
         }
 
@@ -58,20 +106,134 @@ namespace CafeAndRestaurant
 
         private void cb1_CheckedChanged(object sender, EventArgs e)
         {
-            if (cb1.Checked)
             {
-                cb1.Text = "Checked";
+                if (cb1.Checked == true)
+                {
+                    cbBahce.Show();
+                    cbZemin.Visible = false;
+                    cbKat1.Visible = false;
+                    cbKat2.Visible = false;
+                    cbKat3.Visible = false;
+                    cbKat4.Visible = false;
+                }
+                else
+                {
+                    cbZemin.Visible = true;
+                    cbKat1.Visible = true;
+                    cbKat2.Visible = true;
+                    cbKat3.Visible = true;
+                    cbKat4.Visible = true;
+                }
+            }
 
-            }
-            else
-            {
-                cb1.Text = "Unchecked";
-            }
+           
+
+
         }
 
         private void cbBahce_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void flwpMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cb2_CheckedChanged(object sender, EventArgs e)
+        {
+            {
+                if (cb2.Checked == true)
+                {
+                    cbZemin.Show();
+                    cbBahce.Visible = false;
+                    cbKat1.Visible = false;
+                    cbKat2.Visible = false;
+                    cbKat3.Visible = false;
+                    cbKat4.Visible = false;
+                }
+                else
+                {
+                    cbBahce.Visible = true;
+                    cbKat1.Visible = true;
+                    cbKat2.Visible = true;
+                    cbKat3.Visible = true;
+                    cbKat4.Visible = true;
+                }
+            }
+        }
+
+        private void cb3_CheckedChanged(object sender, EventArgs e)
+        {
+            {
+                
+                    if (cb3.Checked == true)
+                    {
+                        cbKat1.Show();
+                        cbBahce.Visible = false;
+                        cbZemin.Visible = false;
+                        cbKat2.Visible = false;
+                        cbKat3.Visible = false;
+                        cbKat4.Visible = false;
+                    }
+                    else
+                    {
+                        cbBahce.Visible = true;
+                        cbZemin.Visible = true;
+                        cbKat2.Visible = true;
+                        cbKat3.Visible = true;
+                        cbKat4.Visible = true;
+                    }
+                }
+            }
+
+        private void cb4_CheckedChanged(object sender, EventArgs e)
+        {
+            {
+
+                if (cb4.Checked == true)
+                {
+                    cbKat2.Show();
+                    cbBahce.Visible = false;
+                    cbZemin.Visible = false;
+                    cbKat1.Visible = false;
+                    cbKat3.Visible = false;
+                    cbKat4.Visible = false;
+                }
+                else
+                {
+                    cbBahce.Visible = true;
+                    cbZemin.Visible = true;
+                    cbKat1.Visible = true;
+                    cbKat3.Visible = true;
+                    cbKat4.Visible = true;
+                }
+            }
+        }
+
+        private void cb5_CheckedChanged(object sender, EventArgs e)
+        {
+            {
+
+                if (cb5.Checked == true)
+                {
+                    cbKat3.Show();
+                    cbBahce.Visible = false;
+                    cbZemin.Visible = false;
+                    cbKat1.Visible = false;
+                    cbKat2.Visible = false;
+                    cbKat4.Visible = false;
+                }
+                else
+                {
+                    cbBahce.Visible = true;
+                    cbZemin.Visible = true;
+                    cbKat1.Visible = true;
+                    cbKat2.Visible = true;
+                    cbKat4.Visible = true;
+                }
+            }
         }
     }
 }

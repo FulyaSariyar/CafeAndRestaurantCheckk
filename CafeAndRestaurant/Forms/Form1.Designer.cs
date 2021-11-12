@@ -43,10 +43,10 @@
             this.cb2 = new System.Windows.Forms.CheckBox();
             this.cb1 = new System.Windows.Forms.CheckBox();
             this.btnNext1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbMenü = new System.Windows.Forms.GroupBox();
             this.flwpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.gbBinaBilgileri.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbMenü.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbBinaBilgileri
@@ -78,6 +78,7 @@
             // 
             // cbKat4
             // 
+            this.cbKat4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKat4.ForeColor = System.Drawing.Color.Silver;
             this.cbKat4.FormattingEnabled = true;
             this.cbKat4.Location = new System.Drawing.Point(147, 252);
@@ -87,6 +88,7 @@
             // 
             // cbKat3
             // 
+            this.cbKat3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKat3.ForeColor = System.Drawing.Color.Silver;
             this.cbKat3.FormattingEnabled = true;
             this.cbKat3.Location = new System.Drawing.Point(147, 212);
@@ -96,6 +98,7 @@
             // 
             // cbKat2
             // 
+            this.cbKat2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKat2.ForeColor = System.Drawing.Color.Silver;
             this.cbKat2.FormattingEnabled = true;
             this.cbKat2.Location = new System.Drawing.Point(147, 176);
@@ -105,6 +108,7 @@
             // 
             // cbKat1
             // 
+            this.cbKat1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKat1.ForeColor = System.Drawing.Color.Silver;
             this.cbKat1.FormattingEnabled = true;
             this.cbKat1.Location = new System.Drawing.Point(147, 140);
@@ -114,6 +118,7 @@
             // 
             // cbZemin
             // 
+            this.cbZemin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbZemin.ForeColor = System.Drawing.Color.Silver;
             this.cbZemin.FormattingEnabled = true;
             this.cbZemin.Location = new System.Drawing.Point(147, 101);
@@ -123,6 +128,7 @@
             // 
             // cbBahce
             // 
+            this.cbBahce.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBahce.ForeColor = System.Drawing.Color.Silver;
             this.cbBahce.FormattingEnabled = true;
             this.cbBahce.Location = new System.Drawing.Point(147, 62);
@@ -155,6 +161,7 @@
             this.cb5.TabIndex = 4;
             this.cb5.Text = "Kat3";
             this.cb5.UseVisualStyleBackColor = true;
+            this.cb5.CheckedChanged += new System.EventHandler(this.cb5_CheckedChanged);
             // 
             // cb4
             // 
@@ -167,6 +174,7 @@
             this.cb4.TabIndex = 3;
             this.cb4.Text = "Kat2";
             this.cb4.UseVisualStyleBackColor = true;
+            this.cb4.CheckedChanged += new System.EventHandler(this.cb4_CheckedChanged);
             // 
             // cb3
             // 
@@ -179,6 +187,7 @@
             this.cb3.TabIndex = 2;
             this.cb3.Text = "Kat 1";
             this.cb3.UseVisualStyleBackColor = true;
+            this.cb3.CheckedChanged += new System.EventHandler(this.cb3_CheckedChanged);
             // 
             // cb2
             // 
@@ -192,6 +201,7 @@
             this.cb2.TabIndex = 1;
             this.cb2.Text = "Zemin Kat";
             this.cb2.UseVisualStyleBackColor = true;
+            this.cb2.CheckedChanged += new System.EventHandler(this.cb2_CheckedChanged);
             // 
             // cb1
             // 
@@ -220,15 +230,16 @@
             this.btnNext1.UseVisualStyleBackColor = false;
             this.btnNext1.Click += new System.EventHandler(this.btnNext1_Click_1);
             // 
-            // groupBox1
+            // gbMenü
             // 
-            this.groupBox1.Controls.Add(this.flwpMenu);
-            this.groupBox1.Location = new System.Drawing.Point(330, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(633, 496);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.gbMenü.BackColor = System.Drawing.Color.White;
+            this.gbMenü.Controls.Add(this.flwpMenu);
+            this.gbMenü.Location = new System.Drawing.Point(330, 0);
+            this.gbMenü.Name = "gbMenü";
+            this.gbMenü.Size = new System.Drawing.Size(633, 496);
+            this.gbMenü.TabIndex = 1;
+            this.gbMenü.TabStop = false;
+            this.gbMenü.Text = "groupBox1";
             // 
             // flwpMenu
             // 
@@ -236,6 +247,7 @@
             this.flwpMenu.Name = "flwpMenu";
             this.flwpMenu.Size = new System.Drawing.Size(153, 468);
             this.flwpMenu.TabIndex = 0;
+            this.flwpMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.flwpMenu_Paint);
             // 
             // FrmIlk
             // 
@@ -246,7 +258,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1249, 496);
             this.Controls.Add(this.btnNext1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbMenü);
             this.Controls.Add(this.gbBinaBilgileri);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.Silver;
@@ -257,7 +269,7 @@
             this.Load += new System.EventHandler(this.FrmIlk_Load);
             this.gbBinaBilgileri.ResumeLayout(false);
             this.gbBinaBilgileri.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.gbMenü.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -278,7 +290,7 @@
         private ComboBox cbBahce;
         private ComboBox cbKat4;
         private Button btnNext1;
-        private GroupBox groupBox1;
+        private GroupBox gbMenü;
         private FlowLayoutPanel flwpMenu;
     }
 }
