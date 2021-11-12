@@ -16,5 +16,26 @@ namespace CafeAndRestaurant.Forms
         {
             InitializeComponent();
         }
+
+        private void btnBack1_Click(object sender, EventArgs e)
+        {
+            FrmIlk frmIlk = new FrmIlk();
+            frmIlk.Show();
+            this.Hide();
+        }
+
+        private void btnBack1_Click_1(object sender, EventArgs e)
+        {
+            FrmIlk frmIlk = new FrmIlk();
+            frmIlk.Show();
+            this.Hide();
+        }
+
+        private void btnBack1_Click_2(object sender, EventArgs e)
+        {
+            FrmIlk frmIlk = new FrmIlk();
+            frmIlk.Show();
+            this.Hide();
+        }
     }
 }
