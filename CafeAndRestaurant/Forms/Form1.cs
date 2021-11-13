@@ -12,6 +12,7 @@ namespace CafeAndRestaurant
     {
 
         private List<Menu> menuler = new List<Menu>();
+        string[] menuResimIsimleri = { "Balýklar", "FastFood", "Kahvaltý", "Mezeler", "Tatlýlar", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
         public FrmIlk()
         {
             InitializeComponent();
@@ -42,21 +43,10 @@ namespace CafeAndRestaurant
 
         }
         //private Menu seciliMenu as Menu;
-        public void JsonConverter()
+        public void JsonConverter(string menuIsmi)
         {
 
-
-            Uri file = new Uri(@"C:\Users\HP\Documents\GitHub\CafeAndRestaurantCheck\CafeAndRestaurant.Lib\Resources\Balýklar.json");
-            //Must end in a slash to indicate folder
-            Uri folder = new Uri(@"C:\Users\HP\Documents\GitHub\");
-            string relativePath =
-            Uri.UnescapeDataString(
-                folder.MakeRelativeUri(file)
-                    .ToString()
-                    .Replace('/', Path.DirectorySeparatorChar)
-                );
-
-            string yol = "C:/Users/HP/Documents/GitHub/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/Balýklar.json";
+            string yol = $"C:/Users/HP/Documents/GitHub/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/{menuIsmi}.json";
             //MessageBox.Show(relativePath);
             //string yol1 = "../CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/Balýklar.json";
 
@@ -117,7 +107,7 @@ namespace CafeAndRestaurant
                     //ClientSize = new Size(200, 180),
                     ImageLocation = resim[i]
                 };
-                pbox.Name = $"pbox{i}";
+                pbox.Name = $"{menuResimIsimleri[i]}";
                 pbox.Click += new EventHandler(pbox_Click);
                 flwpMenu.Controls.Add(pbox);
             }
@@ -125,12 +115,17 @@ namespace CafeAndRestaurant
 
         private void pbox_Click(object sender, EventArgs e)
         {
+            flpMenuElemanlari.Controls.Clear();
             PictureBox oPictureBox = (PictureBox)sender;
-            if (oPictureBox.Name == "pbox1")
+            foreach (var item in menuResimIsimleri)
             {
-                JsonConverter();
+                if (oPictureBox.Name == item)
+                {
+                    JsonConverter(item);
+                }
+                //MessageBox.Show(oPictureBox.Name);
             }
-            MessageBox.Show(oPictureBox.Name);
+            
         }
 
 

@@ -240,6 +240,7 @@
             // 
             // flpMenuElemanlari
             // 
+            this.flpMenuElemanlari.AutoScroll = true;
             this.flpMenuElemanlari.Location = new System.Drawing.Point(280, 37);
             this.flpMenuElemanlari.Name = "flpMenuElemanlari";
             this.flpMenuElemanlari.Size = new System.Drawing.Size(629, 428);
