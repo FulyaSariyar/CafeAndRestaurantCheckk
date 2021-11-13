@@ -15,7 +15,7 @@ namespace CafeAndRestaurant.Forms
     public partial class FrmSiparis : Form
     {
         private List<Menu> menuler = new List<Menu>();
-        string[] menuResimIsimleri = { "Balıklar", "FastFood", "Kahvaltı", "Mezeler", "Tatlılar", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
+        string[] menuResimIsimleri = { "Balıklar", "FastFood", "Kahvaltı", "Mezeler", "Tatlılar", "Salatalar", "Yemekler", "Çorbalar", "İçecekler" };
         public FrmSiparis()
         {
             InitializeComponent();
@@ -34,24 +34,53 @@ namespace CafeAndRestaurant.Forms
             string dosyaİcerigi = fileJson.ReadToEnd();
             menuler = JsonConvert.DeserializeObject<List<Menu>>(dosyaİcerigi);
             MessageBox.Show($"{menuler.Count} ürün içeri aktarıldı");
-            List<Menu> eleman1 = new List<Menu>();
             foreach (var eleman in menuler)
             {
                 MemoryStream stream = new MemoryStream(eleman.Fotograf);
-                //pbResim.Image = Image.FromStream(stream);
+                var groupBox = new GroupBox();
+                groupBox.Name = $"grpBox{eleman.UrunAd}";
+
                 var pbox = new PictureBox
                 {
-
                     SizeMode = PictureBoxSizeMode.StretchImage,
-                    Size = new Size(190, 140),
+                    Size = new Size(210, 160),
                     Image = Image.FromStream(stream)
 
                 };
+                pbox.Name = $"{eleman.UrunAd}";
+                pbox.Click += new EventHandler(pboxUrunler_Click);
+                pbox.Parent = groupBox;
                 flpMenuElemanlari.Controls.Add(pbox);
 
+                Label lblDetay = new Label
+                {
+                    Text = $"{eleman.UrunAd} {eleman.Fiyat} TL",
+                    ForeColor = Color.White,
+                    //BackColor = Color.Transparent,
+                    Font = new Font("Arial", 10, FontStyle.Bold),
+                    BackColor = Color.Chocolate,
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Location = new Point(13, 110),
+                    AutoSize = true
+                };
+                lblDetay.Parent = pbox;
             }
         }
+        private List<Menu> siparişler = new List<Menu>();
+        private void pboxUrunler_Click(object sender, EventArgs e)
+        {
+            //flpMenuElemanlari.Controls.Clear();
+            PictureBox oPictureBox = (PictureBox)sender;
+            foreach (var item in menuler)
+            {
+                if (oPictureBox.Name == item.UrunAd)
+                {
+                    MessageBox.Show($"{item.UrunAd}  {item.Fiyat} TL");
+                }
+                //MessageBox.Show(oPictureBox.Name);
+            }
 
+        }
 
         private void pbox_Click(object sender, EventArgs e)
         {
@@ -70,13 +99,6 @@ namespace CafeAndRestaurant.Forms
 
         private void FrmSiparis_Load(object sender, EventArgs e)
         {
-            //string[] menuResim = { "Balıklar", "Çorbalar", "FastFood", "İçecekler", "Kahvaltı", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
-            //MemoryStream mS = new MemoryStream();
-            // ArrayList resim = new ArrayList();
-
-            //string[] menuResim = { "Balıklar", "Çorbalar", "FastFood", "İçecekler", "Kahvaltı", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
-            //MemoryStream mS = new MemoryStream();
-
             var path = @"C:\Users\HP\Desktop\MenuAD";
             var resim = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
                                 .Where(x => new string[] { ".bmp", ".jpg", ".png" }
@@ -92,7 +114,7 @@ namespace CafeAndRestaurant.Forms
                 var pbox = new PictureBox
                 {
                     SizeMode = PictureBoxSizeMode.StretchImage,
-                    Size = new Size(190, 140),
+                    Size = new Size(220, 170),
                     //ClientSize = new Size(200, 180),
                     ImageLocation = resim[i]
                 };
@@ -109,10 +131,8 @@ namespace CafeAndRestaurant.Forms
                     Font = new Font("Arial", 10, FontStyle.Bold),
                     BackColor = Color.White,
                     TextAlign = ContentAlignment.MiddleCenter,
-                    
+                    Location = new Point(7, 7)
                     //Margin = new Thickness(20)
-
-
                 };
 
                 lblDetay.Parent = pbox;

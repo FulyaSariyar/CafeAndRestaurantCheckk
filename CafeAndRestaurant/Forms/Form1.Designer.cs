@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIlk));
-            this.gbBinaBilgileri = new System.Windows.Forms.GroupBox();
-           
+            this.gbBinaBilgileri = new System.Windows.Forms.GroupBox();           
             this.cbKat4 = new System.Windows.Forms.ComboBox();
             this.cbKat3 = new System.Windows.Forms.ComboBox();
             this.cbKat2 = new System.Windows.Forms.ComboBox();
