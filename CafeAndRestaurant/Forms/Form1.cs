@@ -69,7 +69,7 @@ namespace CafeAndRestaurant
                     Image = Image.FromStream(stream)
 
                 };
-                flpMenuElemanlari.Controls.Add(pbox);
+              
 
             }
         }
@@ -83,55 +83,6 @@ namespace CafeAndRestaurant
 
         private void FrmIlk_Load(object sender, EventArgs e)
         {
-
-            //string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
-            //MemoryStream mS = new MemoryStream();
-            // ArrayList resim = new ArrayList();
-
-
-            //string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
-            //MemoryStream mS = new MemoryStream();
-
-
-
-
-//            string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
-//            MemoryStream mS = new MemoryStream();
-
-
-//            for (int i = 0; i < 2; i++)
-//            {
-//                PictureBox pbmenuler = new PictureBox();
-//                // pbmenuler.Image = Image.FromStream(Menu);
-//                pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
-//                pbmenuler.Dock = DockStyle.Fill;
-//                // pbmenuler.BackColor = Color.Black;
-                
-
-//                string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
-//           MemoryStream mS = new MemoryStream();
-//            ArrayList resim = new ArrayList();
-
-
-
-//            for (int i = 0; i <9 ; i++)
-//            {
-//                PictureBox pbmenuler = new PictureBox();
-
-//                //string yol = @"\CafeAndRestaurantCheck\CafeAndRestaurant.Lib\ImageResources\Balýklar.png";
-//                //pbmenuler.SizeMode = PictureBoxSizeMode.StretchImage;
-//                //pbmenuler.Dock = DockStyle.Fill;
-//                new MemoryStream(Properties.Resources.Balýklar.png);
-//                pbmenuler.BackColor = Color.Black;
-//               // pbmenuler.ImageLocation = $"@\\ImageResources{menuResim[i]}.png";
-//>>>>>>> fc505e3329586c3c26d0dcf526233c802abdd27f
-//                flwpMenu.Controls.Add(pbmenuler);
-//                pbmenuler.ImageLocation = (string)resim[0];
-
-
-
-//<<<<<<< HEAD
-
             var path = @"C:\Users\HP\Desktop\MenuAD";
             var resim = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
                                 .Where(x => new string[] { ".bmp", ".jpg", ".png" }
@@ -156,20 +107,14 @@ namespace CafeAndRestaurant
 
         private void pbox_Click(object sender, EventArgs e)
         {
-            flpMenuElemanlari.Controls.Clear();
             PictureBox oPictureBox = (PictureBox)sender;
             foreach (var item in menuResimIsimleri)
             {
                 if (oPictureBox.Name == item)
                 {
                     JsonConverter(item);
-                }
-                //MessageBox.Show(oPictureBox.Name);
-            }
-//=======
-//>>>>>>> fc505e3329586c3c26d0dcf526233c802abdd27f
-//            }
-            
+                }    
+            }          
         }
 
 
