@@ -70,6 +70,7 @@
             this.btnPersonel.TabIndex = 1;
             this.btnPersonel.Text = "Personel";
             this.btnPersonel.UseVisualStyleBackColor = false;
+            this.btnPersonel.Click += new System.EventHandler(this.btnPersonel_Click);
             // 
             // btnYönetici
             // 

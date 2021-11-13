@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIlk));
             this.gbBinaBilgileri = new System.Windows.Forms.GroupBox();
+            this.lstMasaAdetleri = new System.Windows.Forms.ListBox();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnKaydet = new System.Windows.Forms.Button();
             this.cbKat4 = new System.Windows.Forms.ComboBox();
             this.cbKat3 = new System.Windows.Forms.ComboBox();
             this.cbKat2 = new System.Windows.Forms.ComboBox();
@@ -45,6 +48,7 @@
             this.btnNext1 = new System.Windows.Forms.Button();
             this.gbMenü = new System.Windows.Forms.GroupBox();
             this.flwpMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbBinaBilgileri.SuspendLayout();
             this.gbMenü.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +56,10 @@
             // gbBinaBilgileri
             // 
             this.gbBinaBilgileri.BackColor = System.Drawing.Color.Transparent;
+            this.gbBinaBilgileri.Controls.Add(this.button1);
+            this.gbBinaBilgileri.Controls.Add(this.lstMasaAdetleri);
+            this.gbBinaBilgileri.Controls.Add(this.btnGuncelle);
+            this.gbBinaBilgileri.Controls.Add(this.btnKaydet);
             this.gbBinaBilgileri.Controls.Add(this.cbKat4);
             this.gbBinaBilgileri.Controls.Add(this.cbKat3);
             this.gbBinaBilgileri.Controls.Add(this.cbKat2);
@@ -75,6 +83,40 @@
             this.gbBinaBilgileri.TabStop = false;
             this.gbBinaBilgileri.Tag = "";
             this.gbBinaBilgileri.Text = "Bina Kat Bilgilerini ve Katlara Ait Masa Adetlerini Giriniz:";
+            // 
+            // lstMasaAdetleri
+            // 
+            this.lstMasaAdetleri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstMasaAdetleri.BackColor = System.Drawing.Color.LightGray;
+            this.lstMasaAdetleri.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lstMasaAdetleri.FormattingEnabled = true;
+            this.lstMasaAdetleri.ItemHeight = 19;
+            this.lstMasaAdetleri.Location = new System.Drawing.Point(147, 288);
+            this.lstMasaAdetleri.Name = "lstMasaAdetleri";
+            this.lstMasaAdetleri.Size = new System.Drawing.Size(120, 194);
+            this.lstMasaAdetleri.TabIndex = 14;
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuncelle.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGuncelle.Location = new System.Drawing.Point(0, 359);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(136, 27);
+            this.btnGuncelle.TabIndex = 13;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            // 
+            // btnKaydet
+            // 
+            this.btnKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnKaydet.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnKaydet.Location = new System.Drawing.Point(0, 326);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(136, 27);
+            this.btnKaydet.TabIndex = 12;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.UseVisualStyleBackColor = true;
             // 
             // cbKat4
             // 
@@ -248,7 +290,17 @@
             this.flwpMenu.Size = new System.Drawing.Size(153, 468);
             this.flwpMenu.TabIndex = 0;
             this.flwpMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.flwpMenu_Paint);
-            
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(0, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 27);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Kaydet";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmIlk
             // 
@@ -293,5 +345,9 @@
         private Button btnNext1;
         private GroupBox gbMenü;
         private FlowLayoutPanel flwpMenu;
+        private Button btnGuncelle;
+        private Button btnKaydet;
+        private ListBox lstMasaAdetleri;
+        private Button button1;
     }
 }
