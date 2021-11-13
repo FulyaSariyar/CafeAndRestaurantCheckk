@@ -47,6 +47,7 @@
             this.cb1 = new System.Windows.Forms.CheckBox();
             this.btnNext1 = new System.Windows.Forms.Button();
             this.gbMenü = new System.Windows.Forms.GroupBox();
+            this.flpMenuElemanlari = new System.Windows.Forms.FlowLayoutPanel();
             this.flwpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.gbBinaBilgileri.SuspendLayout();
@@ -74,11 +75,11 @@
             this.gbBinaBilgileri.Controls.Add(this.cb1);
             this.gbBinaBilgileri.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.gbBinaBilgileri.ForeColor = System.Drawing.Color.Black;
-            this.gbBinaBilgileri.Location = new System.Drawing.Point(-3, 2);
+            this.gbBinaBilgileri.Location = new System.Drawing.Point(-3, 32);
             this.gbBinaBilgileri.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbBinaBilgileri.Name = "gbBinaBilgileri";
             this.gbBinaBilgileri.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbBinaBilgileri.Size = new System.Drawing.Size(310, 495);
+            this.gbBinaBilgileri.Size = new System.Drawing.Size(310, 465);
             this.gbBinaBilgileri.TabIndex = 0;
             this.gbBinaBilgileri.TabStop = false;
             this.gbBinaBilgileri.Tag = "";
@@ -177,7 +178,6 @@
             this.cbBahce.Name = "cbBahce";
             this.cbBahce.Size = new System.Drawing.Size(121, 30);
             this.cbBahce.TabIndex = 6;
-            this.cbBahce.SelectedIndexChanged += new System.EventHandler(this.cbBahce_SelectedIndexChanged);
             // 
             // cb6
             // 
@@ -203,7 +203,6 @@
             this.cb5.TabIndex = 4;
             this.cb5.Text = "Kat3";
             this.cb5.UseVisualStyleBackColor = true;
-            this.cb5.CheckedChanged += new System.EventHandler(this.cb5_CheckedChanged);
             // 
             // cb4
             // 
@@ -216,7 +215,6 @@
             this.cb4.TabIndex = 3;
             this.cb4.Text = "Kat2";
             this.cb4.UseVisualStyleBackColor = true;
-            this.cb4.CheckedChanged += new System.EventHandler(this.cb4_CheckedChanged);
             // 
             // cb3
             // 
@@ -229,7 +227,6 @@
             this.cb3.TabIndex = 2;
             this.cb3.Text = "Kat 1";
             this.cb3.UseVisualStyleBackColor = true;
-            this.cb3.CheckedChanged += new System.EventHandler(this.cb3_CheckedChanged);
             // 
             // cb2
             // 
@@ -243,7 +240,6 @@
             this.cb2.TabIndex = 1;
             this.cb2.Text = "Zemin Kat";
             this.cb2.UseVisualStyleBackColor = true;
-            this.cb2.CheckedChanged += new System.EventHandler(this.cb2_CheckedChanged);
             // 
             // cb1
             // 
@@ -256,7 +252,6 @@
             this.cb1.TabIndex = 0;
             this.cb1.Text = "Bahçe Bölümü";
             this.cb1.UseVisualStyleBackColor = true;
-            this.cb1.CheckedChanged += new System.EventHandler(this.cb1_CheckedChanged);
             // 
             // btnNext1
             // 
@@ -264,7 +259,7 @@
             this.btnNext1.BackColor = System.Drawing.Color.White;
             this.btnNext1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNext1.ForeColor = System.Drawing.Color.Black;
-            this.btnNext1.Location = new System.Drawing.Point(1123, 454);
+            this.btnNext1.Location = new System.Drawing.Point(1123, 504);
             this.btnNext1.Name = "btnNext1";
             this.btnNext1.Size = new System.Drawing.Size(114, 30);
             this.btnNext1.TabIndex = 1;
@@ -274,20 +269,31 @@
             // 
             // gbMenü
             // 
+            this.gbMenü.AutoSize = true;
             this.gbMenü.BackColor = System.Drawing.Color.White;
+            this.gbMenü.Controls.Add(this.flpMenuElemanlari);
             this.gbMenü.Controls.Add(this.flwpMenu);
-            this.gbMenü.Location = new System.Drawing.Point(330, 0);
+            this.gbMenü.Location = new System.Drawing.Point(328, 32);
             this.gbMenü.Name = "gbMenü";
-            this.gbMenü.Size = new System.Drawing.Size(633, 496);
+            this.gbMenü.Size = new System.Drawing.Size(1000, 843);
             this.gbMenü.TabIndex = 1;
             this.gbMenü.TabStop = false;
             this.gbMenü.Text = "groupBox1";
             // 
+            // flpMenuElemanlari
+            // 
+            this.flpMenuElemanlari.AutoScroll = true;
+            this.flpMenuElemanlari.Location = new System.Drawing.Point(280, 37);
+            this.flpMenuElemanlari.Name = "flpMenuElemanlari";
+            this.flpMenuElemanlari.Size = new System.Drawing.Size(629, 428);
+            this.flpMenuElemanlari.TabIndex = 1;
+            // 
             // flwpMenu
             // 
+            this.flwpMenu.AutoScroll = true;
             this.flwpMenu.Location = new System.Drawing.Point(6, 22);
             this.flwpMenu.Name = "flwpMenu";
-            this.flwpMenu.Size = new System.Drawing.Size(153, 468);
+            this.flwpMenu.Size = new System.Drawing.Size(225, 800);
             this.flwpMenu.TabIndex = 0;
             this.flwpMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.flwpMenu_Paint);
             // 
@@ -309,7 +315,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1249, 496);
+            this.ClientSize = new System.Drawing.Size(1249, 546);
             this.Controls.Add(this.btnNext1);
             this.Controls.Add(this.gbMenü);
             this.Controls.Add(this.gbBinaBilgileri);
@@ -324,6 +330,7 @@
             this.gbBinaBilgileri.PerformLayout();
             this.gbMenü.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -345,9 +352,5 @@
         private Button btnNext1;
         private GroupBox gbMenü;
         private FlowLayoutPanel flwpMenu;
-        private Button btnGuncelle;
-        private Button btnKaydet;
-        private ListBox lstMasaAdetleri;
-        private Button button1;
     }
 }

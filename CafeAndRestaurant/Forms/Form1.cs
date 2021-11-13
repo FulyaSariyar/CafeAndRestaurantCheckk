@@ -1,10 +1,18 @@
 using CafeAndRestaurant.Forms;
+using CafeAndRestaurant.Lib.Abstract;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections;
+using System.Reflection;
+using System.Xml.Serialization;
 
 namespace CafeAndRestaurant
 {
     public partial class FrmIlk : Form
     {
+
+        private List<Menu> menuler = new List<Menu>();
+        string[] menuResimIsimleri = { "Balýklar", "FastFood", "Kahvaltý", "Mezeler", "Tatlýlar", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
         public FrmIlk()
         {
             InitializeComponent();
@@ -34,6 +42,37 @@ namespace CafeAndRestaurant
             }
 
         }
+        //private Menu seciliMenu as Menu;
+        public void JsonConverter(string menuIsmi)
+        {
+
+            string yol = $"C:/Users/HP/Documents/GitHub/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/{menuIsmi}.json";
+            //MessageBox.Show(relativePath);
+            //string yol1 = "../CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/Balýklar.json";
+
+            ///string yol2=System.AppDomain.CurrentDomain.DynamicDirectory + @"/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/Balýklar.json";
+            //menu1 = Menu as Menu;
+            StreamReader fileJson = new StreamReader(yol);
+            string dosyaÝcerigi = fileJson.ReadToEnd();
+            menuler = JsonConvert.DeserializeObject<List<Menu>>(dosyaÝcerigi);
+            MessageBox.Show($"{menuler.Count} ürün içeri aktarýldý");
+            List<Menu> eleman1 = new List<Menu>();
+            foreach (var eleman in menuler)
+            {
+                MemoryStream stream = new MemoryStream(eleman.Fotograf);
+                //pbResim.Image = Image.FromStream(stream);
+                var pbox = new PictureBox
+                {
+
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    Size = new Size(190, 140),
+                    Image = Image.FromStream(stream)
+
+                };
+                flpMenuElemanlari.Controls.Add(pbox);
+
+            }
+        }
 
         private void btn1_Click(object sender, EventArgs e)
         {
@@ -45,7 +84,13 @@ namespace CafeAndRestaurant
         private void FrmIlk_Load(object sender, EventArgs e)
         {
 
+            //string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
+            //MemoryStream mS = new MemoryStream();
+            // ArrayList resim = new ArrayList();
 
+
+            //string[] menuResim = { "Balýklar", "Çorbalar", "FastFood", "Ýçecekler", "Kahvaltý", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
+            //MemoryStream mS = new MemoryStream();
 
 
 
@@ -87,11 +132,46 @@ namespace CafeAndRestaurant
 
 //<<<<<<< HEAD
 
+            var path = @"C:\Users\HP\Desktop\MenuAD";
+            var resim = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
+                                .Where(x => new string[] { ".bmp", ".jpg", ".png" }
+                                .Contains(new FileInfo(x).Extension.ToLower()))
+                                .Take(20)
+                                .ToList();
 
+            for (int i = 0; i < resim.Count(); i++)
+            {
+                var pbox = new PictureBox
+                {
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    Size = new Size(190, 140),
+                    //ClientSize = new Size(200, 180),
+                    ImageLocation = resim[i]
+                };
+                pbox.Name = $"{menuResimIsimleri[i]}";
+                pbox.Click += new EventHandler(pbox_Click);
+                flwpMenu.Controls.Add(pbox);
+            }
+        }
+
+        private void pbox_Click(object sender, EventArgs e)
+        {
+            flpMenuElemanlari.Controls.Clear();
+            PictureBox oPictureBox = (PictureBox)sender;
+            foreach (var item in menuResimIsimleri)
+            {
+                if (oPictureBox.Name == item)
+                {
+                    JsonConverter(item);
+                }
+                //MessageBox.Show(oPictureBox.Name);
+            }
 //=======
 //>>>>>>> fc505e3329586c3c26d0dcf526233c802abdd27f
 //            }
+            
         }
+
 
         private void btnNext1_Click(object sender, EventArgs e)
         {

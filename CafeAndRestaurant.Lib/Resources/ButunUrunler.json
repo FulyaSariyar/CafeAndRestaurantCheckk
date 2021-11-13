@@ -1,0 +1,130 @@
+ {
+     
+    "Yemekler": [
+        {
+            "Adi": "Köfte Menü",
+            "Fiyat": "30TL",
+            "Fotoğraf":"",
+            "Id": 1
+        },
+        {
+            "Adi": "Kuzu Pirzola",
+            "Fiyat": "80TL",
+            "Fotoğraf":"ddkndjn",
+            "Id": 2
+        },
+        {
+            "Adi": "Antrikot",
+            "Fiyat": "75TL",
+            "Fotoğraf":"jddbdv",
+            "Id": 3
+        }, 
+        {
+            "Adi": "Spesyal",
+            "Fiyat": "50TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 4
+        },
+          {
+            "Adi": "Karışık Izgara",
+            "Fiyat": "97TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 6
+        },
+        {
+            "Adi": "Penne Makarna",
+            "Fiyat": "39TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 7
+        }
+    ],
+    "Kahvaltı":[
+        {
+            "Adi": "Simit",
+            "Fiyat": "5TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 1
+        },
+        {
+            "Adi": "Sahanda Yumurta",
+            "Fiyat": "28TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 2
+        },
+        {
+            "Adi": "Omlet",
+            "Fiyat": "19TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 3
+        },
+        {
+            "Adi": "Menemen",
+            "Fiyat": "24TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 4
+        },
+        {
+            "Adi": "Gözleme",
+            "Fiyat": "21TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 5
+        },
+        {
+            "Adi": "Kavurmalı Yumurta",
+            "Fiyat": "32TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 6
+        },
+        {
+            "Adi": "Pancake",
+            "Fiyat": "16TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 7
+        }
+    ],
+    "Fast Food":[
+        {
+            "Adi": "Tahıllı Pizza",
+            "Fiyat": "26TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 1
+        },
+        {
+            "Adi": "Karışık Mantarlı Pizza",
+            "Fiyat": "42TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 2
+        },
+        {
+            "Adi": "Klasik Pizza",
+            "Fiyat": "32TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 3
+        },
+        {
+            "Adi": "The House Burger",
+            "Fiyat": "31TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 4
+        },
+        {
+            "Adi": "Çıtır Tavuk Burger ",
+            "Fiyat": "28TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 5
+        },
+        {
+            "Adi": "Cheese Burger",
+            "Fiyat": "40TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 6
+        },
+        {
+            "Adi": "Big Burger",
+            "Fiyat": "35TL",
+            "Fotoğraf":"sbjhdh",
+            "Id": 7
+        }
+    ]
+}      
+    

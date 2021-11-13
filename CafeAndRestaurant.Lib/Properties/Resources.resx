@@ -121,14 +121,29 @@
   <data name="Balıklar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Balıklar.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Balıklar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Balıklar.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ButunUrunler" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ButunUrunler.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="FastFood" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FastFood.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FastFood1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FastFood.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Kahvaltı" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Kahvaltı.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Kahvaltı1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kahvaltı.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Mezeler" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mezeler.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Mezeler1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mezeler.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Pastalar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pastalar.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -136,8 +151,14 @@
   <data name="Salatalar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Salatalar.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Tatlılar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tatlılar.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Yemekler" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Yemekler.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Yemekler1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Yemekler.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Çorbalar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Çorbalar.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
