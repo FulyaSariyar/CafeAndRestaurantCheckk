@@ -44,6 +44,7 @@
             this.cb1 = new System.Windows.Forms.CheckBox();
             this.btnNext1 = new System.Windows.Forms.Button();
             this.gbMenü = new System.Windows.Forms.GroupBox();
+            this.flpMenuElemanlari = new System.Windows.Forms.FlowLayoutPanel();
             this.flwpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.gbBinaBilgileri.SuspendLayout();
             this.gbMenü.SuspendLayout();
@@ -66,11 +67,11 @@
             this.gbBinaBilgileri.Controls.Add(this.cb1);
             this.gbBinaBilgileri.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.gbBinaBilgileri.ForeColor = System.Drawing.Color.Black;
-            this.gbBinaBilgileri.Location = new System.Drawing.Point(-3, 2);
+            this.gbBinaBilgileri.Location = new System.Drawing.Point(-3, 32);
             this.gbBinaBilgileri.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbBinaBilgileri.Name = "gbBinaBilgileri";
             this.gbBinaBilgileri.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbBinaBilgileri.Size = new System.Drawing.Size(310, 495);
+            this.gbBinaBilgileri.Size = new System.Drawing.Size(310, 465);
             this.gbBinaBilgileri.TabIndex = 0;
             this.gbBinaBilgileri.TabStop = false;
             this.gbBinaBilgileri.Tag = "";
@@ -226,20 +227,30 @@
             // 
             // gbMenü
             // 
+            this.gbMenü.AutoSize = true;
             this.gbMenü.BackColor = System.Drawing.Color.White;
+            this.gbMenü.Controls.Add(this.flpMenuElemanlari);
             this.gbMenü.Controls.Add(this.flwpMenu);
-            this.gbMenü.Location = new System.Drawing.Point(328, 1);
+            this.gbMenü.Location = new System.Drawing.Point(328, 32);
             this.gbMenü.Name = "gbMenü";
-            this.gbMenü.Size = new System.Drawing.Size(633, 539);
+            this.gbMenü.Size = new System.Drawing.Size(1000, 843);
             this.gbMenü.TabIndex = 1;
             this.gbMenü.TabStop = false;
             this.gbMenü.Text = "groupBox1";
             // 
+            // flpMenuElemanlari
+            // 
+            this.flpMenuElemanlari.Location = new System.Drawing.Point(280, 37);
+            this.flpMenuElemanlari.Name = "flpMenuElemanlari";
+            this.flpMenuElemanlari.Size = new System.Drawing.Size(629, 428);
+            this.flpMenuElemanlari.TabIndex = 1;
+            // 
             // flwpMenu
             // 
+            this.flwpMenu.AutoScroll = true;
             this.flwpMenu.Location = new System.Drawing.Point(6, 22);
             this.flwpMenu.Name = "flwpMenu";
-            this.flwpMenu.Size = new System.Drawing.Size(153, 511);
+            this.flwpMenu.Size = new System.Drawing.Size(225, 800);
             this.flwpMenu.TabIndex = 0;
             // 
             // FrmIlk
@@ -264,6 +275,7 @@
             this.gbBinaBilgileri.PerformLayout();
             this.gbMenü.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -285,5 +297,6 @@
         private Button btnNext1;
         private GroupBox gbMenü;
         private FlowLayoutPanel flwpMenu;
+        private FlowLayoutPanel flpMenuElemanlari;
     }
 }

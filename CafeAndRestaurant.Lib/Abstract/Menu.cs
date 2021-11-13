@@ -9,9 +9,11 @@ namespace CafeAndRestaurant.Lib.Abstract
 {
    public class Menu
     {
-        public Stream MenuResmi { get; set; }
-        public string Ad { get; set; }
-
+        //public Stream Fotograf { get; protected set; }
+        public byte[] Fotograf { get; set; }
+        public string UrunAd { get; set; }
+        public string Fiyat { get; set; }
+        public override string ToString() => $"{UrunAd} {Fiyat}";
         public enum MenuResimleri : byte //256 silah tanımlayabiliriz : byte ile.
         {
             Balıklar,
