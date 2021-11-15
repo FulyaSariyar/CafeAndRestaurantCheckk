@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace CafeAndRestaurant.Lib.Abstract
 {
+
+    public class Menu2
+    {
+        public string Ad { get; set; }
+        public List<Menu> Urunler { get; set; }
+        public byte[] Fotograf { get; set; }
+    }
    public class Menu
     {
         //public Stream Fotograf { get; protected set; }

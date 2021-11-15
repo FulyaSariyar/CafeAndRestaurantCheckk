@@ -24,7 +24,8 @@ namespace CafeAndRestaurant.Forms
         public void JsonConverter(string menuIsmi)
         {
             ///CafeAndRestaurant.Lib.Properties.Resources.Tatlılar
-            string yol = $"C:/Users/win10/Source/Repos/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/{menuIsmi}.json";
+            //string yol = $"C:/Users/win10/Source/Repos/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/{menuIsmi}.json";
+            //string yol = $"../../../CafeAndRestaurant.Lib/Resources/{menuIsmi}.json";
             //string yol = $"{CafeAndRestaurant.Lib.Properties.Resources}.";
             //Stream veri = CafeAndRestaurant.Lib.Properties.Resources.Yemekler;
             //Lib.Properties.Resources.Balıklar
@@ -32,10 +33,11 @@ namespace CafeAndRestaurant.Forms
             //var assembly = Assembly.GetExecutingAssembly();
             //var jsonVeri = assembly.GetManifestResourceStream($"CafeAndRestaurant.Lib.Properties.Resources.{menuIsmi}.json");
 
-
-            StreamReader fileJson = new StreamReader(yol);
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/{menuIsmi}.json";
+            StreamReader fileJson = new StreamReader(path);
             string dosyaİcerigi = fileJson.ReadToEnd();
             menuler = JsonConvert.DeserializeObject<List<Menu>>(dosyaİcerigi);
+
             MessageBox.Show($"{menuler.Count} ürün içeri aktarıldı");
             foreach (var eleman in menuler)
             {
@@ -140,6 +142,6 @@ namespace CafeAndRestaurant.Forms
             }
         }
 
-        
+
     }
 }

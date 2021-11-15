@@ -4,6 +4,7 @@ using CafeAndRestaurant.Lib.Concrete;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections;
+using System.Drawing.Imaging;
 using System.Reflection;
 using System.Xml.Serialization;
 
@@ -25,6 +26,7 @@ namespace CafeAndRestaurant
                 cbKat2.Items.Add(i);
                 cbKat3.Items.Add(i);
                 cbKat4.Items.Add(i);
+                cbTeras.Items.Add(i);
             }
         }
 
@@ -67,21 +69,86 @@ namespace CafeAndRestaurant
 
                 _frmPersonel.BinaBilgileri.Add(item);
             }
-
-
-            // _frmPersonel.BinaBilgileri.Add( binaBilgileri);
-
-            MessageBox.Show("sdçfmlsdjfsjdfk");
-
-            //FrmGiris frmGiris = new FrmGiris();
-            //frmGiris.Show();
-            //this.Hide();
             FrmPersonel frmPersonel = new FrmPersonel();
             frmPersonel.BinaBilgileri = _frmPersonel.BinaBilgileri;
             frmPersonel.Show();
             this.Hide();
 
 
+        }
+
+        private void ListeyiDoldur()
+        {
+            lstUrunler.Items.Clear();
+            foreach (Urun urun in UrunContext.Urunler)
+            {
+                lstUrunler.Items.Add(urun);
+            }
+        }
+
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            // Json verileri içeri aktarma
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/{cmbKategori.Text}.json";
+            StreamReader reader = new StreamReader(path);
+            string dosyaIcerigi = reader.ReadToEnd();
+            UrunContext.Urunler = JsonConvert.DeserializeObject<List<Urun>>(dosyaIcerigi);
+            MessageBox.Show($"{UrunContext.Urunler.Count} adet ürün içeri aktarýldý");
+            ListeyiDoldur();
+
+            // Json veri dosyasýna ürün ekleme
+            Urun yeniUrun = new Urun()
+            {
+                UrunAd = txtUrunAd.Text,
+                Fiyat = txtFiyat.Text,
+
+            };
+            if (pbResim.Image != null)
+            {
+                MemoryStream resimStream = new MemoryStream();
+                pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
+
+                yeniUrun.Fotograf = resimStream.ToArray();
+            }
+            UrunContext.Urunler.Add(yeniUrun);
+            ListeyiDoldur();
+            UrunContext.Save();
+
+            // Json dosyasýna verileri aktarma
+
+            //SaveFileDialog dialog = new SaveFileDialog();
+            //dialog.Title = "Dýþarý aktar";
+            //dialog.Filter = "JSON Format | *.json";
+            //dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            //DialogResult result = dialog.ShowDialog();
+            //if (result == DialogResult.OK)
+            //{
+            //    FileStream fileStream = new FileStream(dialog.FileName, FileMode.OpenOrCreate);
+
+                StreamWriter writer = new StreamWriter(path);
+                writer.Write(JsonConvert.SerializeObject(UrunContext.Urunler, Formatting.Indented));
+                writer.Close();
+                writer.Dispose();
+                MessageBox.Show($"{UrunContext.Urunler.Count} adet kiþi dýþarý aktarýldý.");
+            //}
+
+        }
+
+        private void pbResim_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Multiselect = false;
+            dialog.Title = "Bir fotoðraf seçiniz";
+            dialog.Filter = "Resim Dosyalarý | *.jpeg; *.jpg; *.png; *.jfif";
+            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            DialogResult result = dialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                pbResim.ImageLocation = dialog.FileName;
+            }
         }
     }
 }
