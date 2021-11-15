@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,8 +23,16 @@ namespace CafeAndRestaurant.Forms
         }
         public void JsonConverter(string menuIsmi)
         {
+            ///CafeAndRestaurant.Lib.Properties.Resources.Tatlılar
+            string yol = $"C:/Users/win10/Source/Repos/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/{menuIsmi}.json";
+            //string yol = $"{CafeAndRestaurant.Lib.Properties.Resources}.";
+            //Stream veri = CafeAndRestaurant.Lib.Properties.Resources.Yemekler;
+            //Lib.Properties.Resources.Balıklar
+            //var yol =CafeAndRestaurant.Lib.Properties.Resources.Balıklar;
+            //var assembly = Assembly.GetExecutingAssembly();
+            //var jsonVeri = assembly.GetManifestResourceStream($"CafeAndRestaurant.Lib.Properties.Resources.{menuIsmi}.json");
 
-            string yol = $"C:/Users/HP/Documents/GitHub/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/{menuIsmi}.json";
+
             StreamReader fileJson = new StreamReader(yol);
             string dosyaİcerigi = fileJson.ReadToEnd();
             menuler = JsonConvert.DeserializeObject<List<Menu>>(dosyaİcerigi);
@@ -91,7 +100,7 @@ namespace CafeAndRestaurant.Forms
 
         private void FrmSiparis_Load(object sender, EventArgs e)
         {
-            var path = @"C:\Users\HP\Desktop\MenuAD";
+            var path = @"C:\Users\win10\Desktop\MenuAD";
             var resim = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
                                 .Where(x => new string[] { ".bmp", ".jpg", ".png" }
                                 .Contains(new FileInfo(x).Extension.ToLower()))
@@ -130,5 +139,7 @@ namespace CafeAndRestaurant.Forms
                 lblDetay.Parent = pbox;
             }
         }
+
+        
     }
 }

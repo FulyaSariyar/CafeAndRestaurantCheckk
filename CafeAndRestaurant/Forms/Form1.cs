@@ -64,11 +64,11 @@ namespace CafeAndRestaurant
 
             foreach (BinaBilgileri item in binaBilgileri)
             {
-                
+
                 _frmPersonel.BinaBilgileri.Add(item);
             }
-               
-            
+
+
             // _frmPersonel.BinaBilgileri.Add( binaBilgileri);
 
             MessageBox.Show("sdçfmlsdjfsjdfk");
@@ -77,6 +77,7 @@ namespace CafeAndRestaurant
             //frmGiris.Show();
             //this.Hide();
             FrmPersonel frmPersonel = new FrmPersonel();
+            frmPersonel.BinaBilgileri = _frmPersonel.BinaBilgileri;
             frmPersonel.Show();
             this.Hide();
 

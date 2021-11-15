@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbMenü = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dtGrdGunluk = new System.Windows.Forms.DataGridView();
@@ -47,7 +48,7 @@
             // gbMenü
             // 
             this.gbMenü.AutoSize = true;
-            this.gbMenü.BackColor = System.Drawing.Color.White;
+            this.gbMenü.BackColor = System.Drawing.Color.Black;
             this.gbMenü.Controls.Add(this.flowLayoutPanel1);
             this.gbMenü.Controls.Add(this.button1);
             this.gbMenü.Controls.Add(this.flpMenuElemanlari);
@@ -72,12 +73,12 @@
             // dtGrdGunluk
             // 
             this.dtGrdGunluk.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtGrdGunluk.BackgroundColor = System.Drawing.Color.White;
+            this.dtGrdGunluk.BackgroundColor = System.Drawing.Color.Black;
             this.dtGrdGunluk.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -86,7 +87,15 @@
             this.dtGrdGunluk.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.urnAdiSiparis,
             this.urnFiyatSiparis});
-            this.dtGrdGunluk.GridColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGrdGunluk.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtGrdGunluk.GridColor = System.Drawing.Color.Black;
             this.dtGrdGunluk.Location = new System.Drawing.Point(0, 3);
             this.dtGrdGunluk.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.dtGrdGunluk.Name = "dtGrdGunluk";
@@ -160,6 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1253, 546);
             this.Controls.Add(this.gbMenü);
             this.Name = "FrmSiparis";

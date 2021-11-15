@@ -13,7 +13,7 @@ namespace CafeAndRestaurant
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPersonel());
+            Application.Run(new FrmIlk());
         }
     }
 }
