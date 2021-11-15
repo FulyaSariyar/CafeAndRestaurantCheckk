@@ -1,5 +1,6 @@
 using CafeAndRestaurant.Forms;
 using CafeAndRestaurant.Lib.Abstract;
+using CafeAndRestaurant.Lib.Concrete;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections;
@@ -18,276 +19,68 @@ namespace CafeAndRestaurant
             InitializeComponent();
             for (int i = 1; i <= 20; i++)
             {
-                cbBahce.Items.Add(i);
-            }
-            for (int i = 1; i <= 20; i++)
-            {
+                cbBahçe.Items.Add(i);
                 cbZemin.Items.Add(i);
-            }
-            for (int i = 1; i <= 20; i++)
-            {
                 cbKat1.Items.Add(i);
-            }
-            for (int i = 1; i <= 20; i++)
-            {
                 cbKat2.Items.Add(i);
-            }
-            for (int i = 1; i <= 20; i++)
-            {
                 cbKat3.Items.Add(i);
-            }
-            for (int i = 1; i <= 20; i++)
-            {
                 cbKat4.Items.Add(i);
             }
-
-        }
-        //private Menu seciliMenu as Menu;
-        public void JsonConverter(string menuIsmi)
-        {
-
-            string yol = $"C:/Users/HP/Documents/GitHub/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/{menuIsmi}.json";
-            //MessageBox.Show(relativePath);
-            //string yol1 = "../CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/Balýklar.json";
-
-            ///string yol2=System.AppDomain.CurrentDomain.DynamicDirectory + @"/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/Balýklar.json";
-            //menu1 = Menu as Menu;
-            StreamReader fileJson = new StreamReader(yol);
-            string dosyaÝcerigi = fileJson.ReadToEnd();
-            menuler = JsonConvert.DeserializeObject<List<Menu>>(dosyaÝcerigi);
-            MessageBox.Show($"{menuler.Count} ürün içeri aktarýldý");
-            List<Menu> eleman1 = new List<Menu>();
-            foreach (var eleman in menuler)
-            {
-                MemoryStream stream = new MemoryStream(eleman.Fotograf);
-                //pbResim.Image = Image.FromStream(stream);
-                var pbox = new PictureBox
-                {
-
-                    SizeMode = PictureBoxSizeMode.StretchImage,
-                    Size = new Size(190, 140),
-                    Image = Image.FromStream(stream)
-
-                };
-              
-
-            }
-        }
-
-        private void btn1_Click(object sender, EventArgs e)
-        {
-            FrmGiris frmGiris = new FrmGiris();
-            frmGiris.Show();
-            this.Hide();
         }
 
         private void FrmIlk_Load(object sender, EventArgs e)
         {
-            var path = @"C:\Users\HP\Desktop\MenuAD";
-            var resim = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
-                                .Where(x => new string[] { ".bmp", ".jpg", ".png" }
-                                .Contains(new FileInfo(x).Extension.ToLower()))
-                                .Take(20)
-                                .ToList();
-
-            for (int i = 0; i < resim.Count(); i++)
-            {
-                var pbox = new PictureBox
-                {
-                    SizeMode = PictureBoxSizeMode.StretchImage,
-                    Size = new Size(190, 140),
-                    //ClientSize = new Size(200, 180),
-                    ImageLocation = resim[i]
-                };
-                pbox.Name = $"{menuResimIsimleri[i]}";
-                pbox.Click += new EventHandler(pbox_Click);
-                flwpMenu.Controls.Add(pbox);
-            }
-        }
-
-        private void pbox_Click(object sender, EventArgs e)
-        {
-            PictureBox oPictureBox = (PictureBox)sender;
-            foreach (var item in menuResimIsimleri)
-            {
-                if (oPictureBox.Name == item)
-                {
-                    JsonConverter(item);
-                }    
-            }          
-        }
-
-
-        private void btnNext1_Click(object sender, EventArgs e)
-        {
-            FrmGiris frmGiris = new FrmGiris();
-            frmGiris.Show();
-            this.Hide();
-        }
-
-        private void cb6_CheckedChanged(object sender, EventArgs e)
-        {
-            {
-                if (cb6.Checked == true)
-                {
-                    cbKat4.Show();
-                    cbZemin.Visible = false;
-                    cbKat1.Visible = false;
-                    cbKat2.Visible = false;
-                    cbKat3.Visible = false;
-                    cbBahce.Visible = false;
-                }
-                else
-                {
-                    cbZemin.Visible = true;
-                    cbKat1.Visible = true;
-                    cbKat2.Visible = true;
-                    cbKat3.Visible = true;
-                    cbBahce.Visible = true;
-                }
-            }
 
         }
 
+        List<BinaBilgileri> binaBilgileri = new List<BinaBilgileri>();
+        List<string> katAd = new List<string>();
+        List<string> katMasa = new List<string>();
+        private FrmPersonel _frmPersonel;
         private void btnNext1_Click_1(object sender, EventArgs e)
         {
-            FrmGiris frmGiris = new FrmGiris();
-            frmGiris.Show();
-            this.Hide();
-        }
-
-
-        private void cb1_CheckedChanged(object sender, EventArgs e)
-        {
+            for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
             {
-                if (cb1.Checked == true)
-                {
-                    cbBahce.Show();
-                    cbZemin.Visible = false;
-                    cbKat1.Visible = false;
-                    cbKat2.Visible = false;
-                    cbKat3.Visible = false;
-                    cbKat4.Visible = false;
-                }
-                else
-                {
-                    cbZemin.Visible = true;
-                    cbKat1.Visible = true;
-                    cbKat2.Visible = true;
-                    cbKat3.Visible = true;
-                    cbKat4.Visible = true;
-                }
+                string bilgi = checkedListBox1.CheckedItems[i].ToString();
+                katAd.Add(bilgi);
             }
 
-           
-
-
-        }
-
-        private void cbBahce_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flwpMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void cb2_CheckedChanged(object sender, EventArgs e)
-        {
+            foreach (Control control in grpBxCombolar.Controls)
             {
-                if (cb2.Checked == true)
-                {
-                    cbZemin.Show();
-                    cbBahce.Visible = false;
-                    cbKat1.Visible = false;
-                    cbKat2.Visible = false;
-                    cbKat3.Visible = false;
-                    cbKat4.Visible = false;
-                }
-                else
-                {
-                    cbBahce.Visible = true;
-                    cbKat1.Visible = true;
-                    cbKat2.Visible = true;
-                    cbKat3.Visible = true;
-                    cbKat4.Visible = true;
-                }
+                if (control is ComboBox && control.Text != "")
+                    katMasa.Add(control.Text);
             }
-        }
+            katMasa.Reverse();
 
-        private void cb3_CheckedChanged(object sender, EventArgs e)
-        {
+            for (int i = 0; i < katAd.Count; i++)
+            {
+                binaBilgileri.Add(new BinaBilgileri()
+                {
+                    BinaBolumAdi = katAd[i],
+                    MasaAdet = katMasa[i]
+                });
+            }
+            _frmPersonel = new FrmPersonel();
+
+            foreach (BinaBilgileri item in binaBilgileri)
             {
                 
-                    if (cb3.Checked == true)
-                    {
-                        cbKat1.Show();
-                        cbBahce.Visible = false;
-                        cbZemin.Visible = false;
-                        cbKat2.Visible = false;
-                        cbKat3.Visible = false;
-                        cbKat4.Visible = false;
-                    }
-                    else
-                    {
-                        cbBahce.Visible = true;
-                        cbZemin.Visible = true;
-                        cbKat2.Visible = true;
-                        cbKat3.Visible = true;
-                        cbKat4.Visible = true;
-                    }
-                }
+                _frmPersonel.BinaBilgileri.Add(item);
             }
+               
+            
+            // _frmPersonel.BinaBilgileri.Add( binaBilgileri);
 
-        private void cb4_CheckedChanged(object sender, EventArgs e)
-        {
-            {
+            MessageBox.Show("sdçfmlsdjfsjdfk");
 
-                if (cb4.Checked == true)
-                {
-                    cbKat2.Show();
-                    cbBahce.Visible = false;
-                    cbZemin.Visible = false;
-                    cbKat1.Visible = false;
-                    cbKat3.Visible = false;
-                    cbKat4.Visible = false;
-                }
-                else
-                {
-                    cbBahce.Visible = true;
-                    cbZemin.Visible = true;
-                    cbKat1.Visible = true;
-                    cbKat3.Visible = true;
-                    cbKat4.Visible = true;
-                }
-            }
+            //FrmGiris frmGiris = new FrmGiris();
+            //frmGiris.Show();
+            //this.Hide();
+            FrmPersonel frmPersonel = new FrmPersonel();
+            frmPersonel.Show();
+            this.Hide();
+
+
         }
-
-        private void cb5_CheckedChanged(object sender, EventArgs e)
-        {
-            {
-
-                if (cb5.Checked == true)
-                {
-                    cbKat3.Show();
-                    cbBahce.Visible = false;
-                    cbZemin.Visible = false;
-                    cbKat1.Visible = false;
-                    cbKat2.Visible = false;
-                    cbKat4.Visible = false;
-                }
-                else
-                {
-                    cbBahce.Visible = true;
-                    cbZemin.Visible = true;
-                    cbKat1.Visible = true;
-                    cbKat2.Visible = true;
-                    cbKat4.Visible = true;
-                }
-            }
-        }
-
     }
 }

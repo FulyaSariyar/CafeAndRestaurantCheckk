@@ -50,6 +50,9 @@ namespace CafeAndRestaurant.Forms
             FrmPersonel frmPersonel = new FrmPersonel();
             frmPersonel.Show();
             this.Hide();
+
+
+
         }
     }
 }

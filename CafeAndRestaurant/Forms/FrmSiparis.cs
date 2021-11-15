@@ -20,16 +20,10 @@ namespace CafeAndRestaurant.Forms
         {
             InitializeComponent();
         }
-
         public void JsonConverter(string menuIsmi)
         {
 
             string yol = $"C:/Users/HP/Documents/GitHub/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/{menuIsmi}.json";
-            //MessageBox.Show(relativePath);
-            //string yol1 = "../CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/Balıklar.json";
-
-            ///string yol2=System.AppDomain.CurrentDomain.DynamicDirectory + @"/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/Balıklar.json";
-            //menu1 = Menu as Menu;
             StreamReader fileJson = new StreamReader(yol);
             string dosyaİcerigi = fileJson.ReadToEnd();
             menuler = JsonConvert.DeserializeObject<List<Menu>>(dosyaİcerigi);
@@ -79,9 +73,7 @@ namespace CafeAndRestaurant.Forms
                 }
                 //MessageBox.Show(oPictureBox.Name);
             }
-
         }
-
         private void pbox_Click(object sender, EventArgs e)
         {
             flpMenuElemanlari.Controls.Clear();
