@@ -127,11 +127,11 @@ namespace CafeAndRestaurant
             //{
             //    FileStream fileStream = new FileStream(dialog.FileName, FileMode.OpenOrCreate);
 
-                StreamWriter writer = new StreamWriter(path);
-                writer.Write(JsonConvert.SerializeObject(UrunContext.Urunler, Formatting.Indented));
-                writer.Close();
-                writer.Dispose();
-                MessageBox.Show($"{UrunContext.Urunler.Count} adet kiþi dýþarý aktarýldý.");
+                //StreamWriter writer = new StreamWriter(path);
+                //writer.Write(JsonConvert.SerializeObject(UrunContext.Urunler, Formatting.Indented));
+                //writer.Close();
+                //writer.Dispose();
+                //MessageBox.Show($"{UrunContext.Urunler.Count} adet kiþi dýþarý aktarýldý.");
             //}
 
         }
