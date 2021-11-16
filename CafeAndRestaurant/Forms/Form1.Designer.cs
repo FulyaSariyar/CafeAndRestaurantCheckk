@@ -41,7 +41,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.btnNext1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bnListele = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -205,7 +205,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.bnListele);
             this.groupBox1.Controls.Add(this.btnNext1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmbKategori);
@@ -227,16 +227,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // button1
+            // bnListele
             // 
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(344, 449);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 56);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Listele";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bnListele.ForeColor = System.Drawing.Color.Black;
+            this.bnListele.Location = new System.Drawing.Point(342, 449);
+            this.bnListele.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bnListele.Name = "bnListele";
+            this.bnListele.Size = new System.Drawing.Size(103, 56);
+            this.bnListele.TabIndex = 44;
+            this.bnListele.Text = "Listele";
+            this.bnListele.UseVisualStyleBackColor = true;
+            this.bnListele.Click += new System.EventHandler(this.bnListele_Click);
             // 
             // label4
             // 
@@ -261,7 +262,8 @@
             "Tatlılar",
             "Yemekler",
             "İçecekler",
-            "deneme"});
+            "deneme",
+            "db"});
             this.cmbKategori.Location = new System.Drawing.Point(173, 92);
             this.cmbKategori.Name = "cmbKategori";
             this.cmbKategori.Size = new System.Drawing.Size(218, 24);
@@ -279,6 +281,7 @@
             // 
             // pbResim
             // 
+            this.pbResim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbResim.Location = new System.Drawing.Point(172, 217);
             this.pbResim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbResim.Name = "pbResim";
@@ -298,6 +301,7 @@
             this.btnGuncelle.TabIndex = 38;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // lstUrunler
             // 
@@ -308,6 +312,7 @@
             this.lstUrunler.Name = "lstUrunler";
             this.lstUrunler.Size = new System.Drawing.Size(264, 340);
             this.lstUrunler.TabIndex = 37;
+            this.lstUrunler.SelectedIndexChanged += new System.EventHandler(this.lstUrunler_SelectedIndexChanged);
             // 
             // btnKaydet
             // 
@@ -460,6 +465,6 @@
         private Label label3;
         private ComboBox cmbKategori;
         private Label label4;
-        private Button button1;
+        private Button bnListele;
     }
 }

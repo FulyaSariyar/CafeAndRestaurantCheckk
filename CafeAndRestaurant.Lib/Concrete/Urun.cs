@@ -8,6 +8,7 @@ namespace CafeAndRestaurant.Lib.Concrete
 {
     public class Urun
     {
+        public string UrunKategori { get; set; }
         public string UrunAd { get; set; }
         public string Fiyat { get; set; }
         // public string Id { get; set; }

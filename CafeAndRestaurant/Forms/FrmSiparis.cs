@@ -102,7 +102,7 @@ namespace CafeAndRestaurant.Forms
 
         private void FrmSiparis_Load(object sender, EventArgs e)
         {
-            var path = @"C:\Users\win10\Desktop\MenuAD";
+            var path = @"C:\Users\HP\Desktop\MenuAD";
             var resim = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
                                 .Where(x => new string[] { ".bmp", ".jpg", ".png" }
                                 .Contains(new FileInfo(x).Extension.ToLower()))

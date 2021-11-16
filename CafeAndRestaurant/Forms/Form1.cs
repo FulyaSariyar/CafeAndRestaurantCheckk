@@ -29,7 +29,7 @@ namespace CafeAndRestaurant
                 cbTeras.Items.Add(i);
             }
         }
-
+        
         private void FrmIlk_Load(object sender, EventArgs e)
         {
 
@@ -89,19 +89,14 @@ namespace CafeAndRestaurant
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            // Json verileri içeri aktarma
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/{cmbKategori.Text}.json";
-            StreamReader reader = new StreamReader(path);
-            string dosyaIcerigi = reader.ReadToEnd();
-            UrunContext.Urunler = JsonConvert.DeserializeObject<List<Urun>>(dosyaIcerigi);
-            MessageBox.Show($"{UrunContext.Urunler.Count} adet ürün içeri aktarýldý");
-            ListeyiDoldur();
 
             // Json veri dosyasýna ürün ekleme
             Urun yeniUrun = new Urun()
+
             {
-                UrunAd = txtUrunAd.Text,
+                UrunAd = txtUrunAd.Text + " TL ",
                 Fiyat = txtFiyat.Text,
+                UrunKategori = cmbKategori.SelectedItem.ToString(),
 
             };
             if (pbResim.Image != null)
@@ -127,11 +122,11 @@ namespace CafeAndRestaurant
             //{
             //    FileStream fileStream = new FileStream(dialog.FileName, FileMode.OpenOrCreate);
 
-                //StreamWriter writer = new StreamWriter(path);
-                //writer.Write(JsonConvert.SerializeObject(UrunContext.Urunler, Formatting.Indented));
-                //writer.Close();
-                //writer.Dispose();
-                //MessageBox.Show($"{UrunContext.Urunler.Count} adet kiþi dýþarý aktarýldý.");
+            //StreamWriter writer = new StreamWriter(path);
+            //writer.Write(JsonConvert.SerializeObject(UrunContext.Urunler, Formatting.Indented));
+            //writer.Close();
+            //writer.Dispose();
+            //MessageBox.Show($"{UrunContext.Urunler.Count} adet kiþi dýþarý aktarýldý.");
             //}
 
         }
@@ -151,6 +146,54 @@ namespace CafeAndRestaurant
             }
         }
 
-      
+
+        private void bnListele_Click(object sender, EventArgs e)
+        {            
+            // Json verileri içeri aktarma
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/Balýklar.json";
+            StreamReader reader = new StreamReader(path);
+            string dosyaIcerigi = reader.ReadToEnd();
+            UrunContext.Urunler = JsonConvert.DeserializeObject<List<Urun>>(dosyaIcerigi);
+            MessageBox.Show($"{UrunContext.Urunler.Count} adet ürün içeri aktarýldý");
+            ListeyiDoldur();
+        }
+        private Urun seciliUrun;
+        private void lstUrunler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstUrunler.SelectedItem == null) return; //index çaýþtýðýnda null gelebilir. Hata verme.
+
+            // Kisi seciliKisi = (Kisi)lstKisiler.SelectedItem; //yukarýda secilikisi Deðiþkenini oluþturdugumuz için bunu yorum satýrý yaptým
+            seciliUrun = lstUrunler.SelectedItem as Urun;
+
+            txtUrunAd.Text = seciliUrun.UrunAd;
+            txtFiyat.Text = seciliUrun.Fiyat;
+            cmbKategori.SelectedValue = seciliUrun.UrunKategori;
+
+            if (seciliUrun.Fotograf != null)
+            {
+                MemoryStream stream = new MemoryStream(seciliUrun.Fotograf);
+                pbResim.Image = Image.FromStream(stream);
+            }
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+
+            if (seciliUrun == null) return;
+
+
+            seciliUrun.UrunAd = txtUrunAd.Text;
+            seciliUrun.Fiyat = txtFiyat.Text;
+            seciliUrun.UrunKategori = cmbKategori.SelectedItem.ToString();
+
+            if (pbResim.Image != null)
+            {
+                MemoryStream resimStream = new MemoryStream();
+                pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
+                seciliUrun.Fotograf = resimStream.ToArray();
+            }
+
+            ListeyiDoldur();
+        }
     }
 }
