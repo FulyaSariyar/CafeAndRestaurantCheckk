@@ -150,5 +150,7 @@ namespace CafeAndRestaurant
                 pbResim.ImageLocation = dialog.FileName;
             }
         }
+
+      
     }
 }

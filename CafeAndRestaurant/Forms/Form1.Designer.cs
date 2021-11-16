@@ -41,6 +41,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.btnNext1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.jSONDışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jSONİçeriAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.gbBinaBilgileri.SuspendLayout();
             this.grpBxCombolar.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -194,7 +194,7 @@
             this.btnNext1.BackColor = System.Drawing.Color.White;
             this.btnNext1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNext1.ForeColor = System.Drawing.Color.Black;
-            this.btnNext1.Location = new System.Drawing.Point(1123, 504);
+            this.btnNext1.Location = new System.Drawing.Point(692, 496);
             this.btnNext1.Name = "btnNext1";
             this.btnNext1.Size = new System.Drawing.Size(114, 30);
             this.btnNext1.TabIndex = 1;
@@ -206,6 +206,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnNext1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmbKategori);
             this.groupBox1.Controls.Add(this.label3);
@@ -225,6 +226,17 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(344, 449);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 56);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "Listele";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -270,7 +282,7 @@
             this.pbResim.Location = new System.Drawing.Point(172, 217);
             this.pbResim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbResim.Name = "pbResim";
-            this.pbResim.Size = new System.Drawing.Size(219, 189);
+            this.pbResim.Size = new System.Drawing.Size(219, 215);
             this.pbResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbResim.TabIndex = 39;
             this.pbResim.TabStop = false;
@@ -279,7 +291,7 @@
             // btnGuncelle
             // 
             this.btnGuncelle.ForeColor = System.Drawing.Color.Black;
-            this.btnGuncelle.Location = new System.Drawing.Point(211, 427);
+            this.btnGuncelle.Location = new System.Drawing.Point(211, 449);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(103, 56);
@@ -300,7 +312,7 @@
             // btnKaydet
             // 
             this.btnKaydet.ForeColor = System.Drawing.Color.Black;
-            this.btnKaydet.Location = new System.Drawing.Point(83, 427);
+            this.btnKaydet.Location = new System.Drawing.Point(82, 449);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(103, 56);
@@ -384,17 +396,6 @@
             this.jSONİçeriAktarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.jSONİçeriAktarToolStripMenuItem.Text = "JSON İçeri Aktar";
             // 
-            // button1
-            // 
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(344, 427);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 56);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Listele";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // FrmIlk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -403,7 +404,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1249, 546);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnNext1);
             this.Controls.Add(this.gbBinaBilgileri);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.Silver;
