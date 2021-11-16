@@ -29,7 +29,7 @@ namespace CafeAndRestaurant
                 cbTeras.Items.Add(i);
             }
         }
-        
+
         private void FrmIlk_Load(object sender, EventArgs e)
         {
 
@@ -80,9 +80,13 @@ namespace CafeAndRestaurant
         private void ListeyiDoldur()
         {
             lstUrunler.Items.Clear();
-            foreach (Urun urun in UrunContext.Urunler)
+
+            foreach (var item in UrunContext.Urunler)
             {
-                lstUrunler.Items.Add(urun);
+                if (item.UrunKategori == cmbKategori.SelectedItem.ToString())
+                {
+                    lstUrunler.Items.Add(item);
+                }
             }
         }
 
@@ -148,23 +152,32 @@ namespace CafeAndRestaurant
 
 
         private void bnListele_Click(object sender, EventArgs e)
-        {            
+        {
+            lstUrunler.Items.Clear();
             // Json verileri içeri aktarma
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/Balýklar.json";
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/VeriTabaný - Kopya.json";
             StreamReader reader = new StreamReader(path);
             string dosyaIcerigi = reader.ReadToEnd();
             UrunContext.Urunler = JsonConvert.DeserializeObject<List<Urun>>(dosyaIcerigi);
+            //foreach (var item in UrunContext.Urunler)
+            //{
+            //    if (item.UrunKategori == cmbKategori.SelectedItem.ToString())
+            //    {
+            //        lstUrunler.Items.Add(item);
+            //    }
+            //}
             MessageBox.Show($"{UrunContext.Urunler.Count} adet ürün içeri aktarýldý");
             ListeyiDoldur();
+
         }
+
+
         private Urun seciliUrun;
         private void lstUrunler_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstUrunler.SelectedItem == null) return; //index çaýþtýðýnda null gelebilir. Hata verme.
 
-            // Kisi seciliKisi = (Kisi)lstKisiler.SelectedItem; //yukarýda secilikisi Deðiþkenini oluþturdugumuz için bunu yorum satýrý yaptým
             seciliUrun = lstUrunler.SelectedItem as Urun;
-
             txtUrunAd.Text = seciliUrun.UrunAd;
             txtFiyat.Text = seciliUrun.Fiyat;
             cmbKategori.SelectedValue = seciliUrun.UrunKategori;
@@ -174,26 +187,40 @@ namespace CafeAndRestaurant
                 MemoryStream stream = new MemoryStream(seciliUrun.Fotograf);
                 pbResim.Image = Image.FromStream(stream);
             }
+
+
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
 
+
             if (seciliUrun == null) return;
 
-
-            seciliUrun.UrunAd = txtUrunAd.Text;
-            seciliUrun.Fiyat = txtFiyat.Text;
-            seciliUrun.UrunKategori = cmbKategori.SelectedItem.ToString();
-
-            if (pbResim.Image != null)
+            foreach (var item in UrunContext.Urunler)
             {
-                MemoryStream resimStream = new MemoryStream();
-                pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
-                seciliUrun.Fotograf = resimStream.ToArray();
+
+                if (item.UrunKategori == cmbKategori.SelectedItem.ToString())
+                {
+
+                    seciliUrun.UrunAd = txtUrunAd.Text;
+                    seciliUrun.Fiyat = txtFiyat.Text;
+                    seciliUrun.UrunKategori = cmbKategori.SelectedItem.ToString();
+
+                    if (pbResim.Image != null)
+                    {
+                        MemoryStream resimStream = new MemoryStream();
+                        pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
+                        seciliUrun.Fotograf = resimStream.ToArray();
+                    }
+
+                }
+                lstUrunler.Items.Add(item);
             }
 
             ListeyiDoldur();
+            UrunContext.Save();
+
         }
     }
 }
