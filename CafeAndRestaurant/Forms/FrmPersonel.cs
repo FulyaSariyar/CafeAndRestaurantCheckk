@@ -15,7 +15,8 @@ namespace CafeAndRestaurant.Forms
 {
     public partial class FrmPersonel : Form
     {
-
+        string masaAd;
+        string binaAd;
         public FrmPersonel()
         {
             InitializeComponent();
@@ -31,13 +32,12 @@ namespace CafeAndRestaurant.Forms
             for (int i = 0; i < BinaBilgileri.Count; i++)
             {
                 var btnKat = new Button
-
                 {
 
                     Size = new Size(200, 90),
                     BackColor = ColorTranslator.FromHtml("#B0B0B0"),
-                    Text =BinaBilgileri[i].BinaBolumAdi,
-                    ForeColor=Color.Black
+                    Text = BinaBilgileri[i].BinaBolumAdi,
+                    ForeColor = Color.Black
 
                 };
                 MessageBox.Show("fdlgkdıtjıe");
@@ -49,13 +49,14 @@ namespace CafeAndRestaurant.Forms
             }
 
         }
+       
         protected void btnKat_Click(object sender, EventArgs e)
         {
             //flpMenuElemanlari.Controls.Clear();
             Button oButton = (Button)sender;
             foreach (var item in BinaBilgileri)
             {
-                
+
                 if (oButton.Name == item.BinaBolumAdi)
                 {
                     flwpMasa.Controls.Clear();
@@ -66,33 +67,42 @@ namespace CafeAndRestaurant.Forms
                         {
 
                             Size = new Size(150, 150),
-                            BackColor =ColorTranslator.FromHtml("#7F7F7F"),//#a45117//CD661D
+                            BackColor = ColorTranslator.FromHtml("#7F7F7F"),//#a45117//CD661D
                             Text = $"MASA {i}",
                             ForeColor = Color.White
 
                         };
-                      
-                        btnMasa.Name = $"Masa{i}";
-                        btnMasa.Click += new EventHandler(btnMasa_Click);
-                        //btnKat.Parent = groupBox;
 
+                        btnMasa.Name = $"Masa{i}";
+                        masaAd = $"Masa{i}";
+                        binaAd = item.BinaBolumAdi;
+                        btnMasa.Click += new EventHandler(btnMasa_Click);
                         flwpMasa.Controls.Add(btnMasa);
+                        //Controls.Add(btnMasa);
+                       
                     }
-                    //MessageBox.Show($"{item.BinaBolumAdi}  {item.Fiyat} TL");
-                    //MessageBox.Show("nbhmfhmfmh");
-                    
                 }
-                //MessageBox.Show(oPictureBox.Name);
             }
         }
+
+
+
+        private FrmSiparis _frmSiparis;
         protected void btnMasa_Click(object sender, EventArgs e)
         {
-            //flpMenuElemanlari.Controls.Clear();
+            _frmSiparis = new FrmSiparis();
+            _frmSiparis.SiparisBilgileri.Add(new Siparis
+            {
+                KatIsim=binaAd,
+                Masa = masaAd,
+            }); 
             Button oButton = (Button)sender;
-            FrmSiparis frmSiparis = new FrmSiparis();
-            frmSiparis.Show();
-            this.Hide();
+            oButton.BackColor = Color.Green;
+            _frmSiparis.SiparisBilgileri = _frmSiparis.SiparisBilgileri;
+            //_frmSiparis.MdiParent = this;
+            _frmSiparis.Show();
+            //this.Hide();
 
         }
-        }
+    }
 }

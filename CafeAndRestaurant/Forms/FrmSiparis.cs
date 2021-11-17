@@ -1,4 +1,5 @@
 ﻿using CafeAndRestaurant.Lib.Abstract;
+using CafeAndRestaurant.Lib.Concrete;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -16,35 +17,32 @@ namespace CafeAndRestaurant.Forms
     public partial class FrmSiparis : Form
     {
         private List<Menu> menuler = new List<Menu>();
+
+        public List<Siparis> SiparisBilgileri = new List<Siparis>();
+        public List<SiparisDetay> SiparisDetaylari = new List<SiparisDetay>();
+
+
         string[] menuResimIsimleri = { "Balıklar", "FastFood", "Kahvaltı", "Mezeler", "Tatlılar", "Salatalar", "Yemekler", "Çorbalar", "İçecekler" };
         public FrmSiparis()
         {
             InitializeComponent();
+
         }
         public void JsonConverter(string menuIsmi)
         {
-            ///CafeAndRestaurant.Lib.Properties.Resources.Tatlılar
-            //string yol = $"C:/Users/win10/Source/Repos/CafeAndRestaurantCheck/CafeAndRestaurant.Lib/Resources/{menuIsmi}.json";
-            //string yol = $"../../../CafeAndRestaurant.Lib/Resources/{menuIsmi}.json";
-            //string yol = $"{CafeAndRestaurant.Lib.Properties.Resources}.";
-            //Stream veri = CafeAndRestaurant.Lib.Properties.Resources.Yemekler;
-            //Lib.Properties.Resources.Balıklar
-            //var yol =CafeAndRestaurant.Lib.Properties.Resources.Balıklar;
-            //var assembly = Assembly.GetExecutingAssembly();
-            //var jsonVeri = assembly.GetManifestResourceStream($"CafeAndRestaurant.Lib.Properties.Resources.{menuIsmi}.json");
-
             var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/{menuIsmi}.json";
             StreamReader fileJson = new StreamReader(path);
             string dosyaİcerigi = fileJson.ReadToEnd();
             menuler = JsonConvert.DeserializeObject<List<Menu>>(dosyaİcerigi);
 
-            MessageBox.Show($"{menuler.Count} ürün içeri aktarıldı");
+            //MessageBox.Show($"{menuler.Count} ürün içeri aktarıldı");
             foreach (var eleman in menuler)
             {
                 MemoryStream stream = new MemoryStream(eleman.Fotograf);
                 var groupBox = new GroupBox();
                 groupBox.Name = $"grpBox{eleman.UrunAd}";
 
+                //Sol taraf menü listesi click olaylaarı
                 var pbox = new PictureBox
                 {
                     SizeMode = PictureBoxSizeMode.StretchImage,
@@ -57,6 +55,7 @@ namespace CafeAndRestaurant.Forms
                 pbox.Parent = groupBox;
                 flpMenuElemanlari.Controls.Add(pbox);
 
+                // Label içerisinde ürün bilgileri yazdırıldı
                 Label lblDetay = new Label
                 {
                     Text = $"{eleman.UrunAd} {eleman.Fiyat} TL",
@@ -71,22 +70,50 @@ namespace CafeAndRestaurant.Forms
                 lblDetay.Parent = pbox;
             }
         }
-        private List<Menu> siparişler = new List<Menu>();
+        //private List<Menu> siparişler = new List<Menu>();
+
+        //Menüde bulunan ürünlerin click olayı
         private void pboxUrunler_Click(object sender, EventArgs e)
         {
-            //flpMenuElemanlari.Controls.Clear();
+
+
             PictureBox oPictureBox = (PictureBox)sender;
             foreach (var item in menuler)
             {
                 if (oPictureBox.Name == item.UrunAd)
                 {
-                    MessageBox.Show($"{item.UrunAd}  {item.Fiyat} TL");
+                    // Tıklanan ürünün sipariş listesine atılması.
+                    dtGrdSiparis.Rows.Add(item.UrunAd, item.Fiyat + " TL ");
+                    int sum = 0;
+                    for (int i = 0; i < (dtGrdSiparis.Rows.Count) - 1; ++i)
+                    {
+                        //var gelen=(dtGrdSiparis.Rows[i].Cells[1].Value).ToString();
+
+                        sum += Convert.ToInt32((dtGrdSiparis.Rows[i].Cells[1].Value).ToString().Split(" ").First());
+                    }
+
+                    SiparisDetaylari.Add(new SiparisDetay
+                    {
+                        Fiyat = item.Fiyat,
+                        UrunAd = item.UrunAd,
+                        Tutar = sum.ToString(),
+                    });
+
+
+
+                    lblToplam.Text = $"TOPLAM   :  { sum.ToString()}";
+
+                    //MessageBox.Show($"{item.UrunAd}  {item.Fiyat} TL");
                 }
-                //MessageBox.Show(oPictureBox.Name);
+
             }
+
+
         }
+        //sol menü pbox clik event
         private void pbox_Click(object sender, EventArgs e)
         {
+
             flpMenuElemanlari.Controls.Clear();
             PictureBox oPictureBox = (PictureBox)sender;
             foreach (var item in menuResimIsimleri)
@@ -102,7 +129,8 @@ namespace CafeAndRestaurant.Forms
 
         private void FrmSiparis_Load(object sender, EventArgs e)
         {
-            var path = @"C:\Users\HP\Desktop\MenuAD";
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/MenuAD";
+            // var path = @"C:\Users\win10\Desktop\MenuAD";
             var resim = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
                                 .Where(x => new string[] { ".bmp", ".jpg", ".png" }
                                 .Contains(new FileInfo(x).Extension.ToLower()))
@@ -113,6 +141,7 @@ namespace CafeAndRestaurant.Forms
             {
                 var groupBox = new GroupBox();
                 groupBox.Name = $"grpBox{menuResimIsimleri[i]}";
+
 
                 var pbox = new PictureBox
                 {
@@ -126,6 +155,7 @@ namespace CafeAndRestaurant.Forms
                 pbox.Parent = groupBox;
                 flwpMenu.Controls.Add(pbox);
 
+                //Label içerisinde menü isimleri yazdırıldı
                 Label lblDetay = new Label
                 {
                     Text = $"{menuResimIsimleri[i]}",
@@ -141,7 +171,51 @@ namespace CafeAndRestaurant.Forms
                 lblDetay.Parent = pbox;
             }
         }
+        private Siparis sp = new Siparis();
+        private void btn_SiparisAl_Click(object sender, EventArgs e)
+        {
+            FrmPersonel frmPersonel = new FrmPersonel();
+            foreach (var item in SiparisBilgileri)
+            {
+
+                if (item.Durum == SiparisDurum.Aktif)
+                {
+                    item.Durum = SiparisDurum.Pasif;
+                }
 
 
+                Button b = new Button
+                {
+                    Name = item.Masa
+                };
+                //frmPersonel.ChangecolorDolu(b);
+
+                //if (frmPersonel != null)
+                //{
+
+                //    foreach (Control c in frmPersonel.Controls)
+                //    {
+                //        if (c is Button)
+                //        {
+                //            if (c.Text == item.Masa)
+                //            {
+                //                c.BackColor = System.Drawing.Color.Green;
+                //                break;
+                //            }
+                //        }
+                //    }
+
+                //    MessageBox.Show("fghjk");
+
+                //}
+            }
+            //frmPersonel.Show();
+            this.Hide();
+        }
+
+        private void btnAdisyonKapat_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -8,6 +8,7 @@ namespace CafeAndRestaurant.Lib.Concrete
 {
     public  class Context
     {
-        public List<BinaBilgileri> BinaBilgileri { get; set; } = new List<BinaBilgileri>();
+       // public List<BinaBilgileri> BinaBilgileri { get; set; } = new List<BinaBilgileri>();
+        public List<SiparisDetay> SiparisDetaylari { get; set; } = new List<SiparisDetay>();
     }
 }
