@@ -18,7 +18,7 @@ namespace CafeAndRestaurant.Forms
         public FrmSiparis()
         {
             InitializeComponent();
-            
+
 
         }
         public void JsonConverter(string menuIsmi)
@@ -77,10 +77,10 @@ namespace CafeAndRestaurant.Forms
                     // Tıklanan ürünün sipariş listesine atılması.
                     dtGrdSiparis.Rows.Add(item.UrunAd, item.Fiyat + " TL ");
                     int sum = 0;
-                   
+
                     for (int i = 0; i < (dtGrdSiparis.Rows.Count) - 1; ++i)
                     {
-                        
+
                         sum += Convert.ToInt32((dtGrdSiparis.Rows[i].Cells[1].Value).ToString().Split(" ").First());
                     }
 
@@ -88,8 +88,8 @@ namespace CafeAndRestaurant.Forms
                     {
                         Fiyat = item.Fiyat,
                         UrunAd = item.UrunAd,
-                        Tutar = sum.ToString(),
-
+                        Tutar = sum.ToString()
+                    });
 
                     lblToplam.Text = $"TOPLAM   :  { sum.ToString()}";
                     //MessageBox.Show($"{item.UrunAd}  {item.Fiyat} TL");
@@ -114,9 +114,9 @@ namespace CafeAndRestaurant.Forms
         }
         private void FrmSiparis_Load(object sender, EventArgs e)
         {
-            
+
             this.siparisDetaylari = Context.SiparisDetaylari;
-            
+
 
             var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/MenuAD";
             // var path = @"C:\Users\win10\Desktop\MenuAD";
@@ -157,10 +157,10 @@ namespace CafeAndRestaurant.Forms
 
                 lblDetay.Parent = pbox;
             }
-        }    
+        }
         private void btnAdisyonKapat_Click(object sender, EventArgs e)
         {
-            
+
             Context.Save();
         }
 
@@ -174,24 +174,13 @@ namespace CafeAndRestaurant.Forms
                 {
                     item.Durum = SiparisDurum.Pasif;
                 }
-
-                Button b = new Button
-                {
-                    Name = item.Masa
-               
             }
-            
+
             this.Hide();
-        }
-        Bitmap bitmap;
-        private void btnAdisyonKapat_Click(object sender, EventArgs e)
-        {
-            PrintDialog daraGridViewPrintDialog = new PrintDialog();
-            daraGridViewPrintDialog.Document = printDocument1;
-            daraGridViewPrintDialog.UseEXDialog = true;
-            printDocument1.Print();
+            this.Close();
         }
 
+        Bitmap bitmap;
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             //Bitmap dataGridAdisyon = new Bitmap(this.dtGrdSiparis.Width, this.dtGrdSiparis.Height);
@@ -205,33 +194,15 @@ namespace CafeAndRestaurant.Forms
 
             e.Graphics.DrawImage(Adisyon, 135, 65);
             e.Graphics.DrawImage(lbl, this.dtGrdSiparis.Width, this.flowLayoutPanel1.Height);
-
-                //frmPersonel.ChangecolorDolu(b);
-
-                //if (frmPersonel != null)
-                //{
-
-                //    foreach (Control c in frmPersonel.Controls)
-                //    {
-                //        if (c is Button)
-                //        {
-                //            if (c.Text == item.Masa)
-                //            {
-                //                c.BackColor = System.Drawing.Color.Green;
-                //                break;
-                //            }
-                //        }
-                //    }
-
-                //    MessageBox.Show("fghjk");
-
-                //}
-            }
-            //frmPersonel.Show();
-            this.Hide();
-            this.Close();
-            
         }
 
+        private void btnAdisyonKapat_Click_1(object sender, EventArgs e)
+        {
+            PrintDialog daraGridViewPrintDialog = new PrintDialog();
+            daraGridViewPrintDialog.Document = printDocument1;
+            daraGridViewPrintDialog.UseEXDialog = true;
+            printDocument1.Print();
+        }
+        //frmPersonel.Show();
     }
 }
