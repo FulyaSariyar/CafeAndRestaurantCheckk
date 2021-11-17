@@ -13,7 +13,7 @@ namespace CafeAndRestaurant
     public partial class FrmIlk : Form
     {
 
-        private List<Menu> menuler = new List<Menu>();
+        private List<Urun> urunler = new List<Urun>();
         string[] menuResimIsimleri = { "Balýklar", "FastFood", "Kahvaltý", "Mezeler", "Tatlýlar", "Mezeler", "Pastalar", "Salatalar", "Yemekler" };
         public FrmIlk()
         {
@@ -30,11 +30,6 @@ namespace CafeAndRestaurant
             }
         }
 
-        private void FrmIlk_Load(object sender, EventArgs e)
-        {
-
-        }
-
         List<BinaBilgileri> binaBilgileri = new List<BinaBilgileri>();
         List<string> katAd = new List<string>();
         List<string> katMasa = new List<string>();
@@ -47,7 +42,7 @@ namespace CafeAndRestaurant
                 katAd.Add(bilgi);
             }
 
-            foreach (Control control in grpBxCombolar.Controls)
+            foreach (Control control in pnlCombolar.Controls)
             {
                 if (control is ComboBox && control.Text != "")
                     katMasa.Add(control.Text);
@@ -80,58 +75,54 @@ namespace CafeAndRestaurant
         private void ListeyiDoldur()
         {
             lstUrunler.Items.Clear();
-
-            foreach (var item in UrunContext.Urunler)
+            
+            foreach (Urun item in urunler)
             {
-                if (item.UrunKategori == cmbKategori.SelectedItem.ToString())
+                if (item.UrunKategori == cmbKategori.Text)
                 {
+                    
                     lstUrunler.Items.Add(item);
+
                 }
             }
+           
+            UrunContext.Save();
+        }
+
+        private void FrmIlk_Load(object sender, EventArgs e)
+        {
+            UrunContext.Load();
+            this.urunler = UrunContext.Urunler; //Referanslarýný eþitledik KisiContext nesnesi programýn basýndan kapanana kadar ramda kalýr.
+            //ListeyiDoldur();
         }
 
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-
-            // Json veri dosyasýna ürün ekleme
-            Urun yeniUrun = new Urun()
-
+            Urun yeniUrun = new Urun();
+            try
             {
-                UrunAd = txtUrunAd.Text + " TL ",
-                Fiyat = txtFiyat.Text,
-                UrunKategori = cmbKategori.SelectedItem.ToString(),
+                yeniUrun.UrunAd = txtUrunAd.Text;
+                yeniUrun.Fiyat = txtFiyat.Text+ $" TL " ;
+                yeniUrun.UrunKategori = cmbKategori.Text;
+                // Id = txtId.Text
 
-            };
-            if (pbResim.Image != null)
-            {
-                MemoryStream resimStream = new MemoryStream();
-                pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
+                if (pbResim.Image != null)
+                {
+                    MemoryStream resimStream = new MemoryStream();
+                    pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
+                    yeniUrun.Fotograf = resimStream.ToArray();
+                }
 
-                yeniUrun.Fotograf = resimStream.ToArray();
+
+                urunler.Add(yeniUrun);
+                ListeyiDoldur();
             }
-            UrunContext.Urunler.Add(yeniUrun);
-            ListeyiDoldur();
-            UrunContext.Save();
+            catch (Exception ex)
+            {
 
-            // Json dosyasýna verileri aktarma
-
-            //SaveFileDialog dialog = new SaveFileDialog();
-            //dialog.Title = "Dýþarý aktar";
-            //dialog.Filter = "JSON Format | *.json";
-            //dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            //DialogResult result = dialog.ShowDialog();
-            //if (result == DialogResult.OK)
-            //{
-            //    FileStream fileStream = new FileStream(dialog.FileName, FileMode.OpenOrCreate);
-
-            //StreamWriter writer = new StreamWriter(path);
-            //writer.Write(JsonConvert.SerializeObject(UrunContext.Urunler, Formatting.Indented));
-            //writer.Close();
-            //writer.Dispose();
-            //MessageBox.Show($"{UrunContext.Urunler.Count} adet kiþi dýþarý aktarýldý.");
-            //}
+                MessageBox.Show(ex.Message, "Bir hata oluþtu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -153,20 +144,22 @@ namespace CafeAndRestaurant
 
         private void bnListele_Click(object sender, EventArgs e)
         {
-            lstUrunler.Items.Clear();
+            //lstUrunler.Items.Clear();
             // Json verileri içeri aktarma
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/VeriTabaný - Kopya.json";
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/Deneme.json";
             StreamReader reader = new StreamReader(path);
             string dosyaIcerigi = reader.ReadToEnd();
-            UrunContext.Urunler = JsonConvert.DeserializeObject<List<Urun>>(dosyaIcerigi);
-            //foreach (var item in UrunContext.Urunler)
+            urunler = JsonConvert.DeserializeObject<List<Urun>>(dosyaIcerigi);
+
+            //foreach (var item in urunler)
             //{
             //    if (item.UrunKategori == cmbKategori.SelectedItem.ToString())
             //    {
             //        lstUrunler.Items.Add(item);
             //    }
             //}
-            MessageBox.Show($"{UrunContext.Urunler.Count} adet ürün içeri aktarýldý");
+            MessageBox.Show($"{urunler.Count} adet ürün içeri aktarýldý");
+
             ListeyiDoldur();
 
         }
@@ -177,7 +170,8 @@ namespace CafeAndRestaurant
         {
             if (lstUrunler.SelectedItem == null) return; //index çaýþtýðýnda null gelebilir. Hata verme.
 
-            seciliUrun = lstUrunler.SelectedItem as Urun;
+            // seciliUrun = lstUrunler.SelectedItem as Urun;
+            Urun seciliUrun = (Urun)lstUrunler.SelectedItem;
             txtUrunAd.Text = seciliUrun.UrunAd;
             txtFiyat.Text = seciliUrun.Fiyat;
             cmbKategori.SelectedValue = seciliUrun.UrunKategori;
@@ -187,40 +181,67 @@ namespace CafeAndRestaurant
                 MemoryStream stream = new MemoryStream(seciliUrun.Fotograf);
                 pbResim.Image = Image.FromStream(stream);
             }
-
-
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-
+            Urun seciliUrun = (Urun)lstUrunler.SelectedItem;
 
             if (seciliUrun == null) return;
 
-            foreach (var item in UrunContext.Urunler)
+            //foreach (var item in urunler)
+            //{
+            //if (item.UrunKategori == cmbKategori.Text)
+            //{
+
+            seciliUrun.UrunAd = txtUrunAd.Text;
+            seciliUrun.Fiyat = txtFiyat.Text;
+            seciliUrun.UrunKategori = cmbKategori.Text;
+
+            if (pbResim.Image != null)
             {
-
-                if (item.UrunKategori == cmbKategori.SelectedItem.ToString())
-                {
-
-                    seciliUrun.UrunAd = txtUrunAd.Text;
-                    seciliUrun.Fiyat = txtFiyat.Text;
-                    seciliUrun.UrunKategori = cmbKategori.SelectedItem.ToString();
-
-                    if (pbResim.Image != null)
-                    {
-                        MemoryStream resimStream = new MemoryStream();
-                        pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
-                        seciliUrun.Fotograf = resimStream.ToArray();
-                    }
-
-                }
-                lstUrunler.Items.Add(item);
+                MemoryStream resimStream = new MemoryStream();
+                pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
+                seciliUrun.Fotograf = resimStream.ToArray();
             }
 
+            //}
+            //lstUrunler.Items.Add(item);
+
+            //}
+
             ListeyiDoldur();
-            UrunContext.Save();
+        }
+
+        private void txtFiyat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') )
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtFiyat_TextChanged(object sender, EventArgs e)
+        {
 
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            Urun seciliUrun = (Urun)lstUrunler.SelectedItem;
+
+            if (seciliUrun == null) return;
+
+            DialogResult cevap = MessageBox.Show($"{seciliUrun} yi silmek istiyor musunuz?", "Silme onayý", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (cevap == DialogResult.Yes)
+            {
+                urunler.Remove(seciliUrun);
+                
+            }
+            ListeyiDoldur();
+        }
+
+       
     }
 }
