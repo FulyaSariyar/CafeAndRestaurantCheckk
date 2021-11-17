@@ -93,7 +93,7 @@ namespace CafeAndRestaurant
         {
             UrunContext.Load();
             this.urunler = UrunContext.Urunler; //Referanslarýný eþitledik KisiContext nesnesi programýn basýndan kapanana kadar ramda kalýr.
-            //ListeyiDoldur();
+            ListeyiDoldur();
         }
 
 
@@ -125,7 +125,6 @@ namespace CafeAndRestaurant
             }
 
         }
-
         private void pbResim_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -144,23 +143,30 @@ namespace CafeAndRestaurant
 
         private void bnListele_Click(object sender, EventArgs e)
         {
-            //lstUrunler.Items.Clear();
-            // Json verileri içeri aktarma
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/Deneme.json";
-            StreamReader reader = new StreamReader(path);
-            string dosyaIcerigi = reader.ReadToEnd();
-            urunler = JsonConvert.DeserializeObject<List<Urun>>(dosyaIcerigi);
-
-            //foreach (var item in urunler)
+            //OpenFileDialog dialog = new OpenFileDialog();
+            //dialog.Multiselect = false;
+            //dialog.Title = "Bir Json dosyasý seçiniz: ";
+            //dialog.Filter = "JSON | *.json"; // hangi dosya türlerini seçmek istiyosak onu ayarlýyoruz. *= uzantýlý anlamaýnda.            
+            //dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); //bilgisayarda desktopta kayýtlý olan dosyalara eriþmek için Enviroment
+            var path2 = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+"/Menuler/Deneme.json";
+            //DialogResult result = dialog.ShowDialog();
+            //if (result == DialogResult.OK)
             //{
-            //    if (item.UrunKategori == cmbKategori.SelectedItem.ToString())
-            //    {
-            //        lstUrunler.Items.Add(item);
-            //    }
-            //}
-            MessageBox.Show($"{urunler.Count} adet ürün içeri aktarýldý");
+            FileStream fileStream = new FileStream(path2, FileMode.Open);
+                StreamReader reader = new StreamReader(fileStream);
+                string dosyaÝcerigi = reader.ReadToEnd();
+                urunler = JsonConvert.DeserializeObject<List<Urun>>(dosyaÝcerigi);
+                MessageBox.Show($"{urunler.Count}adert kiþi içeri aktarýldý");
+                reader.Close();
+                lstUrunler.Items.Clear();
 
-            ListeyiDoldur();
+                foreach (Urun item in urunler)
+                {
+                    lstUrunler.Items.Add(item);
+
+                }
+                
+            //}
 
         }
 
@@ -242,6 +248,35 @@ namespace CafeAndRestaurant
             ListeyiDoldur();
         }
 
-       
+        private void veriTabanýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var path3 = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/Menuler/Deneme.json";
+            
+           if(File.Exists(path3))
+            {
+
+                File.Delete(path3);
+
+                var path4 = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/Menuler/Deneme.json";
+                FileStream fileStream = new FileStream(path4, FileMode.OpenOrCreate); //dosya varsa içine kaydet yoksa oluþturup kaydet : openorcreate komutu ile 
+                StreamWriter writer = new StreamWriter(fileStream);
+                writer.Write(JsonConvert.SerializeObject(urunler, Formatting.Indented));
+                writer.Close();
+                writer.Dispose();
+                MessageBox.Show($"{urunler.Count}adert kiþi dýþarý aktarýldý");           
+         
+            }
+           
+        }
+
+        private void cmbKategori_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/Deneme.json";
+            StreamReader reader = new StreamReader(path);
+            string dosyaIcerigi = reader.ReadToEnd();
+            urunler = JsonConvert.DeserializeObject<List<Urun>>(dosyaIcerigi);
+            reader.Close();
+            ListeyiDoldur();
+        }
     }
 }

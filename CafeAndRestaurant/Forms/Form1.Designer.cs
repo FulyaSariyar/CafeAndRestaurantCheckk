@@ -54,6 +54,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.veriTabanıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlCombolar = new System.Windows.Forms.Panel();
@@ -230,6 +231,7 @@
             this.cmbKategori.Name = "cmbKategori";
             this.cmbKategori.Size = new System.Drawing.Size(245, 24);
             this.cmbKategori.TabIndex = 42;
+            this.cmbKategori.SelectedIndexChanged += new System.EventHandler(this.cmbKategori_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -341,7 +343,8 @@
             // dosyaİşlemleriToolStripMenuItem
             // 
             this.dosyaİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator1});
+            this.toolStripSeparator1,
+            this.veriTabanıToolStripMenuItem});
             this.dosyaİşlemleriToolStripMenuItem.Name = "dosyaİşlemleriToolStripMenuItem";
             this.dosyaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
             this.dosyaİşlemleriToolStripMenuItem.Text = "Veri Tabanı  İşlemleri";
@@ -349,7 +352,14 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(57, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // veriTabanıToolStripMenuItem
+            // 
+            this.veriTabanıToolStripMenuItem.Name = "veriTabanıToolStripMenuItem";
+            this.veriTabanıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.veriTabanıToolStripMenuItem.Text = "Veri Tabanı Oluştur";
+            this.veriTabanıToolStripMenuItem.Click += new System.EventHandler(this.veriTabanıToolStripMenuItem_Click);
             // 
             // checkedListBox1
             // 
@@ -462,5 +472,6 @@
         private CheckedListBox checkedListBox1;
         private Panel panel1;
         private Panel pnlCombolar;
+        private ToolStripMenuItem veriTabanıToolStripMenuItem;
     }
 }
