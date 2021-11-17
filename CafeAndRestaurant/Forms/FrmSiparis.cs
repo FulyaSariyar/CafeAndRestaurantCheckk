@@ -1,16 +1,8 @@
 ﻿using CafeAndRestaurant.Lib.Abstract;
 using CafeAndRestaurant.Lib.Concrete;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace CafeAndRestaurant.Forms
 {
@@ -71,11 +63,11 @@ namespace CafeAndRestaurant.Forms
                 lblDetay.Parent = pbox;
             }
         }
-        //private List<Menu> siparişler = new List<Menu>();
 
         //Menüde bulunan ürünlerin click olayı
         private void pboxUrunler_Click(object sender, EventArgs e)
         {
+
 
             PictureBox oPictureBox = (PictureBox)sender;
             foreach (var item in menuler)
@@ -85,10 +77,10 @@ namespace CafeAndRestaurant.Forms
                     // Tıklanan ürünün sipariş listesine atılması.
                     dtGrdSiparis.Rows.Add(item.UrunAd, item.Fiyat + " TL ");
                     int sum = 0;
+                   
                     for (int i = 0; i < (dtGrdSiparis.Rows.Count) - 1; ++i)
                     {
-                        //var gelen=(dtGrdSiparis.Rows[i].Cells[1].Value).ToString();
-
+                        
                         sum += Convert.ToInt32((dtGrdSiparis.Rows[i].Cells[1].Value).ToString().Split(" ").First());
                     }
 
@@ -97,13 +89,11 @@ namespace CafeAndRestaurant.Forms
                         Fiyat = item.Fiyat,
                         UrunAd = item.UrunAd,
                         Tutar = sum.ToString(),
-                    });
+
 
                     lblToplam.Text = $"TOPLAM   :  { sum.ToString()}";
-
                     //MessageBox.Show($"{item.UrunAd}  {item.Fiyat} TL");
                 }
-
             }
 
         }
@@ -122,7 +112,6 @@ namespace CafeAndRestaurant.Forms
                 //MessageBox.Show(oPictureBox.Name);
             }
         }
-
         private void FrmSiparis_Load(object sender, EventArgs e)
         {
             
@@ -189,7 +178,34 @@ namespace CafeAndRestaurant.Forms
                 Button b = new Button
                 {
                     Name = item.Masa
-                };
+               
+            }
+            
+            this.Hide();
+        }
+        Bitmap bitmap;
+        private void btnAdisyonKapat_Click(object sender, EventArgs e)
+        {
+            PrintDialog daraGridViewPrintDialog = new PrintDialog();
+            daraGridViewPrintDialog.Document = printDocument1;
+            daraGridViewPrintDialog.UseEXDialog = true;
+            printDocument1.Print();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            //Bitmap dataGridAdisyon = new Bitmap(this.dtGrdSiparis.Width, this.dtGrdSiparis.Height);
+            //dtGrdSiparis.DrawToBitmap(dataGridAdisyon, new System.Drawing.Rectangle(0, 0, this.dtGrdSiparis.Width, this.dtGrdSiparis.Height));
+
+            Bitmap Adisyon = new Bitmap(this.flowLayoutPanel1.Width, this.flowLayoutPanel1.Height);
+            dtGrdSiparis.DrawToBitmap(Adisyon, new System.Drawing.Rectangle(0, 0, this.flowLayoutPanel1.Width, this.flowLayoutPanel1.Height));
+
+            Bitmap lbl = new Bitmap(this.lblToplam.Width, this.lblToplam.Height);
+            lblToplam.DrawToBitmap(lbl, new System.Drawing.Rectangle(0, 0, this.lblToplam.Width, this.lblToplam.Height));
+
+            e.Graphics.DrawImage(Adisyon, 135, 65);
+            e.Graphics.DrawImage(lbl, this.dtGrdSiparis.Width, this.flowLayoutPanel1.Height);
+
                 //frmPersonel.ChangecolorDolu(b);
 
                 //if (frmPersonel != null)
@@ -214,6 +230,8 @@ namespace CafeAndRestaurant.Forms
             //frmPersonel.Show();
             this.Hide();
             this.Close();
+            
         }
+
     }
 }
