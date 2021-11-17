@@ -44,9 +44,9 @@
             this.gbGiris.Controls.Add(this.pbGiris);
             this.gbGiris.Controls.Add(this.btnPersonel);
             this.gbGiris.Controls.Add(this.btnYönetici);
-            this.gbGiris.Location = new System.Drawing.Point(651, 12);
+            this.gbGiris.Location = new System.Drawing.Point(297, 67);
             this.gbGiris.Name = "gbGiris";
-            this.gbGiris.Size = new System.Drawing.Size(426, 140);
+            this.gbGiris.Size = new System.Drawing.Size(520, 221);
             this.gbGiris.TabIndex = 1;
             this.gbGiris.TabStop = false;
             // 
@@ -63,8 +63,8 @@
             // 
             // btnPersonel
             // 
-            this.btnPersonel.BackColor = System.Drawing.Color.Transparent;
-            this.btnPersonel.Location = new System.Drawing.Point(228, 52);
+            this.btnPersonel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
+            this.btnPersonel.Location = new System.Drawing.Point(322, 112);
             this.btnPersonel.Name = "btnPersonel";
             this.btnPersonel.Size = new System.Drawing.Size(157, 73);
             this.btnPersonel.TabIndex = 1;
@@ -74,8 +74,9 @@
             // 
             // btnYönetici
             // 
-            this.btnYönetici.BackColor = System.Drawing.Color.Transparent;
-            this.btnYönetici.Location = new System.Drawing.Point(37, 52);
+            this.btnYönetici.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
+            this.btnYönetici.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnYönetici.Location = new System.Drawing.Point(79, 46);
             this.btnYönetici.Name = "btnYönetici";
             this.btnYönetici.Size = new System.Drawing.Size(157, 73);
             this.btnYönetici.TabIndex = 0;
@@ -86,7 +87,7 @@
             // btnBack1
             // 
             this.btnBack1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnBack1.BackColor = System.Drawing.Color.White;
+            this.btnBack1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.btnBack1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBack1.ForeColor = System.Drawing.Color.Black;
             this.btnBack1.Location = new System.Drawing.Point(12, 408);
@@ -101,12 +102,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1139, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.btnBack1);
             this.Controls.Add(this.gbGiris);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGiris";
             this.Text = "Giriş";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

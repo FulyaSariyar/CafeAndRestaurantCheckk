@@ -120,12 +120,12 @@ namespace CafeAndRestaurant.Forms
                 {
                     JsonConverter(item);
                 }
-                //MessageBox.Show(oPictureBox.Name);
+                
             }
         }
         private void FrmSiparis_Load(object sender, EventArgs e)
         {
-
+            Context.Load();
             this.siparisDetaylari = Context.SiparisDetaylari;
 
 
@@ -169,11 +169,11 @@ namespace CafeAndRestaurant.Forms
                 lblDetay.Parent = pbox;
             }
         }
-        private void btnAdisyonKapat_Click(object sender, EventArgs e)
-        {
+        //private void btnAdisyonKapat_Click(object sender, EventArgs e)
+        //{
 
-            Context.Save();
-        }
+        //    Context.Save();
+        //}
 
         private void btn_SiparisAl_Click_1(object sender, EventArgs e)
         {
@@ -214,9 +214,9 @@ namespace CafeAndRestaurant.Forms
         }
 
         private void btnAdisyonKapat_Click_1(object sender, EventArgs e)
-        {
+        {                               
             Context.Save();
-            //FrmPersonel frm = (_frmsiparis)Application.OpenForms["form_adi "];
+
             PrintDialog daraGridViewPrintDialog = new PrintDialog();
             daraGridViewPrintDialog.Document = printDocument1;
             daraGridViewPrintDialog.UseEXDialog = true;

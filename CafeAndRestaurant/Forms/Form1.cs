@@ -130,7 +130,7 @@ namespace CafeAndRestaurant
 
                 yeniUrun.Fotograf = resimStream.ToArray();
             }
-            UrunContext.Urunler.Add(yeniUrun);
+            urunler.Add(yeniUrun);
             ListeyiDoldur();
             UrunContext.Save();
 

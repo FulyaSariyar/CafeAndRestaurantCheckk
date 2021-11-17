@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPersonel));
             this.flwpBinaBolumleri = new System.Windows.Forms.FlowLayoutPanel();
             this.flwpMasa = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
@@ -35,34 +36,33 @@
             // flwpBinaBolumleri
             // 
             this.flwpBinaBolumleri.AutoScroll = true;
-            this.flwpBinaBolumleri.BackColor = System.Drawing.Color.Black;
+            this.flwpBinaBolumleri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.flwpBinaBolumleri.Dock = System.Windows.Forms.DockStyle.Left;
             this.flwpBinaBolumleri.Location = new System.Drawing.Point(0, 0);
-            this.flwpBinaBolumleri.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flwpBinaBolumleri.Name = "flwpBinaBolumleri";
-            this.flwpBinaBolumleri.Size = new System.Drawing.Size(243, 693);
+            this.flwpBinaBolumleri.Size = new System.Drawing.Size(213, 520);
             this.flwpBinaBolumleri.TabIndex = 0;
             // 
             // flwpMasa
             // 
-            this.flwpMasa.BackColor = System.Drawing.Color.Black;
+            this.flwpMasa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.flwpMasa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flwpMasa.Location = new System.Drawing.Point(243, 0);
-            this.flwpMasa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flwpMasa.Location = new System.Drawing.Point(213, 0);
             this.flwpMasa.Name = "flwpMasa";
-            this.flwpMasa.Size = new System.Drawing.Size(749, 693);
+            this.flwpMasa.Size = new System.Drawing.Size(937, 520);
             this.flwpMasa.TabIndex = 1;
             // 
             // FrmPersonel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(992, 693);
+            this.ClientSize = new System.Drawing.Size(1150, 520);
+            this.ControlBox = false;
             this.Controls.Add(this.flwpMasa);
             this.Controls.Add(this.flwpBinaBolumleri);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmPersonel";
             this.Text = "FrmPersonel";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
