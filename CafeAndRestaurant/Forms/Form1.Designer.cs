@@ -136,26 +136,6 @@
             this.cbBahçe.Size = new System.Drawing.Size(121, 24);
             this.cbBahçe.TabIndex = 12;
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.Font = new System.Drawing.Font("Calibri Light", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.checkedListBox1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Bahçe",
-            "Zemin Kat",
-            "Kat 1",
-            "Kat 2",
-            "Kat 3",
-            "Kat 4 ",
-            "Teras"});
-            this.checkedListBox1.Location = new System.Drawing.Point(39, 63);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(172, 235);
-            this.checkedListBox1.TabIndex = 12;
-            // 
             // btnNext1
             // 
             this.btnNext1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -228,7 +208,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(91, 71);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 20);
+            this.label4.Size = new System.Drawing.Size(57, 16);
             this.label4.TabIndex = 43;
             this.label4.Text = "Kategori";
             // 
@@ -259,7 +239,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(91, 196);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 20);
+            this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 41;
             this.label3.Text = "Fotoğraf";
             // 
@@ -326,7 +306,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(91, 157);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 20);
+            this.label2.Size = new System.Drawing.Size(36, 16);
             this.label2.TabIndex = 32;
             this.label2.Text = "Fiyat";
             // 
@@ -344,7 +324,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(91, 118);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 20);
+            this.label1.Size = new System.Drawing.Size(52, 16);
             this.label1.TabIndex = 33;
             this.label1.Text = "UrunAd";
             // 
@@ -353,7 +333,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dosyaİşlemleriToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 22);
+            this.menuStrip1.Location = new System.Drawing.Point(3, 18);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(821, 24);
@@ -366,19 +346,18 @@
             this.toolStripSeparator1,
             this.veriTabanıToolStripMenuItem});
             this.dosyaİşlemleriToolStripMenuItem.Name = "dosyaİşlemleriToolStripMenuItem";
-            this.dosyaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
+            this.dosyaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
             this.dosyaİşlemleriToolStripMenuItem.Text = "Veri Tabanı  İşlemleri";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(195, 6);
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(169, 6);
             // 
             // veriTabanıToolStripMenuItem
             // 
             this.veriTabanıToolStripMenuItem.Name = "veriTabanıToolStripMenuItem";
-            this.veriTabanıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.veriTabanıToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.veriTabanıToolStripMenuItem.Text = "Veri Tabanı Oluştur";
             this.veriTabanıToolStripMenuItem.Click += new System.EventHandler(this.veriTabanıToolStripMenuItem_Click);
             // 
@@ -431,7 +410,7 @@
             // 
             // FrmIlk
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
