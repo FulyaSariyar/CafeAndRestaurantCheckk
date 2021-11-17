@@ -53,7 +53,7 @@
             // gbMenü
             // 
             this.gbMenü.AutoSize = true;
-            this.gbMenü.BackColor = System.Drawing.Color.White;
+            this.gbMenü.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.gbMenü.Controls.Add(this.btn_SiparisAl);
             this.gbMenü.Controls.Add(this.btnAdisyonKapat);
             this.gbMenü.Controls.Add(this.flowLayoutPanel1);
@@ -66,21 +66,20 @@
             this.gbMenü.Size = new System.Drawing.Size(1254, 655);
             this.gbMenü.TabIndex = 2;
             this.gbMenü.TabStop = false;
-            this.gbMenü.Text = "groupBox1";
             // 
             // btn_SiparisAl
             // 
             this.btn_SiparisAl.AutoEllipsis = true;
             this.btn_SiparisAl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_SiparisAl.BackColor = System.Drawing.Color.Chocolate;
+            this.btn_SiparisAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.btn_SiparisAl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_SiparisAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SiparisAl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.btn_SiparisAl.ForeColor = System.Drawing.Color.White;
-            this.btn_SiparisAl.Location = new System.Drawing.Point(740, 526);
+            this.btn_SiparisAl.Location = new System.Drawing.Point(740, 467);
             this.btn_SiparisAl.Name = "btn_SiparisAl";
             this.btn_SiparisAl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_SiparisAl.Size = new System.Drawing.Size(511, 63);
+            this.btn_SiparisAl.Size = new System.Drawing.Size(511, 95);
             this.btn_SiparisAl.TabIndex = 5;
             this.btn_SiparisAl.Text = "SİPARİŞ AL";
             this.btn_SiparisAl.UseVisualStyleBackColor = false;
@@ -89,15 +88,15 @@
             // 
             this.btnAdisyonKapat.AutoEllipsis = true;
             this.btnAdisyonKapat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAdisyonKapat.BackColor = System.Drawing.Color.Chocolate;
+            this.btnAdisyonKapat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.btnAdisyonKapat.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnAdisyonKapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdisyonKapat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.btnAdisyonKapat.ForeColor = System.Drawing.Color.White;
-            this.btnAdisyonKapat.Location = new System.Drawing.Point(740, 589);
+            this.btnAdisyonKapat.Location = new System.Drawing.Point(740, 562);
             this.btnAdisyonKapat.Name = "btnAdisyonKapat";
             this.btnAdisyonKapat.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAdisyonKapat.Size = new System.Drawing.Size(511, 63);
+            this.btnAdisyonKapat.Size = new System.Drawing.Size(511, 90);
             this.btnAdisyonKapat.TabIndex = 4;
             this.btnAdisyonKapat.Text = "YAZDIR";
             this.btnAdisyonKapat.UseVisualStyleBackColor = false;
@@ -105,7 +104,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.flowLayoutPanel1.Controls.Add(this.lblToplam);
             this.flowLayoutPanel1.Controls.Add(this.dtGrdSiparis);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -131,7 +130,7 @@
             // dtGrdSiparis
             // 
             this.dtGrdSiparis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtGrdSiparis.BackgroundColor = System.Drawing.Color.White;
+            this.dtGrdSiparis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.dtGrdSiparis.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtGrdSiparis.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtGrdSiparis.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -193,7 +192,7 @@
             // 
             this.flpMenuElemanlari.AutoScroll = true;
             this.flpMenuElemanlari.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flpMenuElemanlari.BackColor = System.Drawing.Color.White;
+            this.flpMenuElemanlari.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.flpMenuElemanlari.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpMenuElemanlari.Location = new System.Drawing.Point(254, 19);
             this.flpMenuElemanlari.Margin = new System.Windows.Forms.Padding(700, 3, 3, 3);
@@ -204,6 +203,7 @@
             // flwpMenu
             // 
             this.flwpMenu.AutoScroll = true;
+            this.flwpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.flwpMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.flwpMenu.Location = new System.Drawing.Point(3, 19);
             this.flwpMenu.Name = "flwpMenu";
@@ -230,8 +230,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1254, 655);
+            this.ControlBox = false;
             this.Controls.Add(this.gbMenü);
             this.ForeColor = System.Drawing.Color.Black;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSiparis";
             this.Text = "FrmSiparis";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -29,8 +29,9 @@ namespace CafeAndRestaurant.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRapor));
             this.grpBoxGunlukRapor = new System.Windows.Forms.GroupBox();
             this.dtGrdGunluk = new System.Windows.Forms.DataGridView();
             this.urunAdiGunluk = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +55,7 @@ namespace CafeAndRestaurant.Forms
             // 
             // grpBoxGunlukRapor
             // 
+            this.grpBoxGunlukRapor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.grpBoxGunlukRapor.Controls.Add(this.dtGrdGunluk);
             this.grpBoxGunlukRapor.Controls.Add(this.button1);
             this.grpBoxGunlukRapor.Controls.Add(this.label1);
@@ -66,16 +68,16 @@ namespace CafeAndRestaurant.Forms
             // dtGrdGunluk
             // 
             this.dtGrdGunluk.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtGrdGunluk.BackgroundColor = System.Drawing.Color.White;
+            this.dtGrdGunluk.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.dtGrdGunluk.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGrdGunluk.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGrdGunluk.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtGrdGunluk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrdGunluk.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.urunAdiGunluk,
@@ -107,7 +109,7 @@ namespace CafeAndRestaurant.Forms
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.button1.Location = new System.Drawing.Point(385, 454);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 31);
@@ -118,7 +120,7 @@ namespace CafeAndRestaurant.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Red;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.label1.Location = new System.Drawing.Point(6, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(460, 15);
@@ -128,6 +130,8 @@ namespace CafeAndRestaurant.Forms
             // 
             // grpBoxAylikRapor
             // 
+            this.grpBoxAylikRapor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBoxAylikRapor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.grpBoxAylikRapor.Controls.Add(this.dtGrdAylik);
             this.grpBoxAylikRapor.Controls.Add(this.button2);
             this.grpBoxAylikRapor.Controls.Add(this.label8);
@@ -140,16 +144,16 @@ namespace CafeAndRestaurant.Forms
             // dtGrdAylik
             // 
             this.dtGrdAylik.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtGrdAylik.BackgroundColor = System.Drawing.Color.White;
+            this.dtGrdAylik.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.dtGrdAylik.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGrdAylik.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGrdAylik.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtGrdAylik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrdAylik.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.urnAdiAylik,
@@ -181,7 +185,7 @@ namespace CafeAndRestaurant.Forms
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Silver;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.button2.Location = new System.Drawing.Point(385, 454);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 31);
@@ -192,35 +196,40 @@ namespace CafeAndRestaurant.Forms
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Red;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.label8.Location = new System.Drawing.Point(6, 19);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(460, 15);
+            this.label8.Size = new System.Drawing.Size(448, 15);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Günlük Rapor                                                                     " +
-    "                                                          ";
+            this.label8.Text = "Aylık Rapor                                                                      " +
+    "                                                         ";
             // 
             // btnBack2
             // 
+            this.btnBack2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBack2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.btnBack2.Location = new System.Drawing.Point(12, 516);
             this.btnBack2.Name = "btnBack2";
             this.btnBack2.Size = new System.Drawing.Size(110, 27);
             this.btnBack2.TabIndex = 17;
             this.btnBack2.Text = "Back";
-            this.btnBack2.UseVisualStyleBackColor = true;
+            this.btnBack2.UseVisualStyleBackColor = false;
             this.btnBack2.Click += new System.EventHandler(this.btnBack2_Click);
             // 
             // FrmRapor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.ClientSize = new System.Drawing.Size(975, 546);
+            this.ControlBox = false;
             this.Controls.Add(this.btnBack2);
             this.Controls.Add(this.grpBoxAylikRapor);
             this.Controls.Add(this.grpBoxGunlukRapor);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRapor";
             this.Text = "Raporlar";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.grpBoxGunlukRapor.ResumeLayout(false);
             this.grpBoxGunlukRapor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdGunluk)).EndInit();

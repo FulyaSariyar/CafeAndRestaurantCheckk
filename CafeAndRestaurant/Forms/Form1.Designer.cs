@@ -139,7 +139,7 @@
             // btnNext1
             // 
             this.btnNext1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNext1.BackColor = System.Drawing.Color.White;
+            this.btnNext1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.btnNext1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNext1.ForeColor = System.Drawing.Color.Black;
             this.btnNext1.Location = new System.Drawing.Point(635, 489);
@@ -155,7 +155,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.groupBox1.Controls.Add(this.btnSil);
             this.groupBox1.Controls.Add(this.bnListele);
             this.groupBox1.Controls.Add(this.btnNext1);
@@ -176,10 +176,10 @@
             this.groupBox1.Size = new System.Drawing.Size(827, 546);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // btnSil
             // 
+            this.btnSil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.btnSil.ForeColor = System.Drawing.Color.Black;
             this.btnSil.Location = new System.Drawing.Point(301, 428);
             this.btnSil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -187,11 +187,12 @@
             this.btnSil.Size = new System.Drawing.Size(72, 56);
             this.btnSil.TabIndex = 45;
             this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // bnListele
             // 
+            this.bnListele.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.bnListele.ForeColor = System.Drawing.Color.Black;
             this.bnListele.Location = new System.Drawing.Point(379, 428);
             this.bnListele.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -199,7 +200,7 @@
             this.bnListele.Size = new System.Drawing.Size(70, 56);
             this.bnListele.TabIndex = 44;
             this.bnListele.Text = "Listele";
-            this.bnListele.UseVisualStyleBackColor = true;
+            this.bnListele.UseVisualStyleBackColor = false;
             this.bnListele.Click += new System.EventHandler(this.bnListele_Click);
             // 
             // label4
@@ -257,6 +258,7 @@
             // 
             // btnGuncelle
             // 
+            this.btnGuncelle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.btnGuncelle.ForeColor = System.Drawing.Color.Black;
             this.btnGuncelle.Location = new System.Drawing.Point(223, 428);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -264,11 +266,12 @@
             this.btnGuncelle.Size = new System.Drawing.Size(72, 56);
             this.btnGuncelle.TabIndex = 38;
             this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.UseVisualStyleBackColor = false;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // lstUrunler
             // 
+            this.lstUrunler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.lstUrunler.FormattingEnabled = true;
             this.lstUrunler.ItemHeight = 16;
             this.lstUrunler.Location = new System.Drawing.Point(475, 68);
@@ -280,6 +283,7 @@
             // 
             // btnKaydet
             // 
+            this.btnKaydet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.btnKaydet.ForeColor = System.Drawing.Color.Black;
             this.btnKaydet.Location = new System.Drawing.Point(143, 428);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -287,7 +291,7 @@
             this.btnKaydet.Size = new System.Drawing.Size(74, 56);
             this.btnKaydet.TabIndex = 36;
             this.btnKaydet.Text = "Ekle";
-            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.UseVisualStyleBackColor = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // txtFiyat
@@ -367,7 +371,7 @@
             this.checkedListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedListBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.checkedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkedListBox1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkedListBox1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
@@ -387,6 +391,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.panel1.Controls.Add(this.checkedListBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -396,6 +401,7 @@
             // 
             // pnlCombolar
             // 
+            this.pnlCombolar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.pnlCombolar.Controls.Add(this.cbTeras);
             this.pnlCombolar.Controls.Add(this.cbBahçe);
             this.pnlCombolar.Controls.Add(this.cbKat4);
@@ -412,9 +418,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1249, 546);
+            this.ControlBox = false;
             this.Controls.Add(this.pnlCombolar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);

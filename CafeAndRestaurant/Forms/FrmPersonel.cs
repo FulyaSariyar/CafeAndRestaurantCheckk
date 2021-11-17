@@ -22,7 +22,7 @@ namespace CafeAndRestaurant.Forms
             InitializeComponent();
         }
 
-        //public BinaBilgileri BinaBilgileri { get; set; }
+       
 
 
         public List<BinaBilgileri> BinaBilgileri = new List<BinaBilgileri>();
@@ -40,7 +40,7 @@ namespace CafeAndRestaurant.Forms
                     ForeColor = Color.Black
 
                 };
-                MessageBox.Show("fdlgkdıtjıe");
+                
                 btnKat.Name = $"{BinaBilgileri[i].BinaBolumAdi}";
                 btnKat.Click += new EventHandler(btnKat_Click);
                 //btnKat.Parent = groupBox;
