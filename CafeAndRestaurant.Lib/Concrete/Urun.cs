@@ -51,31 +51,7 @@ namespace CafeAndRestaurant.Lib.Concrete
                 _urunAd = value;
             }
         }
-        public string Fiyat 
-        {
-            get;set;
-            //get
-            //{
-            //    return _urunFiyat;
-            //}
-            //set
-            //{
-            //    if (string.IsNullOrEmpty(value))
-            //    {
-            //        throw new FormatException("Ürün fiyatı boş geçilemez");
-            //    }
-            //    //foreach (char item in value)
-            //    //{
-            //    //    //if (char.IsLetter(item))
-            //    //    //    throw new Exception("Ürün fiyatında harf bulunamaz");
-
-            //    //    if (char.IsSymbol(item) || char.IsControl(item) || char.IsPunctuation(item))
-            //    //        throw new Exception("Ürün fiyatında geçersiz karakter bulunmaktadır");
-            //    //}
-            //    //if (value.StartsWith("0"))
-            //    //    throw new Exception("kimlik numarası sıfır ile başlayamaz");
-            //} 
-        }
+        public string Fiyat {get;set;}
         // public string Id { get; set; }
         public byte[] Fotograf { get; set; }
 

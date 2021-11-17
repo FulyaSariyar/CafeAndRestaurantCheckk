@@ -379,9 +379,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(397, 546);
             this.panel1.TabIndex = 3;
-            this.jSONDışarıAktarToolStripMenuItem.Name = "jSONDışarıAktarToolStripMenuItem";
-            this.jSONDışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
-            this.jSONDışarıAktarToolStripMenuItem.Text = "Ürün ";
             // 
             // pnlCombolar
             // 
@@ -396,9 +393,6 @@
             this.pnlCombolar.Name = "pnlCombolar";
             this.pnlCombolar.Size = new System.Drawing.Size(177, 228);
             this.pnlCombolar.TabIndex = 4;
-            this.jSONİçeriAktarToolStripMenuItem.Name = "jSONİçeriAktarToolStripMenuItem";
-            this.jSONİçeriAktarToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
-            this.jSONİçeriAktarToolStripMenuItem.Text = "JSON İçeri Aktar";
             // 
             // FrmIlk
             // 

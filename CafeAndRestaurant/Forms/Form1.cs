@@ -74,17 +74,17 @@ namespace CafeAndRestaurant
         private void ListeyiDoldur()
         {
             lstUrunler.Items.Clear();
-            
+
             foreach (Urun item in urunler)
             {
                 if (item.UrunKategori == cmbKategori.Text)
                 {
-                    
+
                     lstUrunler.Items.Add(item);
 
                 }
             }
-           
+
             UrunContext.Save();
         }
 
@@ -102,7 +102,7 @@ namespace CafeAndRestaurant
             try
             {
                 yeniUrun.UrunAd = txtUrunAd.Text;
-                yeniUrun.Fiyat = txtFiyat.Text+ $" TL " ;
+                yeniUrun.Fiyat = txtFiyat.Text + $" TL ";
                 yeniUrun.UrunKategori = cmbKategori.Text;
                 // Id = txtId.Text
 
@@ -121,7 +121,6 @@ namespace CafeAndRestaurant
             {
 
                 MessageBox.Show(ex.Message, "Bir hata oluþtu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
             };
             if (pbResim.Image != null)
@@ -133,7 +132,7 @@ namespace CafeAndRestaurant
             }
             UrunContext.Urunler.Add(yeniUrun);
             ListeyiDoldur();
-            UrunContext.Save();   
+            UrunContext.Save();
 
         }
         private void pbResim_Click(object sender, EventArgs e)
@@ -225,7 +224,7 @@ namespace CafeAndRestaurant
 
         private void txtFiyat_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') )
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -247,11 +246,11 @@ namespace CafeAndRestaurant
             if (cevap == DialogResult.Yes)
             {
                 urunler.Remove(seciliUrun);
-                
+
             }
             ListeyiDoldur();
         }
 
-       
+
     }
 }
