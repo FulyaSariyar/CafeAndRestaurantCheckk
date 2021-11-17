@@ -11,7 +11,7 @@ namespace CafeAndRestaurant.Lib.Concrete
         #region
         private string _urunKategori;
         private string _urunAd;
-        private string _urunFiyat;
+        //private string _urunFiyat;
         #endregion
         public string UrunKategori 
         {

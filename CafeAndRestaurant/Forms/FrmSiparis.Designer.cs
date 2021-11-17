@@ -62,8 +62,10 @@
             this.gbMenü.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbMenü.ForeColor = System.Drawing.Color.Bisque;
             this.gbMenü.Location = new System.Drawing.Point(0, 0);
+            this.gbMenü.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbMenü.Name = "gbMenü";
-            this.gbMenü.Size = new System.Drawing.Size(1254, 655);
+            this.gbMenü.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbMenü.Size = new System.Drawing.Size(1433, 873);
             this.gbMenü.TabIndex = 2;
             this.gbMenü.TabStop = false;
             // 
@@ -83,6 +85,7 @@
             this.btn_SiparisAl.TabIndex = 5;
             this.btn_SiparisAl.Text = "SİPARİŞ AL";
             this.btn_SiparisAl.UseVisualStyleBackColor = false;
+            this.btn_SiparisAl.Click += new System.EventHandler(this.btn_SiparisAl_Click_1);
             // 
             // btnAdisyonKapat
             // 
@@ -100,7 +103,7 @@
             this.btnAdisyonKapat.TabIndex = 4;
             this.btnAdisyonKapat.Text = "YAZDIR";
             this.btnAdisyonKapat.UseVisualStyleBackColor = false;
-            this.btnAdisyonKapat.Click += new System.EventHandler(this.btnAdisyonKapat_Click);
+            this.btnAdisyonKapat.Click += new System.EventHandler(this.btnAdisyonKapat_Click_1);
             // 
             // flowLayoutPanel1
             // 
@@ -108,9 +111,10 @@
             this.flowLayoutPanel1.Controls.Add(this.lblToplam);
             this.flowLayoutPanel1.Controls.Add(this.dtGrdSiparis);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(740, 19);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(845, 24);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(511, 501);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(585, 615);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // lblToplam
@@ -119,10 +123,10 @@
             this.lblToplam.BackColor = System.Drawing.Color.Transparent;
             this.lblToplam.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblToplam.ForeColor = System.Drawing.Color.Black;
-            this.lblToplam.Location = new System.Drawing.Point(25, 15);
-            this.lblToplam.Margin = new System.Windows.Forms.Padding(25, 15, 3, 0);
+            this.lblToplam.Location = new System.Drawing.Point(29, 20);
+            this.lblToplam.Margin = new System.Windows.Forms.Padding(29, 20, 3, 0);
             this.lblToplam.Name = "lblToplam";
-            this.lblToplam.Size = new System.Drawing.Size(75, 23);
+            this.lblToplam.Size = new System.Drawing.Size(95, 30);
             this.lblToplam.TabIndex = 0;
             this.lblToplam.Text = "TOPLAM";
             this.lblToplam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,8 +158,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtGrdSiparis.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtGrdSiparis.GridColor = System.Drawing.Color.White;
-            this.dtGrdSiparis.Location = new System.Drawing.Point(0, 41);
-            this.dtGrdSiparis.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.dtGrdSiparis.Location = new System.Drawing.Point(0, 54);
+            this.dtGrdSiparis.Margin = new System.Windows.Forms.Padding(0, 4, 3, 4);
             this.dtGrdSiparis.Name = "dtGrdSiparis";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -172,7 +176,7 @@
             this.dtGrdSiparis.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dtGrdSiparis.RowTemplate.Height = 50;
             this.dtGrdSiparis.RowTemplate.ReadOnly = true;
-            this.dtGrdSiparis.Size = new System.Drawing.Size(452, 295);
+            this.dtGrdSiparis.Size = new System.Drawing.Size(517, 393);
             this.dtGrdSiparis.TabIndex = 17;
             // 
             // urnAdiSiparis
@@ -194,10 +198,10 @@
             this.flpMenuElemanlari.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flpMenuElemanlari.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.flpMenuElemanlari.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flpMenuElemanlari.Location = new System.Drawing.Point(254, 19);
-            this.flpMenuElemanlari.Margin = new System.Windows.Forms.Padding(700, 3, 3, 3);
+            this.flpMenuElemanlari.Location = new System.Drawing.Point(290, 24);
+            this.flpMenuElemanlari.Margin = new System.Windows.Forms.Padding(800, 4, 3, 4);
             this.flpMenuElemanlari.Name = "flpMenuElemanlari";
-            this.flpMenuElemanlari.Size = new System.Drawing.Size(486, 633);
+            this.flpMenuElemanlari.Size = new System.Drawing.Size(555, 845);
             this.flpMenuElemanlari.TabIndex = 1;
             // 
             // flwpMenu
@@ -205,9 +209,10 @@
             this.flwpMenu.AutoScroll = true;
             this.flwpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.flwpMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flwpMenu.Location = new System.Drawing.Point(3, 19);
+            this.flwpMenu.Location = new System.Drawing.Point(3, 24);
+            this.flwpMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flwpMenu.Name = "flwpMenu";
-            this.flwpMenu.Size = new System.Drawing.Size(251, 633);
+            this.flwpMenu.Size = new System.Drawing.Size(287, 845);
             this.flwpMenu.TabIndex = 0;
             // 
             // printDocument1
@@ -226,7 +231,7 @@
             // 
             // FrmSiparis
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1254, 655);

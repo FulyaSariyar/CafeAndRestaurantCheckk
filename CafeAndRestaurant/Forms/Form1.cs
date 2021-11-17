@@ -130,7 +130,7 @@ namespace CafeAndRestaurant
 
                 yeniUrun.Fotograf = resimStream.ToArray();
             }
-            UrunContext.Urunler.Add(yeniUrun);
+            urunler.Add(yeniUrun);
             ListeyiDoldur();
             UrunContext.Save();
 
@@ -162,7 +162,7 @@ namespace CafeAndRestaurant
             //DialogResult result = dialog.ShowDialog();
             //if (result == DialogResult.OK)
             //{
-            FileStream fileStream = new FileStream(path2, FileMode.Open);
+                FileStream fileStream = new FileStream(path2, FileMode.Open);
                 StreamReader reader = new StreamReader(fileStream);
                 string dosya›cerigi = reader.ReadToEnd();
                 urunler = JsonConvert.DeserializeObject<List<Urun>>(dosya›cerigi);
