@@ -11,6 +11,6 @@ namespace CafeAndRestaurant.Lib.Concrete
         public string BinaBolumAdi { get; set; }
         public string MasaAdet { get; set; }
 
-        public override string ToString() => $"{BinaBolumAdi} {MasaAdet}";
+       // public override string ToString() => $"{BinaBolumAdi} {MasaAdet}";
     }
 }

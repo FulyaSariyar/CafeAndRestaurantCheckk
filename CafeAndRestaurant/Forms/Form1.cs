@@ -76,7 +76,6 @@ namespace CafeAndRestaurant
 
 
         }
-
         private void ListeyiDoldur()
         {
             lstUrunler.Items.Clear();
@@ -85,8 +84,6 @@ namespace CafeAndRestaurant
                 lstUrunler.Items.Add(urun);
             }
         }
-
-
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             // Json verileri içeri aktarma
@@ -113,29 +110,9 @@ namespace CafeAndRestaurant
             }
             UrunContext.Urunler.Add(yeniUrun);
             ListeyiDoldur();
-            UrunContext.Save();
-
-            // Json dosyasýna verileri aktarma
-
-            //SaveFileDialog dialog = new SaveFileDialog();
-            //dialog.Title = "Dýþarý aktar";
-            //dialog.Filter = "JSON Format | *.json";
-            //dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            //DialogResult result = dialog.ShowDialog();
-            //if (result == DialogResult.OK)
-            //{
-            //    FileStream fileStream = new FileStream(dialog.FileName, FileMode.OpenOrCreate);
-
-                //StreamWriter writer = new StreamWriter(path);
-                //writer.Write(JsonConvert.SerializeObject(UrunContext.Urunler, Formatting.Indented));
-                //writer.Close();
-                //writer.Dispose();
-                //MessageBox.Show($"{UrunContext.Urunler.Count} adet kiþi dýþarý aktarýldý.");
-            //}
+            UrunContext.Save();   
 
         }
-
         private void pbResim_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();

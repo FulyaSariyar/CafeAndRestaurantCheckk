@@ -105,7 +105,7 @@
             this.cbTeras.FormattingEnabled = true;
             this.cbTeras.Location = new System.Drawing.Point(16, 254);
             this.cbTeras.Name = "cbTeras";
-            this.cbTeras.Size = new System.Drawing.Size(121, 30);
+            this.cbTeras.Size = new System.Drawing.Size(121, 34);
             this.cbTeras.TabIndex = 18;
             // 
             // cbKat4
@@ -115,7 +115,7 @@
             this.cbKat4.FormattingEnabled = true;
             this.cbKat4.Location = new System.Drawing.Point(16, 216);
             this.cbKat4.Name = "cbKat4";
-            this.cbKat4.Size = new System.Drawing.Size(121, 30);
+            this.cbKat4.Size = new System.Drawing.Size(121, 34);
             this.cbKat4.TabIndex = 17;
             // 
             // cbKat3
@@ -125,7 +125,7 @@
             this.cbKat3.FormattingEnabled = true;
             this.cbKat3.Location = new System.Drawing.Point(16, 176);
             this.cbKat3.Name = "cbKat3";
-            this.cbKat3.Size = new System.Drawing.Size(121, 30);
+            this.cbKat3.Size = new System.Drawing.Size(121, 34);
             this.cbKat3.TabIndex = 16;
             // 
             // cbKat2
@@ -135,7 +135,7 @@
             this.cbKat2.FormattingEnabled = true;
             this.cbKat2.Location = new System.Drawing.Point(16, 140);
             this.cbKat2.Name = "cbKat2";
-            this.cbKat2.Size = new System.Drawing.Size(121, 30);
+            this.cbKat2.Size = new System.Drawing.Size(121, 34);
             this.cbKat2.TabIndex = 15;
             // 
             // cbKat1
@@ -145,7 +145,7 @@
             this.cbKat1.FormattingEnabled = true;
             this.cbKat1.Location = new System.Drawing.Point(16, 104);
             this.cbKat1.Name = "cbKat1";
-            this.cbKat1.Size = new System.Drawing.Size(121, 30);
+            this.cbKat1.Size = new System.Drawing.Size(121, 34);
             this.cbKat1.TabIndex = 14;
             // 
             // cbZemin
@@ -155,7 +155,7 @@
             this.cbZemin.FormattingEnabled = true;
             this.cbZemin.Location = new System.Drawing.Point(16, 65);
             this.cbZemin.Name = "cbZemin";
-            this.cbZemin.Size = new System.Drawing.Size(121, 30);
+            this.cbZemin.Size = new System.Drawing.Size(121, 34);
             this.cbZemin.TabIndex = 13;
             // 
             // cbBahçe
@@ -165,7 +165,7 @@
             this.cbBahçe.FormattingEnabled = true;
             this.cbBahçe.Location = new System.Drawing.Point(16, 26);
             this.cbBahçe.Name = "cbBahçe";
-            this.cbBahçe.Size = new System.Drawing.Size(121, 30);
+            this.cbBahçe.Size = new System.Drawing.Size(121, 34);
             this.cbBahçe.TabIndex = 12;
             // 
             // checkedListBox1
@@ -185,7 +185,7 @@
             "Teras"});
             this.checkedListBox1.Location = new System.Drawing.Point(39, 63);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(172, 266);
+            this.checkedListBox1.Size = new System.Drawing.Size(172, 235);
             this.checkedListBox1.TabIndex = 12;
             // 
             // btnNext1
@@ -244,7 +244,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(93, 92);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
+            this.label4.Size = new System.Drawing.Size(71, 20);
             this.label4.TabIndex = 43;
             this.label4.Text = "Kategori";
             // 
@@ -261,10 +261,11 @@
             "Tatlılar",
             "Yemekler",
             "İçecekler",
-            "deneme"});
-            this.cmbKategori.Location = new System.Drawing.Point(173, 92);
+            "deneme",
+            "db"});
+            this.cmbKategori.Location = new System.Drawing.Point(193, 92);
             this.cmbKategori.Name = "cmbKategori";
-            this.cmbKategori.Size = new System.Drawing.Size(218, 24);
+            this.cmbKategori.Size = new System.Drawing.Size(218, 28);
             this.cmbKategori.TabIndex = 42;
             // 
             // label3
@@ -273,7 +274,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(93, 217);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 16);
+            this.label3.Size = new System.Drawing.Size(71, 20);
             this.label3.TabIndex = 41;
             this.label3.Text = "Fotoğraf";
             // 
@@ -302,11 +303,11 @@
             // lstUrunler
             // 
             this.lstUrunler.FormattingEnabled = true;
-            this.lstUrunler.ItemHeight = 16;
+            this.lstUrunler.ItemHeight = 20;
             this.lstUrunler.Location = new System.Drawing.Point(484, 92);
             this.lstUrunler.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstUrunler.Name = "lstUrunler";
-            this.lstUrunler.Size = new System.Drawing.Size(264, 340);
+            this.lstUrunler.Size = new System.Drawing.Size(264, 324);
             this.lstUrunler.TabIndex = 37;
             // 
             // btnKaydet
@@ -326,7 +327,7 @@
             this.txtFiyat.Location = new System.Drawing.Point(172, 178);
             this.txtFiyat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFiyat.Name = "txtFiyat";
-            this.txtFiyat.Size = new System.Drawing.Size(219, 22);
+            this.txtFiyat.Size = new System.Drawing.Size(219, 26);
             this.txtFiyat.TabIndex = 34;
             // 
             // label2
@@ -335,7 +336,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(93, 178);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 16);
+            this.label2.Size = new System.Drawing.Size(45, 20);
             this.label2.TabIndex = 32;
             this.label2.Text = "Fiyat";
             // 
@@ -344,7 +345,7 @@
             this.txtUrunAd.Location = new System.Drawing.Point(172, 139);
             this.txtUrunAd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUrunAd.Name = "txtUrunAd";
-            this.txtUrunAd.Size = new System.Drawing.Size(219, 22);
+            this.txtUrunAd.Size = new System.Drawing.Size(219, 26);
             this.txtUrunAd.TabIndex = 35;
             // 
             // label1
@@ -353,7 +354,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(93, 139);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 16);
+            this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 33;
             this.label1.Text = "UrunAd";
             // 
@@ -362,10 +363,10 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dosyaİşlemleriToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 18);
+            this.menuStrip1.Location = new System.Drawing.Point(3, 22);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(817, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(817, 28);
             this.menuStrip1.TabIndex = 40;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -376,29 +377,29 @@
             this.jSONDışarıAktarToolStripMenuItem,
             this.jSONİçeriAktarToolStripMenuItem});
             this.dosyaİşlemleriToolStripMenuItem.Name = "dosyaİşlemleriToolStripMenuItem";
-            this.dosyaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
+            this.dosyaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
             this.dosyaİşlemleriToolStripMenuItem.Text = "Veri Tabanı  İşlemleri";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(155, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(195, 6);
             // 
             // jSONDışarıAktarToolStripMenuItem
             // 
             this.jSONDışarıAktarToolStripMenuItem.Name = "jSONDışarıAktarToolStripMenuItem";
-            this.jSONDışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.jSONDışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.jSONDışarıAktarToolStripMenuItem.Text = "Ürün ";
             // 
             // jSONİçeriAktarToolStripMenuItem
             // 
             this.jSONİçeriAktarToolStripMenuItem.Name = "jSONİçeriAktarToolStripMenuItem";
-            this.jSONİçeriAktarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.jSONİçeriAktarToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.jSONİçeriAktarToolStripMenuItem.Text = "JSON İçeri Aktar";
             // 
             // FrmIlk
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
