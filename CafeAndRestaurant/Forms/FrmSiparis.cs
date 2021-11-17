@@ -12,12 +12,23 @@ namespace CafeAndRestaurant.Forms
 
         public List<Siparis> SiparisBilgileri = new List<Siparis>();
         public List<SiparisDetay> siparisDetaylari = new List<SiparisDetay>();
+        public static FrmPersonel frmPer = new FrmPersonel();
 
 
         string[] menuResimIsimleri = { "Balıklar", "FastFood", "Kahvaltı", "Mezeler", "Tatlılar", "Salatalar", "Yemekler", "Çorbalar", "İçecekler" };
+
         public FrmSiparis()
         {
             InitializeComponent();
+           
+
+
+        }
+        private Button _btn;
+        public FrmSiparis(Button btn)
+        {
+            InitializeComponent();
+            _btn = btn;
 
 
         }
@@ -169,10 +180,16 @@ namespace CafeAndRestaurant.Forms
             FrmPersonel frmPersonel = new FrmPersonel();
             foreach (var item in SiparisBilgileri)
             {
+                var r = item.Masa;
+                //Button kapatilacakButton = SiparisBilgileri.Controls[item.Masa] as Button;
+
+
+                //frmPersonel.MasaBoşalt(r as Button);
 
                 if (item.Durum == SiparisDurum.Aktif)
                 {
                     item.Durum = SiparisDurum.Pasif;
+                    
                 }
             }
 
@@ -198,10 +215,28 @@ namespace CafeAndRestaurant.Forms
 
         private void btnAdisyonKapat_Click_1(object sender, EventArgs e)
         {
+            Context.Save();
+            //FrmPersonel frm = (_frmsiparis)Application.OpenForms["form_adi "];
             PrintDialog daraGridViewPrintDialog = new PrintDialog();
             daraGridViewPrintDialog.Document = printDocument1;
             daraGridViewPrintDialog.UseEXDialog = true;
             printDocument1.Print();
+            this.Close();
+            
+            _btn.BackColor = ColorTranslator.FromHtml("#7F7F7F");
+            this.Hide();
+
+
+
+
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Visible = true;
+            
+            
+            //this.Hide();
         }
         //frmPersonel.Show();
     }

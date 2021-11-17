@@ -24,7 +24,7 @@ namespace CafeAndRestaurant.Lib.Concrete
                 _urunKategori = value; 
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new Exception("kategori boş geçilemez");
+                    //throw new Exception("kategori boş geçilemez");
                 }
             }
         }

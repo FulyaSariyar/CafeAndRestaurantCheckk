@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
 using CafeAndRestaurant.Lib.Concrete;
+using System.Reflection;
 
 namespace CafeAndRestaurant.Forms
 {
@@ -17,11 +18,12 @@ namespace CafeAndRestaurant.Forms
     {
         string masaAd;
         string binaAd;
+        
         public FrmPersonel()
         {
             InitializeComponent();
+         
         }
-
         //public BinaBilgileri BinaBilgileri { get; set; }
 
 
@@ -47,7 +49,6 @@ namespace CafeAndRestaurant.Forms
 
                 flwpBinaBolumleri.Controls.Add(btnKat);
             }
-
         }
        
         protected void btnKat_Click(object sender, EventArgs e)
@@ -65,15 +66,14 @@ namespace CafeAndRestaurant.Forms
                         var btnMasa = new Button
 
                         {
-
                             Size = new Size(150, 150),
                             BackColor = ColorTranslator.FromHtml("#7F7F7F"),//#a45117//CD661D
                             Text = $"MASA {i}",
                             ForeColor = Color.White
-
                         };
 
                         btnMasa.Name = $"Masa{i}";
+                        
                         masaAd = $"Masa{i}";
                         binaAd = item.BinaBolumAdi;
                         btnMasa.Click += new EventHandler(btnMasa_Click);
@@ -84,23 +84,29 @@ namespace CafeAndRestaurant.Forms
                 }
             }
         }
-
-
+        public void MasaBoşalt(Button masaAd )
+        {
+            masaAd.BackColor = ColorTranslator.FromHtml("#7F7F7F");
+        }
 
         private FrmSiparis _frmSiparis;
         protected void btnMasa_Click(object sender, EventArgs e)
         {
-            _frmSiparis = new FrmSiparis();
+            Button oButton = (Button)sender;
+            _frmSiparis = new FrmSiparis(oButton);
             _frmSiparis.SiparisBilgileri.Add(new Siparis
             {
                 KatIsim=binaAd,
                 Masa = masaAd,
             }); 
-            Button oButton = (Button)sender;
+            
+
             oButton.BackColor = Color.Green;
+            
+            _frmSiparis.Show();
             _frmSiparis.SiparisBilgileri = _frmSiparis.SiparisBilgileri;
             //_frmSiparis.MdiParent = this;
-            _frmSiparis.Show();
+            //_frmSiparis.Show();
             //this.Hide();
 
         }
