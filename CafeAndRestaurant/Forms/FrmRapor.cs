@@ -58,6 +58,8 @@ namespace CafeAndRestaurant.Forms
             MessageBox.Show($"{SiparisDetay.Count}adert ürün içeri aktarıldı");
             reader.Close();
 
+
+
             //var calculatedDates = new List<DateTime>(
             //    AllDatesBetween
             //    (DateTime.Parse("2009-07-27")
@@ -65,16 +67,33 @@ namespace CafeAndRestaurant.Forms
             //    .Select(d => d.ToString("yyyy-MM-dd"));
 
 
+            //int sum = 0;
+            //foreach (SiparisDetay item in SiparisDetay)
+            //{
+            //    if (item.SiparisTarihi.Day < DateTime.Now.Day && item.SiparisTarihi.Day > DateTime.Now.Day - 28)
+            //    {
+            //        dtgrdAylik.Rows.Add(item.UrunAd, item.Fiyat + " TL ");
+            //        sum += Convert.ToInt32(item.Fiyat.ToString().Split(" ").First());
+            //    }
+            //}
+            //dtgrdAylik.Rows.Add("TOPLAM", sum + " TL ");
+
             int sum = 0;
-            foreach (SiparisDetay item in SiparisDetay)
+            for (DateTime tarih = DateTime.Now.AddMonths(-1); tarih <= DateTime.Now; tarih = tarih.AddDays(1))
             {
-                if (item.SiparisTarihi.Day < DateTime.Now.Day && item.SiparisTarihi.Day > DateTime.Now.Day - 28)
+                foreach (SiparisDetay item in SiparisDetay)
                 {
-                    dtgrdAylik.Rows.Add(item.UrunAd, item.Fiyat + " TL ");
-                    sum += Convert.ToInt32(item.Fiyat.ToString().Split(" ").First());
+                    if (item.SiparisTarihi.Day==tarih.Day)
+                    {
+                        dtgrdAylik.Rows.Add(item.UrunAd, item.Fiyat + " TL ");
+                        sum += Convert.ToInt32(item.Fiyat.ToString().Split(" ").First());
+                    }  
+                    
                 }
             }
+
             dtgrdAylik.Rows.Add("TOPLAM", sum + " TL ");
+
         }
     }
 }
