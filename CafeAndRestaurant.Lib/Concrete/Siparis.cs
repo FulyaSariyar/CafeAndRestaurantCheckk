@@ -13,6 +13,8 @@ namespace CafeAndRestaurant.Lib.Concrete
         public string Masa { get; set; }
         public string KatIsim { get; set; }
         public SiparisDurum Durum { get; set; }
+        public List<SiparisDetay> MasaSiparisBilgisi { get; set;}
+        //public Siparis MasaSiparisBilgisi { get; set; }
         //public string Tutar { get; set; }
         //public decimal BirimFiyat { get; set; }
         //public DateTime SiparisTarihi = DateTime.Now;

@@ -18,27 +18,36 @@ namespace CafeAndRestaurant.Forms
     {
         string masaAd;
         string binaAd;
-        
+
         public FrmPersonel()
         {
             InitializeComponent();
-         
+
         }
         private List<BinaBilgileri> _binaBilgileri;
         public FrmPersonel(List<BinaBilgileri> binaBilgileri)
         {
-            _binaBilgileri= binaBilgileri;
+            _binaBilgileri = binaBilgileri;
+
         }
         //public BinaBilgileri BinaBilgileri { get; set; }
 
 
+        public Dictionary<string, List<Siparis>> SiparisBilgileri1 = new();
+        //public List<Siparis> SiparisBilgileri1 = new();
 
         public List<BinaBilgileri> BinaBilgileri = new List<BinaBilgileri>();
         private void FrmPersonel_Load(object sender, EventArgs e)
         {
-
+            //SiparisBilgileri1[oButton.Name] = new();
+            //foreach (var sip in siparisler)
+            //{
+            //    SiparisBilgileri1[oButton.Name].Add(sip);
+            //}
             for (int i = 0; i < BinaBilgileri.Count; i++)
             {
+                var siparisler = new List<Siparis>();
+                SiparisBilgileri1[BinaBilgileri[i].BinaBolumAdi] = new();
                 var btnKat = new Button
                 {
 
@@ -49,15 +58,28 @@ namespace CafeAndRestaurant.Forms
                     ForeColor = Color.White
 
                 };
-                
+
+                for (int j = 1; j <= Convert.ToInt32(BinaBilgileri[i].MasaAdet); j++)
+                {
+                    siparisler.Add(new Siparis()
+                    {
+                        Durum = SiparisDurum.Pasif,
+                        KatIsim = BinaBilgileri[i].BinaBolumAdi,
+                        Masa = $"MASA {j}",
+                        MasaSiparisBilgisi = new List<SiparisDetay>()
+                    });
+                }
+
                 btnKat.Name = $"{BinaBilgileri[i].BinaBolumAdi}";
                 btnKat.Click += new EventHandler(btnKat_Click);
                 //btnKat.Parent = groupBox;
 
+                //SiparisBilgileri1[BinaBilgileri[i]]
+                SiparisBilgileri1[BinaBilgileri[i].BinaBolumAdi] = siparisler;
                 flwpBinaBolumleri.Controls.Add(btnKat);
             }
         }
-       
+
         protected void btnKat_Click(object sender, EventArgs e)
         {
             //flpMenuElemanlari.Controls.Clear();
@@ -68,6 +90,7 @@ namespace CafeAndRestaurant.Forms
                 if (oButton.Name == item.BinaBolumAdi)
                 {
                     flwpMasa.Controls.Clear();
+                    var siparisler = new List<Siparis>();
                     for (int i = 1; i <= int.Parse(item.MasaAdet); i++)
                     {
                         var btnMasa = new Button
@@ -81,18 +104,20 @@ namespace CafeAndRestaurant.Forms
                         };
 
                         btnMasa.Name = $"Masa{i}";
-                        
+
                         masaAd = $"Masa{i}";
                         binaAd = item.BinaBolumAdi;
                         btnMasa.Click += new EventHandler(btnMasa_Click);
                         flwpMasa.Controls.Add(btnMasa);
                         //Controls.Add(btnMasa);
-                       
+                        
+                        
                     }
+                    
                 }
             }
         }
-        public void MasaBoşalt(Button masaAd )
+        public void MasaBoşalt(Button masaAd)
         {
             masaAd.BackColor = ColorTranslator.FromHtml("#7F7F7F");
         }
@@ -104,13 +129,19 @@ namespace CafeAndRestaurant.Forms
             _frmSiparis = new FrmSiparis(oButton);
             _frmSiparis.SiparisBilgileri.Add(new Siparis
             {
-                KatIsim=binaAd,
+                KatIsim = binaAd,
                 Masa = masaAd,
-            }); 
-            
+            });
 
-            oButton.BackColor = Color.Green;
-            
+
+            //oButton.BackColor = Color.Green;
+
+            if (oButton.BackColor == Color.Green)
+            {
+                MessageBox.Show("İlave sipariş işlemi gerçekleştirilecek");
+            }
+            var siparisler = SiparisBilgileri1[binaAd].Where(x => x.Masa == masaAd).ToList();
+            _frmSiparis.Siparisler = siparisler;
             _frmSiparis.Show();
             _frmSiparis.SiparisBilgileri = _frmSiparis.SiparisBilgileri;
             //_frmSiparis.MdiParent = this;

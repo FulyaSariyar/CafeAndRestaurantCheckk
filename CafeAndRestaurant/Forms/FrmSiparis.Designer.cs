@@ -160,7 +160,8 @@
             this.dtGrdSiparis.RowHeadersVisible = false;
             this.dtGrdSiparis.RowHeadersWidth = 60;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             this.dtGrdSiparis.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtGrdSiparis.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dtGrdSiparis.RowTemplate.Height = 50;

@@ -12,6 +12,7 @@ namespace CafeAndRestaurant.Forms
 
         public List<Siparis> SiparisBilgileri = new List<Siparis>();
         public List<SiparisDetay> siparisDetaylari = new List<SiparisDetay>();
+        public List<SiparisDetay> siparisDetaylari1 = new List<SiparisDetay>();
         //public static FrmPersonel frmPer = new FrmPersonel();
 
 
@@ -73,37 +74,6 @@ namespace CafeAndRestaurant.Forms
                     lblDetay.Parent = pbox;
 
                 }
-
-                //MemoryStream stream = new MemoryStream(eleman.Fotograf);
-                //var groupBox = new GroupBox();
-                //groupBox.Name = $"grpBox{eleman.UrunAd}";
-
-                ////Sol taraf menü listesi click olaylaarı
-                //var pbox = new PictureBox
-                //{
-                //    SizeMode = PictureBoxSizeMode.StretchImage,
-                //    Size = new Size(210, 160),
-                //    Image = Image.FromStream(stream)
-
-                //};
-                //pbox.Name = $"{eleman.UrunAd}";
-                //pbox.Click += new EventHandler(pboxUrunler_Click);
-                //pbox.Parent = groupBox;
-                //flpMenuElemanlari.Controls.Add(pbox);
-
-                //// Label içerisinde ürün bilgileri yazdırıldı
-                //Label lblDetay = new Label
-                //{
-                //    Text = $"{eleman.UrunAd} {eleman.Fiyat} TL",
-                //    ForeColor = Color.White,
-                //    //BackColor = Color.Transparent,
-                //    Font = new Font("Arial", 10, FontStyle.Bold),
-                //    BackColor = Color.Chocolate,
-                //    TextAlign = ContentAlignment.MiddleCenter,
-                //    Location = new Point(13, 110),
-                //    AutoSize = true
-                //};
-                //lblDetay.Parent = pbox;
             }
         }
         //Menüde bulunan ürünlerin click olayı
@@ -123,6 +93,12 @@ namespace CafeAndRestaurant.Forms
                         sum += Convert.ToInt32((dtGrdSiparis.Rows[i].Cells[1].Value).ToString().Split(" ").First());
                     }
                     siparisDetaylari.Add(new SiparisDetay()
+                    {
+                        Fiyat = item.Fiyat,
+                        UrunAd = item.UrunAd,
+                        Tutar = sum.ToString()
+                    });
+                    siparisDetaylari1.Add(new SiparisDetay()
                     {
                         Fiyat = item.Fiyat,
                         UrunAd = item.UrunAd,
@@ -192,20 +168,36 @@ namespace CafeAndRestaurant.Forms
             }
         }
 
+        private FrmPersonel _frmPersonel;
+
+        public List<Siparis> Siparisler { get;  set; }
+
         private void btn_SiparisAl_Click_1(object sender, EventArgs e)
         {
-            FrmPersonel frmPersonel = new FrmPersonel();
-            foreach (var item in SiparisBilgileri)
-            {
-                var r = item.Masa;
+            //if (_frmPersonel == null) return;
 
-                if (item.Durum == SiparisDurum.Aktif)
+            foreach (var item in SiparisBilgileri.ToList())
+            {
+                if (item.MasaSiparisBilgisi == null)
                 {
-                    item.Durum = SiparisDurum.Pasif;
-                    
+                    SiparisBilgileri.Clear();
+                    SiparisBilgileri.Add(new Siparis
+                    {
+                        Masa = item.Masa,
+                        KatIsim = item.KatIsim,
+                        Durum = item.Durum,
+                        MasaSiparisBilgisi = new List<SiparisDetay>(siparisDetaylari1)
+                    });
+
                 }
             }
-            this.Hide();
+
+            //_frmPersonel.Show();
+            //_frmPersonel.SiparisBilgileri1 = SiparisBilgileri;
+            _btn.BackColor = Color.Green;
+            
+            
+            //this.Hide();
             this.Close();
         }
 

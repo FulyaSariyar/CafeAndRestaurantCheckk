@@ -35,7 +35,7 @@ namespace CafeAndRestaurant.Forms
             StreamReader reader = new StreamReader(fileStream);
             string dosyaİcerigi = reader.ReadToEnd();
             SiparisDetay = JsonConvert.DeserializeObject<List<SiparisDetay>>(dosyaİcerigi);
-            MessageBox.Show($"{SiparisDetay.Count}adert kişi içeri aktarıldı");
+            MessageBox.Show($"{SiparisDetay.Count}adert ürün içeri aktarıldı");
             reader.Close();
 
             int sum=0;
@@ -58,7 +58,7 @@ namespace CafeAndRestaurant.Forms
             StreamReader reader = new StreamReader(fileStream);
             string dosyaİcerigi = reader.ReadToEnd();
             SiparisDetay = JsonConvert.DeserializeObject<List<SiparisDetay>>(dosyaİcerigi);
-            MessageBox.Show($"{SiparisDetay.Count}adert kişi içeri aktarıldı");
+            MessageBox.Show($"{SiparisDetay.Count}adert ürün içeri aktarıldı");
             reader.Close();
 
             int sum = 0;
