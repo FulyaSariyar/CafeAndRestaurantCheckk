@@ -31,6 +31,7 @@ namespace CafeAndRestaurant.Forms
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRapor));
             this.grpBoxGunlukRapor = new System.Windows.Forms.GroupBox();
             this.btnBack2 = new System.Windows.Forms.Button();
@@ -107,7 +108,7 @@ namespace CafeAndRestaurant.Forms
             this.dtGrdGunluk.RowHeadersWidth = 51;
             this.dtGrdGunluk.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtGrdGunluk.RowTemplate.Height = 25;
-            this.dtGrdGunluk.Size = new System.Drawing.Size(482, 301);
+            this.dtGrdGunluk.Size = new System.Drawing.Size(482, 577);
             this.dtGrdGunluk.TabIndex = 16;
             // 
             // urunAdiGunluk
@@ -189,8 +190,10 @@ namespace CafeAndRestaurant.Forms
             this.dtgrdAylik.Name = "dtgrdAylik";
             this.dtgrdAylik.RowHeadersVisible = false;
             this.dtgrdAylik.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtgrdAylik.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgrdAylik.RowTemplate.Height = 25;
-            this.dtgrdAylik.Size = new System.Drawing.Size(482, 301);
+            this.dtgrdAylik.Size = new System.Drawing.Size(482, 562);
             this.dtgrdAylik.TabIndex = 17;
             // 
             // dataGridViewTextBoxColumn1

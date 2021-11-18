@@ -119,12 +119,7 @@ namespace CafeAndRestaurant.Forms
 
         }
 
-        private void dosyaİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void raporGörüntüleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnRapor_Click(object sender, EventArgs e)
         {
             FrmRapor frm = new FrmRapor();
             frm.Show();

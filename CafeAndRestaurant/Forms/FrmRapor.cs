@@ -43,7 +43,7 @@ namespace CafeAndRestaurant.Forms
             {
                 if(item.SiparisTarihi.Day==DateTime.Now.Day)
                 {
-                    dtGrdGunluk.Rows.Add(item.UrunAd, item.Fiyat + " TL ");
+                    dtGrdGunluk.Rows.Add(item.UrunAd, item.Fiyat );
                     sum += Convert.ToInt32(item.Fiyat.ToString().Split(" ").First());
                 }    
             }

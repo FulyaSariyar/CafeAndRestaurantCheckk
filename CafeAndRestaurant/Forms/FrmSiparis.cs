@@ -29,44 +29,81 @@ namespace CafeAndRestaurant.Forms
         }
         public void JsonConverter(string menuIsmi)
         {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/{menuIsmi}.json";
+            //var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/{menuIsmi}.json";
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/Menuler/VeriTabanı.json";
             StreamReader fileJson = new StreamReader(path);
             string dosyaİcerigi = fileJson.ReadToEnd();
             menuler = JsonConvert.DeserializeObject<List<Menu>>(dosyaİcerigi);
+            
 
             //MessageBox.Show($"{menuler.Count} ürün içeri aktarıldı");
             foreach (var eleman in menuler)
             {
-                MemoryStream stream = new MemoryStream(eleman.Fotograf);
-                var groupBox = new GroupBox();
-                groupBox.Name = $"grpBox{eleman.UrunAd}";
-
-                //Sol taraf menü listesi click olaylaarı
-                var pbox = new PictureBox
+                if (eleman.UrunKategori == menuIsmi)
                 {
-                    SizeMode = PictureBoxSizeMode.StretchImage,
-                    Size = new Size(210, 160),
-                    Image = Image.FromStream(stream)
+                    MemoryStream stream = new MemoryStream(eleman.Fotograf);
+                    var groupBox = new GroupBox();
+                    groupBox.Name = $"grpBox{eleman.UrunAd}";
 
-                };
-                pbox.Name = $"{eleman.UrunAd}";
-                pbox.Click += new EventHandler(pboxUrunler_Click);
-                pbox.Parent = groupBox;
-                flpMenuElemanlari.Controls.Add(pbox);
+                    //Sol taraf menü listesi click olaylaarı
+                    var pbox = new PictureBox
+                    {
+                        SizeMode = PictureBoxSizeMode.StretchImage,
+                        Size = new Size(210, 160),
+                        Image = Image.FromStream(stream)
 
-                // Label içerisinde ürün bilgileri yazdırıldı
-                Label lblDetay = new Label
-                {
-                    Text = $"{eleman.UrunAd} {eleman.Fiyat} TL",
-                    ForeColor = Color.White,
-                    //BackColor = Color.Transparent,
-                    Font = new Font("Arial", 10, FontStyle.Bold),
-                    BackColor = Color.Chocolate,
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Location = new Point(13, 110),
-                    AutoSize = true
-                };
-                lblDetay.Parent = pbox;
+                    };
+                    pbox.Name = $"{eleman.UrunAd}";
+                    pbox.Click += new EventHandler(pboxUrunler_Click);
+                    pbox.Parent = groupBox;
+                    flpMenuElemanlari.Controls.Add(pbox);
+
+                    // Label içerisinde ürün bilgileri yazdırıldı
+                    Label lblDetay = new Label
+                    {
+                        Text = $"{eleman.UrunAd} {eleman.Fiyat} TL",
+                        ForeColor = Color.White,
+                        //BackColor = Color.Transparent,
+                        Font = new Font("Arial", 10, FontStyle.Bold),
+                        BackColor = Color.Chocolate,
+                        TextAlign = ContentAlignment.MiddleCenter,
+                        Location = new Point(13, 110),
+                        AutoSize = true
+                    };
+                    lblDetay.Parent = pbox;
+
+                }
+
+                //MemoryStream stream = new MemoryStream(eleman.Fotograf);
+                //var groupBox = new GroupBox();
+                //groupBox.Name = $"grpBox{eleman.UrunAd}";
+
+                ////Sol taraf menü listesi click olaylaarı
+                //var pbox = new PictureBox
+                //{
+                //    SizeMode = PictureBoxSizeMode.StretchImage,
+                //    Size = new Size(210, 160),
+                //    Image = Image.FromStream(stream)
+
+                //};
+                //pbox.Name = $"{eleman.UrunAd}";
+                //pbox.Click += new EventHandler(pboxUrunler_Click);
+                //pbox.Parent = groupBox;
+                //flpMenuElemanlari.Controls.Add(pbox);
+
+                //// Label içerisinde ürün bilgileri yazdırıldı
+                //Label lblDetay = new Label
+                //{
+                //    Text = $"{eleman.UrunAd} {eleman.Fiyat} TL",
+                //    ForeColor = Color.White,
+                //    //BackColor = Color.Transparent,
+                //    Font = new Font("Arial", 10, FontStyle.Bold),
+                //    BackColor = Color.Chocolate,
+                //    TextAlign = ContentAlignment.MiddleCenter,
+                //    Location = new Point(13, 110),
+                //    AutoSize = true
+                //};
+                //lblDetay.Parent = pbox;
             }
         }
         //Menüde bulunan ürünlerin click olayı
@@ -181,7 +218,7 @@ namespace CafeAndRestaurant.Forms
             lblToplam.DrawToBitmap(lbl, new System.Drawing.Rectangle(0, 0, this.lblToplam.Width, this.lblToplam.Height));
 
             e.Graphics.DrawImage(Adisyon, 135, 65);
-            e.Graphics.DrawImage(lbl, this.dtGrdSiparis.Width, this.flowLayoutPanel1.Height);
+            e.Graphics.DrawImage(lbl, this.dtGrdSiparis.Width, this.flowLayoutPanel1.Height-300);
         }
 
         private void btnAdisyonKapat_Click_1(object sender, EventArgs e)
@@ -200,9 +237,7 @@ namespace CafeAndRestaurant.Forms
         }
         private void btnGeri_Click(object sender, EventArgs e)
         {
-            this.Visible = true;
-        }
-
-      
+            this.Hide(); ;
+        }    
     }
 }

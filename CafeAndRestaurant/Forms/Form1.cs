@@ -109,7 +109,7 @@ namespace CafeAndRestaurant
                 }
 
 
-                urunler.Add(yeniUrun);
+                //urunler.Add(yeniUrun);
                 ListeyiDoldur();
             }
             catch (Exception ex)

@@ -28,28 +28,28 @@ namespace CafeAndRestaurant.Lib.Concrete
                 }
             }
         }
-        public string UrunAd {
-            get 
-            {
-                return _urunAd.Substring(0, 1).ToUpper() + _urunAd.Substring(1).ToLower();
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new FormatException("Ürün adı boş geçilemez"); 
-                }
-                foreach (char harf in value)
-                {
+        public string UrunAd {get;set;
+            //get 
+            //{
+            //    return _urunAd.Substring(0, 1).ToUpper() + _urunAd.Substring(1).ToLower();
+            //}
+            //set
+            //{
+            //    if (string.IsNullOrEmpty(value))
+            //    {
+            //        throw new FormatException("Ürün adı boş geçilemez"); 
+            //    }
+            //    foreach (char harf in value)
+            //    {
 
-                    if (char.IsSymbol(harf) || char.IsControl(harf) || char.IsPunctuation(harf)|| char.IsDigit(harf))
-                        throw new Exception("Ürün adında harf dışında geçersiz karakter bulunmaktadır");
-                }
-                if (value.Length > 50)
-                    throw new Exception(" girilen ifade 50 karakterden büyük olmasın");
+            //        if (char.IsSymbol(harf) || char.IsControl(harf) || char.IsPunctuation(harf)|| char.IsDigit(harf))
+            //            throw new Exception("Ürün adında harf dışında geçersiz karakter bulunmaktadır");
+            //    }
+            //    if (value.Length > 50)
+            //        throw new Exception(" girilen ifade 50 karakterden büyük olmasın");
 
-                _urunAd = value;
-            }
+            //    _urunAd = value;
+            //}
         }
         public string Fiyat {get;set;}
         // public string Id { get; set; }

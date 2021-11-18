@@ -13,6 +13,7 @@ namespace CafeAndRestaurant.Lib.Abstract
         public byte[] Fotograf { get; set; }
         public string UrunAd { get; set; }
         public string Fiyat { get; set; }
+        public string UrunKategori { get; set; }
         public override string ToString() => $"{UrunAd} {Fiyat}";
 
 
