@@ -166,37 +166,35 @@ namespace CafeAndRestaurant.Forms
                 };
                 lblDetay.Parent = pbox;
             }
+
+            if(Siparisler != null)
+            {
+                foreach (var f in Siparisler)
+                {
+                    foreach (var b in f.MasaSiparisBilgisi)
+                    {
+                        dtGrdSiparis.Rows.Add(b.UrunAd, b.Fiyat + " TL ");
+                    }
+                }
+            }  
         }
 
         private FrmPersonel _frmPersonel;
-
         public List<Siparis> Siparisler { get;  set; }
 
         private void btn_SiparisAl_Click_1(object sender, EventArgs e)
         {
             //if (_frmPersonel == null) return;
 
-            foreach (var item in SiparisBilgileri.ToList())
+            foreach (var item in Context.SiparisBilgileri1 )
             {
-                if (item.MasaSiparisBilgisi == null)
+                foreach (var k in item.Value)
                 {
-                    SiparisBilgileri.Clear();
-                    SiparisBilgileri.Add(new Siparis
-                    {
-                        Masa = item.Masa,
-                        KatIsim = item.KatIsim,
-                        Durum = item.Durum,
-                        MasaSiparisBilgisi = new List<SiparisDetay>(siparisDetaylari1)
-                    });
-
+                    if (k.Masa == _btn.Name)
+                        k.MasaSiparisBilgisi = new List<SiparisDetay>(siparisDetaylari1);   
                 }
             }
-
-            //_frmPersonel.Show();
-            //_frmPersonel.SiparisBilgileri1 = SiparisBilgileri;
-            _btn.BackColor = Color.Green;
-            
-            
+            _btn.BackColor = Color.Green;   
             //this.Hide();
             this.Close();
         }
@@ -225,7 +223,6 @@ namespace CafeAndRestaurant.Forms
             
             _btn.BackColor = ColorTranslator.FromHtml("#ee7621");
             this.Hide();
-
         }
         private void btnGeri_Click(object sender, EventArgs e)
         {

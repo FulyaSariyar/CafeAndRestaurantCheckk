@@ -34,16 +34,10 @@ namespace CafeAndRestaurant.Forms
 
 
         public Dictionary<string, List<Siparis>> SiparisBilgileri1 = new();
-        //public List<Siparis> SiparisBilgileri1 = new();
 
         public List<BinaBilgileri> BinaBilgileri = new List<BinaBilgileri>();
         private void FrmPersonel_Load(object sender, EventArgs e)
         {
-            //SiparisBilgileri1[oButton.Name] = new();
-            //foreach (var sip in siparisler)
-            //{
-            //    SiparisBilgileri1[oButton.Name].Add(sip);
-            //}
             for (int i = 0; i < BinaBilgileri.Count; i++)
             {
                 var siparisler = new List<Siparis>();
@@ -56,14 +50,13 @@ namespace CafeAndRestaurant.Forms
                     BackColor = ColorTranslator.FromHtml("#ee7621"),
                     Text = BinaBilgileri[i].BinaBolumAdi,
                     ForeColor = Color.White
-
                 };
 
                 for (int j = 1; j <= Convert.ToInt32(BinaBilgileri[i].MasaAdet); j++)
                 {
                     siparisler.Add(new Siparis()
                     {
-                        Durum = SiparisDurum.Pasif,
+                        Durum = SiparisDurum.Aktif,
                         KatIsim = BinaBilgileri[i].BinaBolumAdi,
                         Masa = $"MASA {j}",
                         MasaSiparisBilgisi = new List<SiparisDetay>()
@@ -75,7 +68,7 @@ namespace CafeAndRestaurant.Forms
                 //btnKat.Parent = groupBox;
 
                 //SiparisBilgileri1[BinaBilgileri[i]]
-                SiparisBilgileri1[BinaBilgileri[i].BinaBolumAdi] = siparisler;
+                Context.SiparisBilgileri1[BinaBilgileri[i].BinaBolumAdi] = siparisler;
                 flwpBinaBolumleri.Controls.Add(btnKat);
             }
         }
@@ -103,15 +96,13 @@ namespace CafeAndRestaurant.Forms
                             ForeColor = Color.White
                         };
 
-                        btnMasa.Name = $"Masa{i}";
+                        btnMasa.Name = $"MASA {i}";
 
                         masaAd = $"Masa{i}";
                         binaAd = item.BinaBolumAdi;
                         btnMasa.Click += new EventHandler(btnMasa_Click);
                         flwpMasa.Controls.Add(btnMasa);
-                        //Controls.Add(btnMasa);
-                        
-                        
+                        //Controls.Add(btnMasa); 
                     }
                     
                 }
@@ -130,23 +121,22 @@ namespace CafeAndRestaurant.Forms
             _frmSiparis.SiparisBilgileri.Add(new Siparis
             {
                 KatIsim = binaAd,
-                Masa = masaAd,
-            });
+                Masa = oButton.Name,
+            }) ;
 
 
             //oButton.BackColor = Color.Green;
 
-            if (oButton.BackColor == Color.Green)
+            if (oButton.BackColor == Color.Green )
             {
                 MessageBox.Show("İlave sipariş işlemi gerçekleştirilecek");
+                var siparisler = Context.SiparisBilgileri1[binaAd].Where(x => x.Masa == oButton.Name).ToList();
+                _frmSiparis.Siparisler = siparisler;
+
             }
-            var siparisler = SiparisBilgileri1[binaAd].Where(x => x.Masa == masaAd).ToList();
-            _frmSiparis.Siparisler = siparisler;
             _frmSiparis.Show();
             _frmSiparis.SiparisBilgileri = _frmSiparis.SiparisBilgileri;
-            //_frmSiparis.MdiParent = this;
-            //_frmSiparis.Show();
-            //this.Hide();
+
 
         }
 
