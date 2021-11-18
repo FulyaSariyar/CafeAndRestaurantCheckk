@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CafeAndRestaurant.Lib.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace CafeAndRestaurant.Forms
         public FrmGiris()
         {
             InitializeComponent();
+        }
+        private List<BinaBilgileri> _bina;
+        public FrmGiris(List<BinaBilgileri> bina)
+        {
+            _bina = bina;       
         }
 
         private void btnBack1_Click(object sender, EventArgs e)
@@ -47,11 +53,14 @@ namespace CafeAndRestaurant.Forms
 
         private void btnPersonel_Click(object sender, EventArgs e)
         {
-            FrmPersonel frmPersonel = new FrmPersonel();
+            FrmPersonel frmPersonel = new FrmPersonel(_bina);
             frmPersonel.Show();
             this.Hide();
 
+        }
 
+        private void FrmGiris_Load(object sender, EventArgs e)
+        {
 
         }
     }

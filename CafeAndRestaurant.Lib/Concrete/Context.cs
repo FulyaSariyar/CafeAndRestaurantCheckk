@@ -56,6 +56,5 @@ namespace CafeAndRestaurant.Lib.Concrete
             }
         }
         // public List<BinaBilgileri> BinaBilgileri { get; set; } = new List<BinaBilgileri>();
-
     }
 }

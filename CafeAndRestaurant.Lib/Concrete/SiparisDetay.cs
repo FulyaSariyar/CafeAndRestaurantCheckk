@@ -9,13 +9,10 @@ namespace CafeAndRestaurant.Lib.Concrete
     public class SiparisDetay
     {
         public string UrunAd { get; set; }
-
         public string Fiyat { get; set; }
 
         public DateTime SiparisTarihi = DateTime.Now;
         public string Tutar { get; set; }
-
-       
 
         //public int Adet { get; set; }
 

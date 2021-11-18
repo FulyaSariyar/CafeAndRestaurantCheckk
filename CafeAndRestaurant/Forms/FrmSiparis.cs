@@ -12,7 +12,7 @@ namespace CafeAndRestaurant.Forms
 
         public List<Siparis> SiparisBilgileri = new List<Siparis>();
         public List<SiparisDetay> siparisDetaylari = new List<SiparisDetay>();
-        public static FrmPersonel frmPer = new FrmPersonel();
+        //public static FrmPersonel frmPer = new FrmPersonel();
 
 
         string[] menuResimIsimleri = { "Balıklar", "FastFood", "Kahvaltı", "Mezeler", "Tatlılar", "Salatalar", "Yemekler", "Çorbalar", "İçecekler" };
@@ -20,17 +20,12 @@ namespace CafeAndRestaurant.Forms
         public FrmSiparis()
         {
             InitializeComponent();
-           
-
-
         }
         private Button _btn;
         public FrmSiparis(Button btn)
         {
             InitializeComponent();
             _btn = btn;
-
-
         }
         public void JsonConverter(string menuIsmi)
         {
@@ -74,12 +69,9 @@ namespace CafeAndRestaurant.Forms
                 lblDetay.Parent = pbox;
             }
         }
-
         //Menüde bulunan ürünlerin click olayı
         private void pboxUrunler_Click(object sender, EventArgs e)
         {
-
-
             PictureBox oPictureBox = (PictureBox)sender;
             foreach (var item in menuler)
             {
@@ -91,10 +83,8 @@ namespace CafeAndRestaurant.Forms
 
                     for (int i = 0; i < (dtGrdSiparis.Rows.Count) - 1; ++i)
                     {
-
                         sum += Convert.ToInt32((dtGrdSiparis.Rows[i].Cells[1].Value).ToString().Split(" ").First());
                     }
-
                     siparisDetaylari.Add(new SiparisDetay()
                     {
                         Fiyat = item.Fiyat,
@@ -106,7 +96,6 @@ namespace CafeAndRestaurant.Forms
                     //MessageBox.Show($"{item.UrunAd}  {item.Fiyat} TL");
                 }
             }
-
         }
         //sol menü pbox clik event
         private void pbox_Click(object sender, EventArgs e)
@@ -120,7 +109,6 @@ namespace CafeAndRestaurant.Forms
                 {
                     JsonConverter(item);
                 }
-                
             }
         }
         private void FrmSiparis_Load(object sender, EventArgs e)
@@ -141,8 +129,6 @@ namespace CafeAndRestaurant.Forms
             {
                 var groupBox = new GroupBox();
                 groupBox.Name = $"grpBox{menuResimIsimleri[i]}";
-
-
                 var pbox = new PictureBox
                 {
                     SizeMode = PictureBoxSizeMode.StretchImage,
@@ -165,15 +151,9 @@ namespace CafeAndRestaurant.Forms
                     TextAlign = ContentAlignment.MiddleCenter,
                     Location = new Point(7, 7)
                 };
-
                 lblDetay.Parent = pbox;
             }
         }
-        //private void btnAdisyonKapat_Click(object sender, EventArgs e)
-        //{
-
-        //    Context.Save();
-        //}
 
         private void btn_SiparisAl_Click_1(object sender, EventArgs e)
         {
@@ -181,10 +161,6 @@ namespace CafeAndRestaurant.Forms
             foreach (var item in SiparisBilgileri)
             {
                 var r = item.Masa;
-                //Button kapatilacakButton = SiparisBilgileri.Controls[item.Masa] as Button;
-
-
-                //frmPersonel.MasaBoşalt(r as Button);
 
                 if (item.Durum == SiparisDurum.Aktif)
                 {
@@ -192,17 +168,12 @@ namespace CafeAndRestaurant.Forms
                     
                 }
             }
-
             this.Hide();
             this.Close();
         }
 
-        Bitmap bitmap;
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            //Bitmap dataGridAdisyon = new Bitmap(this.dtGrdSiparis.Width, this.dtGrdSiparis.Height);
-            //dtGrdSiparis.DrawToBitmap(dataGridAdisyon, new System.Drawing.Rectangle(0, 0, this.dtGrdSiparis.Width, this.dtGrdSiparis.Height));
-
             Bitmap Adisyon = new Bitmap(this.flowLayoutPanel1.Width, this.flowLayoutPanel1.Height);
             dtGrdSiparis.DrawToBitmap(Adisyon, new System.Drawing.Rectangle(0, 0, this.flowLayoutPanel1.Width, this.flowLayoutPanel1.Height));
 
@@ -223,21 +194,15 @@ namespace CafeAndRestaurant.Forms
             printDocument1.Print();
             this.Close();
             
-            _btn.BackColor = ColorTranslator.FromHtml("#7F7F7F");
+            _btn.BackColor = ColorTranslator.FromHtml("#ee7621");
             this.Hide();
 
-
-
-
         }
-
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Visible = true;
-            
-            
-            //this.Hide();
         }
-        //frmPersonel.Show();
+
+      
     }
 }

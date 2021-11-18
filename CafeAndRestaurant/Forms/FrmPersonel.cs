@@ -24,6 +24,11 @@ namespace CafeAndRestaurant.Forms
             InitializeComponent();
          
         }
+        private List<BinaBilgileri> _binaBilgileri;
+        public FrmPersonel(List<BinaBilgileri> binaBilgileri)
+        {
+            _binaBilgileri= binaBilgileri;
+        }
         //public BinaBilgileri BinaBilgileri { get; set; }
 
 
@@ -38,9 +43,10 @@ namespace CafeAndRestaurant.Forms
                 {
 
                     Size = new Size(200, 90),
-                    BackColor = ColorTranslator.FromHtml("#B0B0B0"),
+                    //BackColor = ColorTranslator.FromHtml("#B0B0B0"),ffd2691e
+                    BackColor = ColorTranslator.FromHtml("#ee7621"),
                     Text = BinaBilgileri[i].BinaBolumAdi,
-                    ForeColor = Color.Black
+                    ForeColor = Color.White
 
                 };
                 
@@ -68,7 +74,8 @@ namespace CafeAndRestaurant.Forms
 
                         {
                             Size = new Size(150, 150),
-                            BackColor = ColorTranslator.FromHtml("#7F7F7F"),//#a45117//CD661D
+                            //BackColor = ColorTranslator.FromHtml("#7F7F7F"),//#a45117//CD661D
+                            BackColor = Color.Chocolate,
                             Text = $"MASA {i}",
                             ForeColor = Color.White
                         };
@@ -110,6 +117,17 @@ namespace CafeAndRestaurant.Forms
             //_frmSiparis.Show();
             //this.Hide();
 
+        }
+
+        private void dosyaİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void raporGörüntüleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRapor frm = new FrmRapor();
+            frm.Show();
         }
     }
 }
